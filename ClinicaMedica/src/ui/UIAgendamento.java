@@ -9,12 +9,8 @@ public class UIAgendamento {
 	
 	Agendamento agendamentoController = new Agendamento();
 	
-	
-	
-	
-	
 	public void agendarAtendimento(){
-		agendamentoController.agendamentoAtendimento(paciente, especialista, dataHora, tipoAtendimento);
+		//agendamentoController.agendamentoAtendimento(paciente, especialista, dataHora, tipoAtendimento);
 	}
 	
 	public void reagendarAtendimento(){}
