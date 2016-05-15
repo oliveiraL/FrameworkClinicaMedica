@@ -54,7 +54,7 @@ public class GenericDao {
     }
 
     public Object buscar(Object objeto){
-        return null;
+        throw new ExceptionInInitializerError("Metodo não implementado.");
     }
 
 }
