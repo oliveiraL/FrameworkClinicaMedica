@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class PacienteDao {
 
-    private GenericDao genericDao;
-    private ArrayList<Paciente> pacientes;
-
-    public PacienteDao(String caminho) {
-        this.genericDao = new GenericDao(caminho);
+    private final GenericDao genericDao;
+    private final ArrayList<Paciente> pacientes;
+    public PacienteDao() {
+        this.genericDao = new GenericDao(System.getProperty("user.dir")+ "/src/xmlVeterinaria/paciente.xml");
         this.pacientes = new ArrayList<>();
     }
 
@@ -18,6 +17,7 @@ public class PacienteDao {
     }
 
     public void salvar(Paciente paciente) {
+        paciente.setId(pacientes.size()+1);
         pacientes.add(paciente);
         genericDao.salvar(pacientes);
     }

@@ -1,11 +1,45 @@
 package dominio;
 
-public class Responsavel{
+public class Responsavel {
 
-	private int id;
+    private int id;
 
-	private String nome;
+    private String nome;
 
-	private String CPF;
+    private String CPF;
+
+    public Responsavel() {
+    }
+
+    public Responsavel(String nome, String CPF) {
+        this.nome = nome;
+        this.CPF = CPF;
+    }
+    
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
 
 }

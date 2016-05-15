@@ -10,7 +10,7 @@ import dominio.AgendamentoAtendimento;
 
 public class AgendamentoController {
 
-	private GerenciarPaciente gerenciarPaciente;
+	private GerenciarPacienteController gerenciarPaciente;
 
 	private GerenciarEspecialista gerenciarEspecialista;
 	private NotificarAtendimento notificarAtendimento;

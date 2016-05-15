@@ -1,6 +1,6 @@
 package ui;
 
-import controller.GerenciarPaciente;
+import controller.GerenciarPacienteController;
 import java.util.List;
 
 public interface UIGerenciamentoPaciente {
@@ -8,16 +8,20 @@ public interface UIGerenciamentoPaciente {
 		/**
 	 *  
 	 */
-	public abstract void cadastrarPaciente();
+	public void cadastrarPaciente();
 
 	/**
 	 *  
 	 */
-	public abstract void removerPaciente();
+	public void removerPaciente();
 
 	/**
 	 *  
 	 */
-	public abstract List listarPaciente();
+	public List listarPaciente();
+        
+        public void atualizar();
+        
+        
 
 }

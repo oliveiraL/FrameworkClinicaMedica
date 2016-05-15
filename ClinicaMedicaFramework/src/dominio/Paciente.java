@@ -1,5 +1,7 @@
 package dominio;
 
+import validacoes.ValidacaoException;
+
 public abstract class Paciente {
 
     private int id;
@@ -8,10 +10,19 @@ public abstract class Paciente {
 
     private Responsavel responsavel;
 
+    public Paciente(String nome, Responsavel responsavel) {
+        this.nome = nome;
+        this.responsavel = responsavel;
+    }
+
+    public Paciente() {
+    }
+    
+    
     /**
      *
      */
-    public abstract void validarPaciente();
+    public abstract void validarPaciente() throws ValidacaoException;
 
     public int getId() {
         return id;
