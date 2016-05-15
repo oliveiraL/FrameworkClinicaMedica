@@ -2,14 +2,13 @@ package dao;
 
 import controller.GerenciarPaciente;
 import dominio.Paciente;
+import java.util.ArrayList;
 import java.util.List;
 
-public abstract class PacienteDao extends GenericDao<Paciente>{
+public class PacienteDao {
 
-	private PacienteDao pacienteDao;
-
-
-	private GerenciarPaciente gerenciarPaciente;
+        private GenericDao genericDao;
+	private ArrayList<Paciente> pacientes;
 
 	public boolean existe(Paciente paciente) {
 		return false;

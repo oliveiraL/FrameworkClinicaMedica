@@ -1,9 +1,6 @@
 package dao;
 
-import controller.GerenciarPaciente;
-import dominio.Responsavel;
-import java.util.List;
+public class ResponsavelDao {
 
-public abstract class ResponsavelDao extends GenericDao<Responsavel>{
-
+    private GenericDao genericDao;
 }

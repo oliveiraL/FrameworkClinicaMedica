@@ -1,12 +1,14 @@
 package dao;
 
-import controller.GerenciarEspecialista;
 import dominio.Especialista;
-import java.util.List;
+import java.util.ArrayList;
 
-public abstract class EspecialistaDao extends GenericDao<Especialista>{
 
-	private GerenciarEspecialista gerenciarEspecialista;
+public class EspecialistaDao{
+
+    private GenericDao genericDao;
+    
+    private ArrayList<Especialista> especialisatas; 
 
 
 }

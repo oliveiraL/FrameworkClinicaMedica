@@ -1,11 +1,9 @@
 package dao;
 
 
-import dominio.Prontuario;
 
+public class ProntuarioDao {
 
-public abstract class ProntuarioDao extends GenericDao<Prontuario> {
-
-	
+    private GenericDao genericDao;
 
 }

@@ -3,12 +3,13 @@ package dao;
 import controller.AtendimentoController;
 import java.util.List;
 
-public abstract class AtendimentoPrivadoDao extends GenericDao<AtendimentoPrivadoDao> {
+public class AtendimentoPrivadoDao  {
 
-    private AtendimentoController atendimentoController;
 
+    private GenericDao genericDao;
     public List listarAtendimentoNaoPago() {
         return null;
     }
+    
 
 }

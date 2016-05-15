@@ -4,8 +4,8 @@ import controller.AtendimentoController;
 import dominio.AtendimentoPublico;
 import java.util.List;
 
-public abstract class AtendimentoPublicDao extends GenericDao<AtendimentoPublico> {
+public class AtendimentoPublicDao{
 
-   
+   private GenericDao genericDao;
 
 }

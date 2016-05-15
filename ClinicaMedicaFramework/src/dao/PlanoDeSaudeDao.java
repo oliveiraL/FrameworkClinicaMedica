@@ -1,11 +1,8 @@
 package dao;
 
-import controller.GerenciarPlanosDeSaude;
-import dominio.PlanoDeSaude;
-import java.util.List;
 
-public abstract class PlanoDeSaudeDao extends GenericDao<PlanoDeSaude> {
-
+public class PlanoDeSaudeDao{
+    private GenericDao genericDao;
 	
 
 }
