@@ -31,7 +31,7 @@ public class Animal extends Paciente{
     
     @Override
     public void validarPaciente() throws ValidacaoException{
-        if(getResponsavel() == null)
+        if(getResponsavel() == null || getResponsavel().getCPF().isEmpty())
             throw new ValidacaoException("Erro ao validar animal.");
         
     }

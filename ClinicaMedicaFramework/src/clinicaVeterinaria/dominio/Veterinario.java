@@ -28,7 +28,7 @@ public class Veterinario extends Especialista{
     
     @Override
     public void validarEspecialista() throws ValidacaoException{
-        if(getCrmv() == null)
+        if(getCrmv() == null || getCPF() == null || getCPF().isEmpty() || getCrmv().isEmpty())
             throw new ValidacaoException("Erro ao validar Veterinario.");
     }
 

@@ -2,7 +2,7 @@ package controller;
 
 import dao.EspecialistaDao;
 import dominio.Especialista;
-import java.util.List;
+import java.util.ArrayList;
 import validacoes.ValidacaoException;
 
 public class GerenciarEspecialistaController {
@@ -19,28 +19,29 @@ public class GerenciarEspecialistaController {
      */
     public void cadastrarEspecialista(Especialista especialista) throws ValidacaoException {
         especialista.validarEspecialista();
+        especialistaDao.salvar(especialista);
     }
 
     /**
      *
      */
     public void removerEspecialista(Especialista especialista) {
-
+        especialistaDao.remover(especialista);
     }
 
     public Especialista getEspecialista(String CPF) {
         return null;
     }
 
-    public List listarEspecialista() {
-        return null;
+    public ArrayList<Especialista> listarEspecialista() {
+        return especialistaDao.listar();
     }
 
     /**
      *
      */
-    public void alterarEspecialista(Especialista especialista) {
-
+    public void atualizarEspecialista(Especialista especialista) {
+        especialistaDao.atualizar(especialista);
     }
 
     public boolean verificarExistencia(Especialista especialista) {

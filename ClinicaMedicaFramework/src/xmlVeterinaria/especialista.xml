@@ -1,0 +1,16 @@
+<list>
+  <clinicaVeterinaria.dominio.Veterinario>
+    <crmv>1234</crmv>
+    <especialidade>
+      <id>0</id>
+      <descricao>Prestar atendimento clínico a animais domésticos.</descricao>
+      <tipoAtendimento>
+        <id>0</id>
+        <descricao>Clinico Geral</descricao>
+      </tipoAtendimento>
+    </especialidade>
+    <id>1</id>
+    <nome>Bokus</nome>
+    <CPF>123.456.789-09</CPF>
+  </clinicaVeterinaria.dominio.Veterinario>
+</list>

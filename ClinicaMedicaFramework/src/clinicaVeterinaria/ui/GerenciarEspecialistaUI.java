@@ -176,7 +176,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame {
     Especialista veterinario = new Veterinario(crmv, gerenciarEspecialidade.listagem().get(index), nome, cpf);
         try {
             gerenciarEspecialista.cadastrarEspecialista(veterinario);
-// TODO add your handling code here:
+            JOptionPane.showMessageDialog(rootPane, "Especialista Cadastrado com sulcesso.");
         } catch (ValidacaoException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }

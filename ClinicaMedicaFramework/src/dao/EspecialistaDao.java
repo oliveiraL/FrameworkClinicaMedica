@@ -18,6 +18,7 @@ public class EspecialistaDao extends GenericDao<Especialista>{
     }
 
     public void salvar(Especialista especialista) {
+        especialista.setId(listagem.size()+1);
         listagem.add(especialista);
         super.salvar();
     }
