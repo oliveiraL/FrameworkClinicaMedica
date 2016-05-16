@@ -1,7 +1,6 @@
 package dao;
 
 import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.Dom4JDriver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -41,7 +40,7 @@ public class GenericDao {
 
     public Object listar(){ 
         try {
-            XStream xStream = new XStream(new Dom4JDriver());
+            XStream xStream = new XStream();
             try (FileInputStream fis = new FileInputStream(new File(caminho))) {
                 Object arquivoXML = xStream.fromXML(fis);
                 return arquivoXML;

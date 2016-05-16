@@ -9,7 +9,11 @@ public class PacienteDao {
     private final ArrayList<Paciente> pacientes;
     public PacienteDao() {
         this.genericDao = new GenericDao(System.getProperty("user.dir")+ "/src/xmlVeterinaria/paciente.xml");
-        this.pacientes = new ArrayList<>();
+        Object obj = genericDao.listar();
+        if(obj != null)
+            this.pacientes = (ArrayList<Paciente>)obj;
+        else
+            this.pacientes = new ArrayList<>();
     }
 
     public boolean existe(Paciente paciente) {
@@ -20,6 +24,7 @@ public class PacienteDao {
         paciente.setId(pacientes.size()+1);
         pacientes.add(paciente);
         genericDao.salvar(pacientes);
+        System.err.println(pacientes.size());
     }
 
     public void atualizar(Paciente paciente) {
