@@ -8,6 +8,12 @@ import validacoes.ValidacaoException;
 public class GerenciarPacienteController {
 
     private PacienteDao pacienteDao;
+
+    public GerenciarPacienteController() {
+        pacienteDao = new PacienteDao();
+    }
+    
+    
     
     public void cadastrarPaciente(Paciente paciente) throws ValidacaoException {
         paciente.validarPaciente();

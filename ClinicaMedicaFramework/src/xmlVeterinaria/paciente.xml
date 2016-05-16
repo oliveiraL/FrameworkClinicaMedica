@@ -1,0 +1,14 @@
+<list>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>labrador</raca>
+    <especie>cão</especie>
+    <idade>3 meses</idade>
+    <id>1</id>
+    <nome>clara</nome>
+    <responsavel>
+      <id>0</id>
+      <nome>lucio</nome>
+      <CPF>444.247.768-08</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
+</list>

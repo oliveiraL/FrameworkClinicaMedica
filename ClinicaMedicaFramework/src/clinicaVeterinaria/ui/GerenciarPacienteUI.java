@@ -26,6 +26,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
      */
     public GerenciarPacienteUI() {
         initComponents();
+        gerenciarPaciente = new GerenciarPacienteController();
     }
 
     /**

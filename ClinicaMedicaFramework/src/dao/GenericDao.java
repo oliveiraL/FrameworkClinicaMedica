@@ -18,7 +18,7 @@ public class GenericDao {
     
 
     public void salvar(Object object) {
-        XStream xml = new XStream(new Dom4JDriver());
+        XStream xml = new XStream();
         String arquivoXMl = xml.toXML(object);
         File arquivo = new File(caminho);
         FileOutputStream gravar;
