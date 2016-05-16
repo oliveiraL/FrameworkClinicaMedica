@@ -16,10 +16,12 @@ public class GenericDao<T> {
     public GenericDao(String caminho) {
         this.caminho = caminho;
         listagem = listar();
+        if(listagem == null)
+            listagem = new ArrayList<>();
     }
     
 
-    public void salvar() {
+    protected void salvar() {
         XStream xml = new XStream();
         String arquivoXMl = xml.toXML(listagem);
         File arquivo = new File(caminho);
@@ -33,11 +35,11 @@ public class GenericDao<T> {
         }
     }
 
-    public void atualizar(){
+    protected void atualizar(){
         salvar();
     }
 
-    public void remover(){
+    protected void remover(){
         salvar();
     }
 

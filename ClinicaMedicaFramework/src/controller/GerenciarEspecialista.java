@@ -1,13 +1,12 @@
 package controller;
 
-import ui.UIGerenciarEspecialista;
 import dao.EspecialistaDao;
 import dominio.Especialista;
 import java.util.List;
 
 public class GerenciarEspecialista {
 
-	private UIGerenciarEspecialista uIGerenciarEspecialista;
+
 
 	private AgendamentoController agendamentoController;
 

@@ -1,0 +1,10 @@
+<list>
+  <dominio.Especialidade>
+    <id>0</id>
+    <descricao>Prestar atendimento clínico a animais domésticos.</descricao>
+    <tipoAtendimento>
+      <id>0</id>
+      <descricao>Clinico Geral</descricao>
+    </tipoAtendimento>
+  </dominio.Especialidade>
+</list>
