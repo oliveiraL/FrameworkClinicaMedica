@@ -5,6 +5,9 @@
  */
 package clinicamedicaframework;
 
+import clinicaVeterinaria.dominio.Animal;
+import validacoes.ValidacaoException;
+
 /**
  *
  * @author lucio
@@ -14,8 +17,8 @@ public class ClinicaMedicaFramework {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws ValidacaoException {
+        
     }
     
 }

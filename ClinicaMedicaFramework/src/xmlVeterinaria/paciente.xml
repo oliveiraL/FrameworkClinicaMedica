@@ -11,16 +11,4 @@
       <CPF>444.247.768-08</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>gato</raca>
-    <especie>gato</especie>
-    <idade>4 meses</idade>
-    <id>2</id>
-    <nome>jack</nome>
-    <responsavel>
-      <id>0</id>
-      <nome>lucio</nome>
-      <CPF>444.247.768-08</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
 </list>

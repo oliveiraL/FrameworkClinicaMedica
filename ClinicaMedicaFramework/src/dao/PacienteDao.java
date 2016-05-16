@@ -29,14 +29,16 @@ public class PacienteDao extends GenericDao<Paciente>{
     }
 
     public void remover(Paciente paciente) {
+        System.err.println(paciente.getId());
         listagem.stream().filter((aux) -> (aux.getId() == paciente.getId())).forEach((aux) -> {
+            System.err.println(paciente.getId()+" = "+aux.getId());
             listagem.remove(aux);
         });
         super.remover();
     }
 
     
-    public Paciente buscar(int id){
+    public Paciente buscarID(int id){
         Paciente paciente = null;
         for(Paciente aux : listagem){
             if(aux.getId() == id)
@@ -44,6 +46,20 @@ public class PacienteDao extends GenericDao<Paciente>{
         }
         return paciente;
     }
+    
+    public Paciente buscarNome(String nome){
+       Paciente paciente = null;
+       for(Paciente aux : listagem){
+           if(aux.getNome() == nome)
+               paciente = aux;
+       }
+           return paciente;
+    }
+       
+      
+      
+    
+    
 
     
     

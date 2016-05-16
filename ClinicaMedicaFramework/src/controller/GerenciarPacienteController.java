@@ -2,6 +2,7 @@ package controller;
 
 import dao.PacienteDao;
 import dominio.Paciente;
+import java.util.ArrayList;
 import java.util.List;
 import validacoes.ValidacaoException;
 
@@ -21,15 +22,15 @@ public class GerenciarPacienteController {
     }
 
     public void removerPaciene(Paciente paciente) {
-
+        pacienteDao.remover(paciente);
     }
 
     public Paciente getPaciente(int id) {
         return null;
     }
 
-    public List listarPacientes() {
-        return null;
+    public ArrayList<Paciente> listarPacientes() {
+        return pacienteDao.listar();
     }
 
     /**
