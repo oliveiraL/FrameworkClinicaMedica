@@ -5,20 +5,23 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class GenericDao {
+public class GenericDao<T> {
 
-    private String caminho;
+    protected String caminho;
+    protected ArrayList<T> listagem;
 
     public GenericDao(String caminho) {
         this.caminho = caminho;
+        listagem = listar();
     }
     
 
-    public void salvar(Object object) {
+    public void salvar() {
         XStream xml = new XStream();
-        String arquivoXMl = xml.toXML(object);
+        String arquivoXMl = xml.toXML(listagem);
         File arquivo = new File(caminho);
         FileOutputStream gravar;
         try {
@@ -30,20 +33,20 @@ public class GenericDao {
         }
     }
 
-    public void atualizar(Object object){
-        salvar(object);
+    public void atualizar(){
+        salvar();
     }
 
-    public void remover(Object object){
-        salvar(object);
+    public void remover(){
+        salvar();
     }
 
-    public Object listar(){ 
+    public <T> ArrayList<T> listar(){ 
         try {
             XStream xStream = new XStream();
             try (FileInputStream fis = new FileInputStream(new File(caminho))) {
                 Object arquivoXML = xStream.fromXML(fis);
-                return arquivoXML;
+                return (ArrayList<T>)arquivoXML;
             }
         } catch (IOException ex) {
             System.out.println("erro");
@@ -52,8 +55,8 @@ public class GenericDao {
         return null;
     }
 
-    public Object buscar(Object objeto){
-        throw new ExceptionInInitializerError("Metodo não implementado.");
+    private <T> T buscar(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

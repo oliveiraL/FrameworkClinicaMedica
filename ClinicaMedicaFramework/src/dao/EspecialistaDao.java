@@ -4,15 +4,13 @@ import dominio.Especialista;
 import java.util.ArrayList;
 
 
-public class EspecialistaDao{
+public class EspecialistaDao extends GenericDao<Especialista>{
 
-    private GenericDao genericDao;
-    
-    private ArrayList<Especialista> especialistas; 
 
-    public EspecialistaDao(String caminho) {
-        this.genericDao = new GenericDao(caminho);
-        this.especialistas = new ArrayList<>();
+    public EspecialistaDao() {
+        super(System.getProperty("user.dir")+ "/src/xmlVeterinaria/especialista.xml");
+        System.out.println(listagem.size());
+        
     }
 
     public boolean existe(Especialista especialista) {
@@ -20,31 +18,28 @@ public class EspecialistaDao{
     }
 
     public void salvar(Especialista especialista) {
-        especialistas.add(especialista);
-        genericDao.salvar(especialistas);
+        listagem.add(especialista);
+        super.salvar();
     }
 
     public void atualizar(Especialista especialista) {
-        especialistas.stream().filter((aux) -> (aux.getId() == especialista.getId())).forEach((aux) -> {
+        listagem.stream().filter((aux) -> (aux.getId() == especialista.getId())).forEach((aux) -> {
             aux = especialista;
         });
-        genericDao.atualizar(especialistas);
+        super.atualizar();
     }
 
     public void remover(Especialista especialista) {
-        especialistas.stream().filter((aux) -> (aux.getId() == especialista.getId())).forEach((aux) -> {
-            especialistas.remove(aux);
+        listagem.stream().filter((aux) -> (aux.getId() == especialista.getId())).forEach((aux) -> {
+            listagem.remove(aux);
         });
-        genericDao.remover(especialistas);
+        super.remover();
     }
 
-    public ArrayList<Especialista> listar() {
-        return (ArrayList<Especialista>) genericDao.listar();
-    }
     
     public Especialista buscar(int id){
         Especialista especialista = null;
-        for(Especialista aux : especialistas){
+        for(Especialista aux : listagem){
             if(aux.getId() == id)
                 especialista = aux;
         }

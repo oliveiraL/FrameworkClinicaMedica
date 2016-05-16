@@ -12,10 +12,11 @@ import dominio.Especialista;
  * @author lucio
  */
 public class Veterinario extends Especialista{
-
+    
+    
     @Override
     public void validarEspecialista() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

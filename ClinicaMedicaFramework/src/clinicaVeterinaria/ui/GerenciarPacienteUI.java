@@ -9,8 +9,6 @@ import clinicaVeterinaria.dominio.Animal;
 import dominio.Paciente;
 import dominio.Responsavel;
 import controller.GerenciarPacienteController;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import validacoes.ValidacaoException;
 /**
