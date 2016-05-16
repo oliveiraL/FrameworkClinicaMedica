@@ -19,7 +19,7 @@ public class GenericDao<T> {
     }
     
 
-    public void salvar() {
+    protected void salvar() {
         XStream xml = new XStream();
         String arquivoXMl = xml.toXML(listagem);
         File arquivo = new File(caminho);
@@ -33,11 +33,11 @@ public class GenericDao<T> {
         }
     }
 
-    public void atualizar(){
+    protected void atualizar(){
         salvar();
     }
 
-    public void remover(){
+    protected void remover(){
         salvar();
     }
 
@@ -49,10 +49,9 @@ public class GenericDao<T> {
                 return (ArrayList<T>)arquivoXML;
             }
         } catch (IOException ex) {
-            System.out.println("erro");
-            
+           return new ArrayList<>();            
         }
-        return null;
+        
     }
 
     private <T> T buscar(Object obj) {

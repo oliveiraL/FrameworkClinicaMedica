@@ -1,8 +1,8 @@
 package dominio;
 
-public abstract class Especialista {
+import validacoes.ValidacaoException;
 
-    private String registro;
+public abstract class Especialista {
 
     private Especialidade especialidade;
 
@@ -12,18 +12,19 @@ public abstract class Especialista {
 
     private String CPF;
 
+    public Especialista() {
+    }
+
+    public Especialista(Especialidade especialidade, String nome, String CPF) {
+        this.especialidade = especialidade;
+        this.nome = nome;
+        this.CPF = CPF;
+    }
+    
     /**
      *
      */
-    public abstract void validarEspecialista();
-
-    public String getRegistro() {
-        return registro;
-    }
-
-    public void setRegistro(String registro) {
-        this.registro = registro;
-    }
+    public abstract void validarEspecialista() throws ValidacaoException;
 
     public Especialidade getEspecialidade() {
         return especialidade;

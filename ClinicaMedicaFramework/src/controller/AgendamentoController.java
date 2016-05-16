@@ -12,7 +12,7 @@ public class AgendamentoController {
 
 	private GerenciarPacienteController gerenciarPaciente;
 
-	private GerenciarEspecialista gerenciarEspecialista;
+	private GerenciarEspecialistaController gerenciarEspecialista;
 	private NotificarAtendimento notificarAtendimento;
 
 
