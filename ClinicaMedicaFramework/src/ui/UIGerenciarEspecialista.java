@@ -1,6 +1,6 @@
 package ui;
 
-import controller.GerenciarEspecialista;
+import controller.GerenciarEspecialistaController;
 
 public interface UIGerenciarEspecialista {
 

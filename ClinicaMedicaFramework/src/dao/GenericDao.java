@@ -16,8 +16,6 @@ public class GenericDao<T> {
     public GenericDao(String caminho) {
         this.caminho = caminho;
         listagem = listar();
-        if(listagem == null)
-            listagem = new ArrayList<>();
     }
     
 
@@ -51,10 +49,9 @@ public class GenericDao<T> {
                 return (ArrayList<T>)arquivoXML;
             }
         } catch (IOException ex) {
-            System.out.println("erro");
-            
+           return new ArrayList<>();            
         }
-        return null;
+        
     }
 
     private <T> T buscar(Object obj) {

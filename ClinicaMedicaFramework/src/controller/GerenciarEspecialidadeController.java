@@ -7,6 +7,8 @@ package controller;
 
 import dao.EspecialidadeDao;
 import dominio.Especialidade;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -28,6 +30,9 @@ public class GerenciarEspecialidadeController {
     }
     public void remover(Especialidade especialidade){
         especialidadeDao.remover(especialidade);
+    }
+    public ArrayList<Especialidade> listagem(){
+        return especialidadeDao.listar();
     }
     
 }
