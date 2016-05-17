@@ -11,18 +11,26 @@ import dominio.Paciente;
 import dominio.Responsavel;
 import controller.GerenciarPacienteController;
 import java.awt.Color;
+import java.util.List;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import ui.UIGerenciamentoPaciente;
 import validacoes.ValidacaoException;
+
 /**
  *
  * @author lucio
  */
-public class GerenciarPacienteUI extends javax.swing.JFrame {
+public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenciamentoPaciente {
 
+    private int clickMouse = 0;
     private GerenciarPacienteController gerenciarPaciente;
-    
+    private Animal animalAtual;
+
     /**
      * Creates new form GerenciarPacienteController
      */
@@ -55,7 +63,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
         txtNomeResposavel = new javax.swing.JTextField();
         cadastrarPaciente = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        AlterarPaciente = new javax.swing.JButton();
         txtCPFResponsavel = new javax.swing.JFormattedTextField();
         messageCadastro = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -146,7 +154,12 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
 
         jButton2.setText("Cancelar");
 
-        jButton3.setText("Atualizar");
+        AlterarPaciente.setText("Alterar");
+        AlterarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlterarPacienteActionPerformed(evt);
+            }
+        });
 
         try {
             txtCPFResponsavel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -174,7 +187,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                        .addComponent(AlterarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(cadastrarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -193,12 +206,13 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
                                     .addComponent(txtTelefone, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtCPFResponsavel, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtEmail))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(messageCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(120, 120, 120))
+                                .addGap(193, 193, 193))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtNomeResposavel, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(messageCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,12 +228,8 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(messageCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
@@ -227,11 +237,13 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)))
+                        .addGap(3, 3, 3)))
+                .addComponent(messageCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrarPaciente)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(AlterarPaciente))
                 .addContainerGap())
         );
 
@@ -254,6 +266,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -316,8 +333,8 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(removerPaciente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -357,79 +374,51 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarPacienteActionPerformed
-    String nomeAnimal = txtNome.getText();
-    String raca = txtRaca.getText();
-    String especie = txtEspecie.getText();
-    String idade = txtIdade.getText();
-    String nomeResponsavel = txtNomeResposavel.getText();
-    String cpf = txtCPFResponsavel.getText();
-    String telefone = txtTelefone.getText();
-    String email = txtEmail.getText();
-    Paciente animal = new Animal(nomeAnimal, raca, especie, idade, new DonoAnimal(nomeResponsavel, cpf, telefone, email));
-    try {
-          
-        if(!txtNome.getText().trim().equals("") && !txtRaca.getText().trim().equals("") && !txtEspecie.getText().trim()
-              .equals("") && !txtIdade.getText().trim().equals("") && !txtNomeResposavel.getText().trim().equals("") 
-                  && !txtCPFResponsavel.getText().trim().equals("")){  
-            messageCadastro.setForeground(Color.GREEN);
-            gerenciarPaciente.cadastrarPaciente(animal);
-            messageCadastro.setText("Cadastro realizado com Sucesso!");
-        }else{
-            messageCadastro.setForeground(Color.red);
-            messageCadastro.setText("Preencha todos os campos!");
-        }
-    } catch (ValidacaoException ex) {
-            JOptionPane.showMessageDialog(rootPane, ex.getMessage(),"Erro",2);
-        }
+        cadastrarPaciente();
     }//GEN-LAST:event_cadastrarPacienteActionPerformed
 
     private void buscarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarNomeActionPerformed
-       String nomeAnimal = txtNomeBuscar.getText();
-       Animal animal;
-       int linhas = 0;
-       
-       for(Paciente paciente : gerenciarPaciente.listarPacientes()){
-              animal = (Animal)paciente;
-              ((DefaultTableModel)jTable1.getModel()).addRow(new Vector());
-               
-               if(nomeAnimal.equalsIgnoreCase(animal.getNome())){
-                        jTable1.getModel().setValueAt(animal.getNome(), linhas, 0);
-                        jTable1.getModel().setValueAt(animal.getIdade(), linhas, 1);
-                        jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 2);
-                        jTable1.getModel().setValueAt(animal.getRaca(), linhas, 3);
-                     linhas++;
-                }
-       }    
-       
+        buscarNome();
     }//GEN-LAST:event_buscarNomeActionPerformed
 
     private void listarPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarPacientesActionPerformed
-
-            int linhas = 0;
-            Animal animal;
-        
-            for(Paciente paciente : gerenciarPaciente.listarPacientes()){
-                ((DefaultTableModel)jTable1.getModel()).addRow(new Vector());
-                animal = (Animal)paciente;
-                
-                    jTable1.getModel().setValueAt(animal.getNome(), linhas, 0);
-                    jTable1.getModel().setValueAt(animal.getIdade(), linhas, 1);
-                    jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 2);
-                    jTable1.getModel().setValueAt(animal.getRaca(), linhas, 3);
-                linhas++;
-            }
-        
+        listarPaciente();
     }//GEN-LAST:event_listarPacientesActionPerformed
 
     private void removerPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerPacienteActionPerformed
-            
-            int index = jTable1.getSelectedRow();
-           
-            //JOptionPane.showConfirmDialog(null,"Deseja Remover esse Paciente?");
-            Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
-
-            gerenciarPaciente.removerPaciene(paciente);
+        removerPaciente();
     }//GEN-LAST:event_removerPacienteActionPerformed
+
+    private void AlterarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarPacienteActionPerformed
+        atualizar();
+    }//GEN-LAST:event_AlterarPacienteActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        clickMouse++;
+        if (clickMouse == 2) {
+            clickMouse = 0;
+                int index = jTable1.getSelectedRow();
+                Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
+                Animal animal;
+                animal = (Animal) paciente;
+                animalAtual = animal;
+            
+                txtNome.setText(animal.getNome());
+                txtEspecie.setText(animal.getEspecie());
+                txtRaca.setText(animal.getRaca());
+                txtIdade.setText(animal.getIdade());
+
+                //txtNomeResposavel.setText(animal.getResponsavel().getNome());
+                //txtCPFResponsavel.setText(animal.getResponsavel().getCPF());
+                
+                //DonoAnimal dono;
+                //dono = (DonoAnimal) animal.getResponsavel();
+                //txtTelefone.setText(dono.getTelefone());
+                //txtEmail.setText(dono.getEmail());
+                
+                
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -468,10 +457,10 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AlterarPaciente;
     private javax.swing.JButton buscarNome;
     private javax.swing.JButton cadastrarPaciente;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -500,4 +489,114 @@ public class GerenciarPacienteUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtRaca;
     private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void cadastrarPaciente() {
+        String nomeAnimal = txtNome.getText();
+        String raca = txtRaca.getText();
+        String especie = txtEspecie.getText();
+        String idade = txtIdade.getText();
+        String nomeResponsavel = txtNomeResposavel.getText();
+        String cpf = txtCPFResponsavel.getText();
+        String telefone = txtTelefone.getText();
+        String email = txtEmail.getText();
+        Paciente animal = new Animal(nomeAnimal, raca, especie, idade, new DonoAnimal(nomeResponsavel, cpf, telefone, email));
+        try {
+
+            if (!txtNome.getText().trim().equals("") && !txtRaca.getText().trim().equals("") && !txtEspecie.getText().trim()
+                    .equals("") && !txtIdade.getText().trim().equals("") && !txtNomeResposavel.getText().trim().equals("")
+                    && !txtCPFResponsavel.getText().trim().equals("")) {
+                messageCadastro.setForeground(Color.GREEN);
+                gerenciarPaciente.cadastrarPaciente(animal);
+                messageCadastro.setText("Cadastro realizado com Sucesso!");
+            } else {
+                messageCadastro.setForeground(Color.red);
+                messageCadastro.setText("Preencha todos os campos!");
+            }
+        } catch (ValidacaoException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro", 2);
+        }
+    }
+
+    @Override
+    public void removerPaciente() {
+        int index = jTable1.getSelectedRow();
+
+        //JOptionPane.showConfirmDialog(null,"Deseja Remover esse Paciente?");
+        Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
+
+        gerenciarPaciente.removerPaciene(paciente);
+    }
+
+    @Override
+    public List listarPaciente() {
+        limparTabela();
+        int linhas = 0;
+        Animal animal;
+
+        for (Paciente paciente : gerenciarPaciente.listarPacientes()) {
+            ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
+            animal = (Animal) paciente;
+
+            jTable1.getModel().setValueAt(animal.getNome(), linhas, 0);
+            jTable1.getModel().setValueAt(animal.getIdade(), linhas, 1);
+            jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 2);
+            jTable1.getModel().setValueAt(animal.getRaca(), linhas, 3);
+            linhas++;
+        }
+        return null;
+    }
+
+    @Override
+    public void atualizar() {
+        String nomeAnimal = txtNome.getText();
+        String raca = txtRaca.getText();
+        String especie = txtEspecie.getText();
+        String idade = txtIdade.getText();
+        
+        
+        animalAtual.setEspecie(especie);
+        animalAtual.setIdade(idade);
+        animalAtual.setNome(nomeAnimal);
+        animalAtual.setRaca(raca);
+        
+        try {
+            gerenciarPaciente.alterarPaciente(animalAtual);
+        } catch (ValidacaoException ex) {
+            Logger.getLogger(GerenciarPacienteUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void buscarNome() {
+        limparTabela();
+
+        String nomeAnimal = txtNomeBuscar.getText();
+        Animal animal;
+        int linhas = 0;
+
+        for (Paciente paciente : gerenciarPaciente.listarPacientes()) {
+            animal = (Animal) paciente;
+            ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
+
+            if (nomeAnimal.equalsIgnoreCase(animal.getNome())) {
+                jTable1.getModel().setValueAt(animal.getNome(), linhas, 0);
+                jTable1.getModel().setValueAt(animal.getIdade(), linhas, 1);
+                jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 2);
+                jTable1.getModel().setValueAt(animal.getRaca(), linhas, 3);
+                linhas++;
+            }
+        }
+
+    }
+
+    /*
+     Limpar a tabela, antes de realizar uma busca
+     */
+    public void limparTabela() {
+        while (jTable1.getRowCount() > 0) {
+            DefaultTableModel dm = (DefaultTableModel) jTable1.getModel();
+            dm.getDataVector().removeAllElements();
+        }
+
+    }
 }

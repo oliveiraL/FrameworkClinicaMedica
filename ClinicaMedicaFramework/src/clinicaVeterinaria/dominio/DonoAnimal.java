@@ -22,6 +22,9 @@ public class DonoAnimal extends Responsavel{
         this.telefone = telefone;
     }
 
+    public DonoAnimal() {
+    }
+    
     public String getTelefone() {
         return telefone;
     }
