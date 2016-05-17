@@ -6,6 +6,11 @@
 package clinicaVeterinaria.dominio;
 
 import dominio.AgendamentoAtendimento;
+import dominio.Especialidade;
+import dominio.Especialista;
+import dominio.Paciente;
+import java.util.Date;
+import validacoes.ValidacaoException;
 
 /**
  *
@@ -14,13 +19,17 @@ import dominio.AgendamentoAtendimento;
 public class Agendamento extends AgendamentoAtendimento{
 
     @Override
-    public void validarAgendamento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void validarAgendamento() throws ValidacaoException{
+        if(getDataHora().getHours() > 18 && getDataHora().getHours() < 8){
+           throw new ValidacaoException("Agendamento invalido.");
+        }
     }
 
-    @Override
-    public void verificarDisponibilidade() {
-        //throw new UnsuppcaortedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Agendamento(Date dataHora, Especialista especialista, Paciente paciente, Especialidade especialidade) {
+        super(dataHora, especialista, paciente, especialidade);
     }
+    
+    
+    
     
 }

@@ -1,15 +1,49 @@
 package dao;
 
-import controller.AgendamentoController;
+
+import clinicaVeterinaria.dominio.Agendamento;
 import dominio.AgendamentoAtendimento;
 import dominio.Especialista;
+import dominio.Paciente;
 import java.util.Date;
 
-public abstract class AgendamentoDao {
-    
-        private GenericDao genericDao;
-	private AgendamentoController agendamentoController;
 
-	public abstract boolean verificarAgendamento(Especialista especialista, Date dataHora);
+public class AgendamentoDao extends GenericDao<AgendamentoAtendimento>{
+
+    public AgendamentoDao(String caminho) {
+        super(caminho);
+    }
+    
+    public void salvar(AgendamentoAtendimento agendamento) {
+        agendamento.setId(listagem.size()+1);
+        listagem.add(agendamento);
+        super.salvar();
+    }
+
+    public void atualizar(AgendamentoAtendimento agendamento) {
+        listagem.stream().filter((aux) -> (aux.getId() == agendamento.getId())).forEach((aux) -> {
+            aux = agendamento;
+        });
+        super.atualizar();
+    }
+
+    public void remover(AgendamentoAtendimento agendamento) {
+        listagem.stream().filter((aux) -> (aux.getId() == agendamento.getId())).forEach((aux) -> {
+            listagem.remove(agendamento);
+        });
+        super.remover();
+    }
+
+    
+    public AgendamentoAtendimento buscar(Date dataHora, Paciente paciente){
+        AgendamentoAtendimento agendamentoAtendimento = null;
+        for(AgendamentoAtendimento aux : listagem){
+            if(aux.getPaciente()== null ? paciente == null : aux.getPaciente().equals(paciente) && aux.getDataHora()== null ? dataHora == null : aux.getDataHora().equals(dataHora))
+                agendamentoAtendimento = aux;
+        }
+        
+        return agendamentoAtendimento;
+    }
+    
 
 }

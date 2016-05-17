@@ -10,10 +10,9 @@ import controller.GerenciarEspecialidadeController;
 import controller.GerenciarEspecialistaController;
 import dominio.Especialidade;
 import dominio.Especialista;
-import java.awt.Component;
+
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.swing.JOptionPane;
 import validacoes.ValidacaoException;
 
@@ -161,19 +160,20 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-    ArrayList<Especialidade> especialidades = gerenciarEspecialidade.listagem();
-    for(Especialidade e: especialidades)
-        cmbEspecialidade.addItem(e.getTipoAtendimento().getDescricao());
+        ArrayList<Especialidade> especialidades = gerenciarEspecialidade.listagem();
+        for (Especialidade e : especialidades) {
+            cmbEspecialidade.addItem(e.getDesignacao());
+        }
 
 // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String nome = txtNome.getText();
-    String cpf = txtCPF.getText();
-    String crmv = txtCRMV.getText();
-    int index = cmbEspecialidade.getSelectedIndex();   
-    Especialista veterinario = new Veterinario(crmv, gerenciarEspecialidade.listagem().get(index), nome, cpf);
+        String nome = txtNome.getText();
+        String cpf = txtCPF.getText();
+        String crmv = txtCRMV.getText();
+        int index = cmbEspecialidade.getSelectedIndex();
+        Especialista veterinario = new Veterinario(crmv, gerenciarEspecialidade.listagem().get(index), nome, cpf);
         try {
             gerenciarEspecialista.cadastrarEspecialista(veterinario);
             JOptionPane.showMessageDialog(rootPane, "Especialista Cadastrado com sulcesso.");

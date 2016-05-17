@@ -2,15 +2,12 @@
   <clinicaVeterinaria.dominio.Veterinario>
     <crmv>1234</crmv>
     <especialidade>
-      <id>0</id>
-      <descricao>Prestar atendimento clínico a animais domésticos.</descricao>
-      <tipoAtendimento>
-        <id>0</id>
-        <descricao>Clinico Geral</descricao>
-      </tipoAtendimento>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
     </especialidade>
     <id>1</id>
-    <nome>Bokus</nome>
+    <nome>Lucio</nome>
     <CPF>123.456.789-09</CPF>
   </clinicaVeterinaria.dominio.Veterinario>
 </list>

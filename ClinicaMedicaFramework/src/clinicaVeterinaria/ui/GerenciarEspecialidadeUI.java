@@ -125,7 +125,7 @@ public class GerenciarEspecialidadeUI extends javax.swing.JFrame {
         String descricao = txtDescricao.getText();
         String designacao = txtDesignacao.getText();
         TipoAtendimento tipoAtendimento = new TipoAtendimento(designacao);
-        Especialidade especialidade = new Especialidade(descricao, tipoAtendimento);
+        Especialidade especialidade = new Especialidade(descricao, designacao);
         gerenciarEspecialidade.cadastrar(especialidade);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

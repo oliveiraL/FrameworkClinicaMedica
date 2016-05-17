@@ -5,18 +5,20 @@ public class Especialidade {
     private int id;
 
     private String descricao;
-
-    private TipoAtendimento tipoAtendimento;
-
     
+    private String designacao;
+
+    public Especialidade(String descricao, String designacao) {
+        this.descricao = descricao;
+        this.designacao = designacao;
+    }
+
+   
     
     public Especialidade() {
     }
 
-    public Especialidade(String descricao, TipoAtendimento tipoAtendimento) {
-        this.descricao = descricao;
-        this.tipoAtendimento = tipoAtendimento;
-    }
+
     
     
     public int getId() {
@@ -35,11 +37,12 @@ public class Especialidade {
         this.descricao = descricao;
     }
 
-    public TipoAtendimento getTipoAtendimento() {
-        return tipoAtendimento;
+    public String getDesignacao() {
+        return designacao;
     }
 
-    public void setTipoAtendimento(TipoAtendimento tipoAtendimento) {
-        this.tipoAtendimento = tipoAtendimento;
+    public void setDesignacao(String designacao) {
+        this.designacao = designacao;
     }
+
 }

@@ -1,7 +1,8 @@
 package dao;
 
+
 import dominio.Especialista;
-import java.util.ArrayList;
+
 
 
 public class EspecialistaDao extends GenericDao<Especialista>{
@@ -11,10 +12,6 @@ public class EspecialistaDao extends GenericDao<Especialista>{
         super(System.getProperty("user.dir")+ "/src/xmlVeterinaria/especialista.xml");
         System.out.println(listagem.size());
         
-    }
-
-    public boolean existe(Especialista especialista) {
-        return false;
     }
 
     public void salvar(Especialista especialista) {
@@ -38,15 +35,16 @@ public class EspecialistaDao extends GenericDao<Especialista>{
     }
 
     
-    public Especialista buscar(int id){
+    public Especialista buscar(String CPF){
         Especialista especialista = null;
         for(Especialista aux : listagem){
-            if(aux.getId() == id)
+            if(aux.getCPF() == null ? CPF == null : aux.getCPF().equals(CPF))
                 especialista = aux;
         }
         
         return especialista;
     }
+
 
 
 }
