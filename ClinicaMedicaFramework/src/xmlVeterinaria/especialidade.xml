@@ -4,4 +4,9 @@
     <descricao>Cuida de animais domesticos</descricao>
     <designacao>Clinico Geral</designacao>
   </dominio.Especialidade>
+  <dominio.Especialidade>
+    <id>2</id>
+    <descricao>teste</descricao>
+    <designacao>cirurgiao plastico</designacao>
+  </dominio.Especialidade>
 </list>

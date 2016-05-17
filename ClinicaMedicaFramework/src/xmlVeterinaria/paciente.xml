@@ -1,14 +1,30 @@
 <list>
   <clinicaVeterinaria.dominio.Animal>
-    <raca>labrador</raca>
-    <especie>cão</especie>
-    <idade>3 meses</idade>
-    <id>1</id>
-    <nome>clara</nome>
-    <responsavel>
+    <raca>cock</raca>
+    <especie>dog</especie>
+    <idade>2</idade>
+    <id>3</id>
+    <nome>teste</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>9999</email>
       <id>0</id>
       <nome>lucio</nome>
-      <CPF>444.247.768-08</CPF>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>teste</raca>
+    <especie>dog</especie>
+    <idade>2</idade>
+    <id>3</id>
+    <nome>koko</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>9999</email>
+      <id>0</id>
+      <nome>lucio</nome>
+      <CPF>999.999.999-99</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
 </list>
