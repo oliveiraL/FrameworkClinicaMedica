@@ -1,0 +1,482 @@
+<list>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>1</id>
+    <dataHora>2016-05-17 12:00:39.258 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>2</id>
+    <dataHora>2016-05-17 13:00:00.0 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>3</id>
+    <dataHora>2016-05-17 13:00:00.0 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>4</id>
+    <dataHora>2016-05-17 13:00:00.71 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>5</id>
+    <dataHora>2016-05-17 10:00:00.858 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>6</id>
+    <dataHora>2016-05-17 13:00:00.858 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>7</id>
+    <dataHora>2016-05-17 10:00:00.507 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>8</id>
+    <dataHora>2016-05-17 10:00:00.507 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>9</id>
+    <dataHora>2016-05-17 13:00:00.739 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>10</id>
+    <dataHora>2016-05-17 10:00:00.739 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>11</id>
+    <dataHora>2016-05-17 10:00:00.771 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>12</id>
+    <dataHora>1969-12-31 21:00:00.0 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>13</id>
+    <dataHora>2016-05-17 10:00:00.631 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>14</id>
+    <dataHora>2016-05-17 10:00:00.0 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>15</id>
+    <dataHora>2016-05-17 09:00:00.342 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>444.247.768-08</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
+</list>

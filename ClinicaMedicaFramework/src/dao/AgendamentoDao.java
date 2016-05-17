@@ -1,17 +1,16 @@
 package dao;
 
 
-import clinicaVeterinaria.dominio.Agendamento;
+
 import dominio.AgendamentoAtendimento;
-import dominio.Especialista;
 import dominio.Paciente;
 import java.util.Date;
 
 
 public class AgendamentoDao extends GenericDao<AgendamentoAtendimento>{
 
-    public AgendamentoDao(String caminho) {
-        super(caminho);
+    public AgendamentoDao() {
+        super(System.getProperty("user.dir")+ "/src/xmlVeterinaria/agendamento.xml");
     }
     
     public void salvar(AgendamentoAtendimento agendamento) {

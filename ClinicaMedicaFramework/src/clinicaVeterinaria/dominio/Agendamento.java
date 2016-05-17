@@ -17,16 +17,22 @@ import validacoes.ValidacaoException;
  * @author lucio
  */
 public class Agendamento extends AgendamentoAtendimento{
+    
+    
 
     @Override
     public void validarAgendamento() throws ValidacaoException{
-        if(getDataHora().getHours() > 18 && getDataHora().getHours() < 8){
+        System.err.println(getDataHora().getHours() );
+        if(getDataHora().getHours() > 18 || getDataHora().getHours() < 8){
            throw new ValidacaoException("Agendamento invalido.");
         }
     }
 
     public Agendamento(Date dataHora, Especialista especialista, Paciente paciente, Especialidade especialidade) {
         super(dataHora, especialista, paciente, especialidade);
+    }
+
+    public Agendamento() {
     }
     
     
