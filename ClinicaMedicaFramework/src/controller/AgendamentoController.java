@@ -1,9 +1,7 @@
 package controller;
 
-import clinicaVeterinaria.dominio.Agendamento;
-import ui.UiAgendamento;
+
 import dao.AgendamentoDao;
-import dominio.Paciente;
 import dominio.Especialista;
 import java.util.Date;
 import dominio.AgendamentoAtendimento;
