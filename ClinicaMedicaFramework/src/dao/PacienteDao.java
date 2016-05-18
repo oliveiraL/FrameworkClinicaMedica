@@ -26,7 +26,7 @@ public class PacienteDao extends GenericDao<Paciente> {
         Paciente alterar = null;
         for (Paciente aux : listagem) {
             if (aux.getId() == paciente.getId()) {
-                aux = paciente;                
+                alterar = paciente;                
             }
             i++;
         }
@@ -40,6 +40,7 @@ public class PacienteDao extends GenericDao<Paciente> {
         for (Paciente aux : listagem) {
             if (aux.getId() == paciente.getId()) {
                 remover = aux;
+                break;
             }
         }
         listagem.remove(remover);

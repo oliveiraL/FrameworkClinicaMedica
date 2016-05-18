@@ -1,0 +1,70 @@
+<list>
+  <clinicaVeterinaria.dominio.ConsultaVeterinario>
+    <procedimentoPago>false</procedimentoPago>
+    <id>1</id>
+    <dataHora>2016-05-18 12:15:14.23 BRT</dataHora>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>cock</raca>
+      <especie>dog</especie>
+      <idade>2</idade>
+      <id>3</id>
+      <nome>clara</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>9999</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+  </clinicaVeterinaria.dominio.ConsultaVeterinario>
+  <clinicaVeterinaria.dominio.ConsultaVeterinario>
+    <procedimentoPago>false</procedimentoPago>
+    <id>2</id>
+    <dataHora>2016-05-18 12:19:11.1 BRT</dataHora>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>cock</raca>
+      <especie>dog</especie>
+      <idade>2</idade>
+      <id>2</id>
+      <nome>jack</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>9999</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>Lucio</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <tratamentos>
+      <id>0</id>
+      <descricao>09</descricao>
+    </tratamentos>
+    <diagnosticoAtendimentos>
+      <id>0</id>
+      <descricao>09</descricao>
+    </diagnosticoAtendimentos>
+  </clinicaVeterinaria.dominio.ConsultaVeterinario>
+</list>

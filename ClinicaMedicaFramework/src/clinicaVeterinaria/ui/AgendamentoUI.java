@@ -16,8 +16,6 @@ import dominio.Especialista;
 import dominio.Paciente;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import ui.UiAgendamento;
 import validacoes.ValidacaoException;
@@ -379,13 +377,14 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento {
         int mm = Integer.parseInt(hora.split(":")[1]);
         int indexEspecialidade = cmbEspecialidade.getSelectedIndex();
         int indexEspecialista = cmbEspecialista.getSelectedIndex();
-        Especialista especialista = gerenciarEspecialista.listarEspecialista().get(indexEspecialista-1);
-        Especialidade especialidade = gerenciarEspecialidade.listagem().get(indexEspecialidade);
-        Paciente paciente = gerenciarPaciente.buscarPaciente(cpf);
-        Date dataAgendamento = data.getDate();
-        dataAgendamento.setHours(hh);
-        dataAgendamento.setMinutes(mm);
         try {
+            Especialista especialista = gerenciarEspecialista.listarEspecialista().get(indexEspecialista-1);
+            Especialidade especialidade = gerenciarEspecialidade.listagem().get(indexEspecialidade);
+            Paciente paciente = gerenciarPaciente.buscarPaciente(cpf);
+            Date dataAgendamento = data.getDate();
+            dataAgendamento.setHours(hh);
+            dataAgendamento.setMinutes(mm);
+        
             AgendamentoAtendimento agendamentoVeterinario = new Agendamento(dataAgendamento, especialista, paciente, especialidade);
             agendamento.agendamento(agendamentoVeterinario);
             JOptionPane.showMessageDialog(rootPane, "Agendamento Realizado com sucesso.");

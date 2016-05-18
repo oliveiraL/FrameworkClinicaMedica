@@ -7,9 +7,6 @@ import java.util.List;
 import dominio.Paciente;
 
 public class GerenciarProntuario {
-
-	private UIGerenciarProntuario uIGerenciarProntuario;
-
 	private ProntuarioDao prontuarioDao;
 
 	/**

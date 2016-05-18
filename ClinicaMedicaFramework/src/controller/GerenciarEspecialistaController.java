@@ -30,8 +30,14 @@ public class GerenciarEspecialistaController {
         especialistaDao.remover(especialista);
     }
 
-    public Especialista getEspecialista(String CPF) {
-        return null;
+    public Especialista buscarEspecialista(String CPF) throws ValidacaoException {
+        
+        ArrayList<Especialista> lista = especialistaDao.listar();
+        for(Especialista especialista: lista){
+            if(especialista.getCPF().equals(CPF))
+                return  especialista;
+        }
+        throw new ValidacaoException("CPF especialista invalido.");
     }
 
     public ArrayList<Especialista> listarEspecialista() {
@@ -53,6 +59,10 @@ public class GerenciarEspecialistaController {
      */
     public void atualizarEspecialista(Especialista especialista) {
         especialistaDao.atualizar(especialista);
+    }
+
+    public Especialista getEspecialista(String cpf) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

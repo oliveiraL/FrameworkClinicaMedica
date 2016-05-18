@@ -1,16 +1,38 @@
 package dominio;
 
-public abstract class DiagnosticoAtendimento {
+public class DiagnosticoAtendimento {
 
-	private int id;
+    private int id;
 
-	private String descricao;
+    private String descricao;
 
+    public DiagnosticoAtendimento() {
+    }
+    
+    
 
-	public abstract Object getDiagnostico();
+    public int getId() {
+        return id;
+    }
 
-	public abstract Object getDadosAtendimento();
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Object getDiagnostico() {
+        return null;
+    }
+
+    public Object getDadosAtendimento() {
+        return null;
+    }
 
 }
