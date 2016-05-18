@@ -6,6 +6,7 @@
 package clinicaVeterinaria.ui;
 
 import clinicaVeterinaria.dominio.Agendamento;
+import clinicaVeterinaria.dominio.Animal;
 import controller.AgendamentoController;
 import controller.GerenciarEspecialidadeController;
 import controller.GerenciarEspecialistaController;
@@ -16,7 +17,11 @@ import dominio.Especialista;
 import dominio.Paciente;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import ui.UiAgendamento;
 import validacoes.ValidacaoException;
 
@@ -194,6 +199,11 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCPFDono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCPFDonoKeyReleased(evt);
+            }
+        });
 
         jLabel3.setText("Data:");
 
@@ -310,6 +320,25 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbEspecialistaMouseClicked
 
+    private void txtCPFDonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPFDonoKeyReleased
+if(evt.getKeyCode() == 10){
+    
+     String cpf = txtCPFDono.getText();
+    try {
+        Paciente paciente = gerenciarPaciente.buscarPaciente(cpf);
+         ((DefaultTableModel) grade.getModel()).addRow(new Vector());
+         Animal animal = (Animal) paciente;
+
+            grade.getModel().setValueAt(animal.getNome(), 0, 0);
+            grade.getModel().setValueAt(animal.getResponsavel().getNome(), 0, 1);
+            grade.getModel().setValueAt(animal.getResponsavel().getCPF(), 0, 2);
+           
+    } catch (ValidacaoException ex) {
+       JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+    }
+}        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCPFDonoKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -404,4 +433,6 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento {
     public void cancelar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
 }

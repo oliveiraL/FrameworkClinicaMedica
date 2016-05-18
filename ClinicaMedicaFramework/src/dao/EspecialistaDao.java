@@ -21,16 +21,28 @@ public class EspecialistaDao extends GenericDao<Especialista>{
     }
 
     public void atualizar(Especialista especialista) {
-        listagem.stream().filter((aux) -> (aux.getId() == especialista.getId())).forEach((aux) -> {
-            aux = especialista;
-        });
+        int i = 0;
+        Especialista alterar = null;
+        for (Especialista aux : listagem) {
+            if (aux.getId() == especialista.getId()) {
+                alterar = especialista;                
+            }
+            i++;
+        }
+        listagem.remove(alterar);
+        listagem.add(i,especialista);
         super.atualizar();
     }
 
     public void remover(Especialista especialista) {
-        listagem.stream().filter((aux) -> (aux.getId() == especialista.getId())).forEach((aux) -> {
-            listagem.remove(aux);
-        });
+        Especialista remover = null;
+        for (Especialista aux : listagem) {
+            if (aux.getId() == especialista.getId()) {
+                remover = aux;
+                break;
+            }
+        }
+        listagem.remove(remover);
         super.remover();
     }
 

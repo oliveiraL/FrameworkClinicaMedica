@@ -1,16 +1,5 @@
 <list>
   <clinicaVeterinaria.dominio.Veterinario>
-    <crmv>1234</crmv>
-    <especialidade>
-      <id>1</id>
-      <descricao>Cuida de animais domesticos</descricao>
-      <designacao>Clinico Geral</designacao>
-    </especialidade>
-    <id>1</id>
-    <nome>Lucio</nome>
-    <CPF>123.456.789-09</CPF>
-  </clinicaVeterinaria.dominio.Veterinario>
-  <clinicaVeterinaria.dominio.Veterinario>
     <crmv>15741</crmv>
     <especialidade>
       <id>2</id>
@@ -53,5 +42,16 @@
     <id>5</id>
     <nome>Lucas</nome>
     <CPF>123.456.789-09</CPF>
+  </clinicaVeterinaria.dominio.Veterinario>
+  <clinicaVeterinaria.dominio.Veterinario>
+    <crmv>15749</crmv>
+    <especialidade>
+      <id>2</id>
+      <descricao>teste</descricao>
+      <designacao>cirurgiao plastico</designacao>
+    </especialidade>
+    <id>5</id>
+    <nome>Bokus</nome>
+    <CPF>111.222.333-44</CPF>
   </clinicaVeterinaria.dominio.Veterinario>
 </list>

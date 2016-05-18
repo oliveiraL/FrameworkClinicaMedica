@@ -1,6 +1,6 @@
 package ui;
 
-import controller.GerenciarProntuario;
+import controller.GerenciarProntuarioController;
 
 public interface UIGerenciarProntuario {
 

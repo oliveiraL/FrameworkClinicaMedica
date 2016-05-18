@@ -479,4 +479,38 @@
       <designacao>Clinico Geral</designacao>
     </especialidade>
   </clinicaVeterinaria.dominio.Agendamento>
+  <clinicaVeterinaria.dominio.Agendamento>
+    <id>16</id>
+    <dataHora>2016-05-11 12:00:00.719 BRT</dataHora>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>96841</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>3</id>
+      <nome>Joao</nome>
+      <CPF>123.469.875-41</CPF>
+    </especialista>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>cock</raca>
+      <especie>dog</especie>
+      <idade>2</idade>
+      <id>2</id>
+      <nome>jack</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>9999</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>2</id>
+      <descricao>teste</descricao>
+      <designacao>cirurgiao plastico</designacao>
+    </especialidade>
+  </clinicaVeterinaria.dominio.Agendamento>
 </list>
