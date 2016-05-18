@@ -10,4 +10,37 @@
     <nome>Lucio</nome>
     <CPF>123.456.789-09</CPF>
   </clinicaVeterinaria.dominio.Veterinario>
+  <clinicaVeterinaria.dominio.Veterinario>
+    <crmv>15741</crmv>
+    <especialidade>
+      <id>2</id>
+      <descricao>teste</descricao>
+      <designacao>cirurgiao plastico</designacao>
+    </especialidade>
+    <id>2</id>
+    <nome>Vinícius</nome>
+    <CPF>111.222.333-44</CPF>
+  </clinicaVeterinaria.dominio.Veterinario>
+  <clinicaVeterinaria.dominio.Veterinario>
+    <crmv>96841</crmv>
+    <especialidade>
+      <id>1</id>
+      <descricao>Cuida de animais domesticos</descricao>
+      <designacao>Clinico Geral</designacao>
+    </especialidade>
+    <id>3</id>
+    <nome>Joao</nome>
+    <CPF>123.469.875-41</CPF>
+  </clinicaVeterinaria.dominio.Veterinario>
+  <clinicaVeterinaria.dominio.Veterinario>
+    <crmv>15749</crmv>
+    <especialidade>
+      <id>2</id>
+      <descricao>teste</descricao>
+      <designacao>cirurgiao plastico</designacao>
+    </especialidade>
+    <id>4</id>
+    <nome>Vinícius</nome>
+    <CPF>111.222.333-44</CPF>
+  </clinicaVeterinaria.dominio.Veterinario>
 </list>
