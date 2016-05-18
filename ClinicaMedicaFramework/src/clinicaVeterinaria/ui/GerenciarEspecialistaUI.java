@@ -16,13 +16,14 @@ import java.util.Vector;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import ui.UIGerenciarEspecialista;
 import validacoes.ValidacaoException;
 
 /**
  *
  * @author lucio
  */
-public class GerenciarEspecialistaUI extends javax.swing.JFrame {
+public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGerenciarEspecialista {
 
     private GerenciarEspecialistaController gerenciarEspecialista;
     private GerenciarEspecialidadeController gerenciarEspecialidade;
@@ -290,17 +291,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nome = txtNome.getText();
-        String cpf = txtCPF.getText();
-        String crmv = txtCRMV.getText();
-        int index = cmbEspecialidade.getSelectedIndex();
-        Especialista veterinario = new Veterinario(crmv, gerenciarEspecialidade.listagem().get(index), nome, cpf);
-        try {
-            gerenciarEspecialista.cadastrarEspecialista(veterinario);
-            JOptionPane.showMessageDialog(rootPane, "Especialista cadastrado com sucesso.");
-        } catch (ValidacaoException ex) {
-            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
-        }
+        cadastrarEspecialista();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNomeBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeBuscaActionPerformed
@@ -323,20 +314,20 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame {
         clickMouse++;
         if (clickMouse == 2) {
             clickMouse = 0;
-                int index = jTable1.getSelectedRow();
-                Especialista especialista = gerenciarEspecialista.listarEspecialista().get(index);
-                Veterinario veterinario = (Veterinario) especialista;
-                veterinarioAtual = veterinario;
-            
-                txtNome.setText(veterinario.getNome());
-                txtCPF.setText(veterinario.getCPF());
-                txtCRMV.setText(veterinario.getCrmv());
-                if(veterinario.getEspecialidade().getDesignacao().equalsIgnoreCase("Clinico Geral")) {
-                    cmbEspecialidade.setSelectedIndex(0);
-                } else {
-                    cmbEspecialidade.setSelectedIndex(1);
-                }
-                
+            int index = jTable1.getSelectedRow();
+            Especialista especialista = gerenciarEspecialista.listarEspecialista().get(index);
+            Veterinario veterinario = (Veterinario) especialista;
+            veterinarioAtual = veterinario;
+
+            txtNome.setText(veterinario.getNome());
+            txtCPF.setText(veterinario.getCPF());
+            txtCRMV.setText(veterinario.getCrmv());
+            if (veterinario.getEspecialidade().getDesignacao().equalsIgnoreCase("Clinico Geral")) {
+                cmbEspecialidade.setSelectedIndex(0);
+            } else {
+                cmbEspecialidade.setSelectedIndex(1);
+            }
+
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -404,21 +395,21 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame {
 
     /*
     Limpar a tabela, antes de realizar uma busca
-    */
+     */
     public void limparTabela() {
         while (jTable1.getRowCount() > 0) {
             DefaultTableModel dm = (DefaultTableModel) jTable1.getModel();
             dm.getDataVector().removeAllElements();
         }
     }
-    
+
     public void buscarNome() {
         limparTabela();
-        
+
         String nomeEspecialista = txtNomeBusca.getText();
         Veterinario veterinario;
         int linhas = 0;
-        
+
         for (Especialista especialista : gerenciarEspecialista.listarEspecialista()) {
             veterinario = (Veterinario) especialista;
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
@@ -432,7 +423,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame {
             }
         }
     }
-    
+
     public void listarEspecialista() {
         limparTabela();
         int linhas = 0;
@@ -449,31 +440,46 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame {
             linhas++;
         }
     }
-    
+
     public void removerEspecialista() {
         int index = jTable1.getSelectedRow();
         Especialista especialista = gerenciarEspecialista.listarEspecialista().get(index);
         gerenciarEspecialista.removerEspecialista(especialista);
     }
-    
+
     public void atualizar() {
         String nomeVeterinario = txtNome.getText();
         String CPF = txtCPF.getText();
         String CRMV = txtCRMV.getText();
         int index = cmbEspecialidade.getSelectedIndex();
         Especialidade especialidade = gerenciarEspecialidade.listagem().get(index);
-        
+
         veterinarioAtual.setNome(nomeVeterinario);
         veterinarioAtual.setCPF(CPF);
         veterinarioAtual.setCrmv(CRMV);
         veterinarioAtual.setEspecialidade(especialidade);
-        
+
         try {
             gerenciarEspecialista.cadastrarEspecialista(veterinarioAtual);
         } catch (ValidacaoException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
-        
+
+    }
+
+    @Override
+    public void cadastrarEspecialista() {
+        String nome = txtNome.getText();
+        String cpf = txtCPF.getText();
+        String crmv = txtCRMV.getText();
+        int index = cmbEspecialidade.getSelectedIndex();
+        Especialista veterinario = new Veterinario(crmv, gerenciarEspecialidade.listagem().get(index), nome, cpf);
+        try {
+            gerenciarEspecialista.cadastrarEspecialista(veterinario);
+            JOptionPane.showMessageDialog(rootPane, "Especialista cadastrado com sucesso.");
+        } catch (ValidacaoException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        }
     }
 
 }
