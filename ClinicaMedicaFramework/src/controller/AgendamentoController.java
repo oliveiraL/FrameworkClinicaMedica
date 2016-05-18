@@ -1,36 +1,33 @@
 package controller;
 
-import clinicaVeterinaria.dominio.Agendamento;
-import ui.UiAgendamento;
+
 import dao.AgendamentoDao;
-import dominio.Paciente;
 import dominio.Especialista;
 import java.util.Date;
-import dominio.TipoAtendimento;
 import dominio.AgendamentoAtendimento;
-import dominio.Especialidade;
 import java.util.ArrayList;
 import validacoes.ValidacaoException;
 
 public class AgendamentoController {
 
-    private GerenciarPacienteController gerenciarPaciente;
-
-    private GerenciarEspecialistaController gerenciarEspecialista;
-    
-    private NotificarAtendimento notificarAtendimento;
-
     private AgendamentoDao agendamentoDao;
 
     public AgendamentoController() {
+        agendamentoDao = new AgendamentoDao();
     }
 
-    public void agendamento(Paciente paciente, Especialista especialista, Date dataHora, Especialidade especialidade) throws ValidacaoException {
-        AgendamentoAtendimento agendamento = new Agendamento(dataHora, especialista, paciente, especialidade);
+    public void agendamento(AgendamentoAtendimento agendamento) throws ValidacaoException {
         agendamento.validarAgendamento();
-        verificarAgendamento(especialista, dataHora);
-        agendamentoDao.salvar(agendamento);
-        notificarAtendimento.notificarAgendamento(agendamento);
+        agendamento.getDataHora().setSeconds(0);
+        
+        if (verificarAgendamento(agendamento.getEspecialista(), agendamento.getDataHora())) {
+            
+            agendamentoDao.salvar(agendamento);
+        }else{
+            throw new ValidacaoException("Especialista com horario marcado para esse dia.");
+        }
+
+        //notificarAtendimento.notificarAgendamento(agendamento);
     }
 
     /**
@@ -46,10 +43,14 @@ public class AgendamentoController {
     }
 
     public boolean verificarAgendamento(Especialista especialista, Date dataHora) {
+        
         ArrayList<AgendamentoAtendimento> agendamentos = agendamentoDao.listar();
         for (AgendamentoAtendimento agendamento : agendamentos) {
-            if (agendamento.getEspecialista() == especialista && agendamento.getDataHora() == dataHora) {
-                return false;
+            if (agendamento.getEspecialista().getCPF().equals(especialista.getCPF())) {
+                if(agendamento.getDataHora().getDay() == dataHora.getDay() && agendamento.getDataHora().getMonth() == dataHora.getMonth() &&
+                        agendamento.getDataHora().getHours() == dataHora.getHours() && agendamento.getDataHora().getMinutes() == dataHora.getMinutes()){
+                    return false;
+                }
             }
         }
         return true;

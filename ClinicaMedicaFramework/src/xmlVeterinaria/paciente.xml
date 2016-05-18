@@ -1,14 +1,58 @@
 <list>
   <clinicaVeterinaria.dominio.Animal>
-    <raca>labrador</raca>
-    <especie>cão</especie>
-    <idade>3 meses</idade>
-    <id>1</id>
+    <raca>cock</raca>
+    <especie>dog</especie>
+    <idade>2</idade>
+    <id>3</id>
     <nome>clara</nome>
-    <responsavel>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>9999</email>
       <id>0</id>
       <nome>lucio</nome>
-      <CPF>444.247.768-08</CPF>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>cock</raca>
+    <especie>dog</especie>
+    <idade>2</idade>
+    <id>2</id>
+    <nome>jack</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>9999</email>
+      <id>0</id>
+      <nome>lucio</nome>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>teste</raca>
+    <especie>dog</especie>
+    <idade>2</idade>
+    <id>1</id>
+    <nome>cindy</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>9999</email>
+      <id>0</id>
+      <nome>lucio</nome>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>seila</raca>
+    <especie>seila</especie>
+    <idade>seila</idade>
+    <id>4</id>
+    <nome>deu certo porra</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(22)2222-2222</telefone>
+      <email>22222</email>
+      <id>0</id>
+      <nome>seila</nome>
+      <CPF>222.222.222-22</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
   <clinicaVeterinaria.dominio.Animal>

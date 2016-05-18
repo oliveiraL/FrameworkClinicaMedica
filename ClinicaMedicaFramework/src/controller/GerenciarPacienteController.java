@@ -25,7 +25,21 @@ public class GerenciarPacienteController {
         pacienteDao.remover(paciente);
     }
 
-    public Paciente getPaciente(int id) {
+    public Paciente buscarPaciente(int id) {
+        ArrayList<Paciente> pacientes = pacienteDao.listar();
+        for(Paciente p: pacientes){
+            if(p.getId() == id)
+                return p;
+        }
+        return null;
+    }
+    
+    public Paciente buscarPaciente(String cpfResponsalvel) {
+        ArrayList<Paciente> pacientes = pacienteDao.listar();
+        for(Paciente p: pacientes){
+            if(p.getResponsavel().getCPF().equals(cpfResponsalvel))
+                return p;
+        }
         return null;
     }
 
