@@ -11,4 +11,18 @@
       <CPF>444.247.768-08</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>sdasd</raca>
+    <especie>dasdsa</especie>
+    <idade>123</idade>
+    <id>2</id>
+    <nome>asdsad</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(12)3123-1241</telefone>
+      <email>213213@hghyy.cimo</email>
+      <id>0</id>
+      <nome>asdasdsa</nome>
+      <CPF>222.222.222-22</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
 </list>
