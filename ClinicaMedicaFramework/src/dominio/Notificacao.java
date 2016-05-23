@@ -4,10 +4,20 @@ import controller.NotificarAtendimento;
 
 public abstract class Notificacao {
 
-	private String mensagem;
+    private String mensagem;
 
-	private NotificarAtendimento notificarAtendimento;
+    public Notificacao(String mensagem) {
+        this.mensagem = mensagem;
+    }
 
-	public abstract void enviar();
+    public abstract void enviar();
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
 
 }

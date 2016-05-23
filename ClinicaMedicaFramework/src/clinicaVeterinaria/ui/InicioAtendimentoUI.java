@@ -11,17 +11,21 @@ import dominio.Atendimento;
 import dominio.Paciente;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import ui.UIAtendimento;
+import validacoes.ValidacaoException;
 
 /**
  *
  * @author lucio
  */
-public class InicioAtendimentoUI extends javax.swing.JFrame{
+public class InicioAtendimentoUI extends javax.swing.JFrame {
 
     private int clickMouse = 0;
     private GerenciarPacienteController gerenciarPaciente;
+
     /**
      * Creates new form AtendimentoUI
      */
@@ -67,11 +71,11 @@ public class InicioAtendimentoUI extends javax.swing.JFrame{
 
             },
             new String [] {
-                "Nome", "Idade", "Especie", "Raca"
+                "ID", "Nome", "Idade", "Especie", "Raca"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -84,6 +88,9 @@ public class InicioAtendimentoUI extends javax.swing.JFrame{
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,17 +131,23 @@ public class InicioAtendimentoUI extends javax.swing.JFrame{
         if (clickMouse == 2) {
             clickMouse = 0;
             int index = jTable1.getSelectedRow();
-            Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
-            Animal animal;
-            animal = (Animal) paciente;
+            Integer id = (Integer) jTable1.getValueAt(index, 0);
+            
+            
+            Animal animal = null;
+            try {
+                animal = (Animal) gerenciarPaciente.buscarPaciente(id.intValue());
+            } catch (ValidacaoException ex) {
+                Logger.getLogger(InicioAtendimentoUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
             AtendimentoUI atendimento = new AtendimentoUI();
-            atendimento.iniciarAtendimento(paciente);
+            atendimento.iniciarAtendimento(animal);
             atendimento.show();
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    buscarCPF();        // TODO add your handling code here:
+        buscarCPF();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -179,22 +192,24 @@ public class InicioAtendimentoUI extends javax.swing.JFrame{
         String cpfDono = txtCPFDono.getText();
         Animal animal;
         int linhas = 0;
-        
+
         ArrayList<Paciente> animais = gerenciarPaciente.buscarPacienteResponsavel(cpfDono);
         System.err.println(animais.size());
         for (Paciente paciente : animais) {
             animal = (Animal) paciente;
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
-                jTable1.getModel().setValueAt(animal.getNome(), linhas, 0);
-                jTable1.getModel().setValueAt(animal.getIdade(), linhas, 1);
-                jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 2);
-                jTable1.getModel().setValueAt(animal.getRaca(), linhas, 3);
-                linhas++;
-            
+            jTable1.getModel().setValueAt(animal.getId(), linhas, 0);
+            jTable1.getModel().setValueAt(animal.getNome(), linhas, 1);
+            jTable1.getModel().setValueAt(animal.getIdade(), linhas, 2);
+            jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 3);
+            jTable1.getModel().setValueAt(animal.getRaca(), linhas, 4);
+            linhas++;
+
         }
 
     }
-     public void limparTabela() {
+
+    public void limparTabela() {
         while (jTable1.getRowCount() > 0) {
             DefaultTableModel dm = (DefaultTableModel) jTable1.getModel();
             dm.getDataVector().removeAllElements();

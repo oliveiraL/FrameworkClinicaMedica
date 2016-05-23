@@ -12,7 +12,7 @@ public class NotificarAtendimento {
 	 *  
 	 */
 	public void notificarAgendamento(AgendamentoAtendimento agendamento) {
-
+                
 	}
 
 	public void notificarCandelamento(AgendamentoAtendimento agendamento) {

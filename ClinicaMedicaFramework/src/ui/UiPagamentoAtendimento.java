@@ -1,6 +1,6 @@
 package ui;
 
-import controller.PagamentoAtendimento;
+import controller.PagamentoAtendimentoController;
 
 public interface UiPagamentoAtendimento {
 

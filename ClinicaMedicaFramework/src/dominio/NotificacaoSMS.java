@@ -1,11 +1,16 @@
 package dominio;
 
+import javax.swing.JOptionPane;
+
 public class NotificacaoSMS extends Notificacao {
+
+    public NotificacaoSMS(String mensagem) {
+        super(mensagem);
+    }
 
     @Override
     public void enviar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JOptionPane.showMessageDialog(null, this.getMensagem());
     }
-
 
 }

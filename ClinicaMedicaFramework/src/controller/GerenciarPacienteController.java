@@ -8,9 +8,11 @@ import validacoes.ValidacaoException;
 public class GerenciarPacienteController {
 
     private PacienteDao pacienteDao;
+    GerenciarProntuarioController gerenciarProntuario;
 
     public GerenciarPacienteController() {
         pacienteDao = new PacienteDao();
+        gerenciarProntuario = new GerenciarProntuarioController();
     }
     
     

@@ -7,16 +7,18 @@ package clinicaVeterinaria.ui;
 
 import clinicaVeterinaria.dominio.Animal;
 import clinicaVeterinaria.dominio.DonoAnimal;
+import clinicaVeterinaria.dominio.ProntuarioAnimal;
 import dominio.Paciente;
-import dominio.Responsavel;
 import controller.GerenciarPacienteController;
+import controller.GerenciarProntuarioController;
+import dominio.Prontuario;
 import java.awt.Color;
+import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import ui.UIGerenciamentoPaciente;
 import validacoes.ValidacaoException;
@@ -30,6 +32,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     private int clickMouse = 0;
     private GerenciarPacienteController gerenciarPaciente;
     private Animal animalAtual;
+    private GerenciarProntuarioController gerenciarProntuario;
 
     /**
      * Creates new form GerenciarPacienteController
@@ -37,6 +40,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     public GerenciarPacienteUI() {
         initComponents();
         gerenciarPaciente = new GerenciarPacienteController();
+        gerenciarProntuario = new GerenciarProntuarioController();
     }
 
     /**
@@ -506,9 +510,14 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
             if (!txtNome.getText().trim().equals("") && !txtRaca.getText().trim().equals("") && !txtEspecie.getText().trim()
                     .equals("") && !txtIdade.getText().trim().equals("") && !txtNomeResposavel.getText().trim().equals("")
                     && !txtCPFResponsavel.getText().trim().equals("")) {
+                
                 messageCadastro.setForeground(Color.GREEN);
                 gerenciarPaciente.cadastrarPaciente(animal);
+                ProntuarioAnimal prontuario = new ProntuarioAnimal();
+                prontuario.setPaciente(animal);
+                gerenciarProntuario.cadastrarProntuario(prontuario);
                 messageCadastro.setText("Cadastro realizado com Sucesso!");
+                
             } else {
                 messageCadastro.setForeground(Color.red);
                 messageCadastro.setText("Preencha todos os campos!");

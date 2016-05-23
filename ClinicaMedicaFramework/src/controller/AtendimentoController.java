@@ -11,20 +11,11 @@ import validacoes.ValidacaoException;
 public class AtendimentoController {
 
     AtendimentoPrivadoDao atendimentoDao;
-    ProntuarioDao prontuarioDao;
+    GerenciarProntuarioController gerenciarProntuario;
 
     public AtendimentoController() {
-        prontuarioDao = new ProntuarioDao();
+        gerenciarProntuario = new GerenciarProntuarioController();
         atendimentoDao = new AtendimentoPrivadoDao();
-    }
-
-    /**
-     *
-     * @param paciente
-     * @return 
-     */
-    public Prontuario consultarProntuario(Paciente paciente) {
-        return null;
     }
 
     /**
@@ -34,6 +25,7 @@ public class AtendimentoController {
     public void finalizarAtendimento(Atendimento atendimento) throws ValidacaoException {
         atendimento.validarAtendimento();
         atendimentoDao.salvar((AtendimentoPrivado) atendimento);
+        gerenciarProntuario.addAtendumento(atendimento);
     }
 
 }

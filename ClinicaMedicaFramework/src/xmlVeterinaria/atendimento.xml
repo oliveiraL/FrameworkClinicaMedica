@@ -67,4 +67,114 @@
       <descricao>09</descricao>
     </diagnosticoAtendimentos>
   </clinicaVeterinaria.dominio.ConsultaVeterinario>
+  <clinicaVeterinaria.dominio.ConsultaVeterinario>
+    <procedimentoPago>false</procedimentoPago>
+    <id>3</id>
+    <dataHora>2016-05-18 13:37:33.956 BRT</dataHora>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>teste</raca>
+      <especie>dog</especie>
+      <idade>2</idade>
+      <id>1</id>
+      <nome>cindy</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>9999</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>5</id>
+      <nome>Lucas</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <diagnosticoAtendimentos>
+      <id>0</id>
+      <descricao>asd</descricao>
+    </diagnosticoAtendimentos>
+  </clinicaVeterinaria.dominio.ConsultaVeterinario>
+  <clinicaVeterinaria.dominio.ConsultaVeterinario>
+    <procedimentoPago>false</procedimentoPago>
+    <id>4</id>
+    <dataHora>2016-05-23 14:17:18.990 BRT</dataHora>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>gato</raca>
+      <especie>gato</especie>
+      <idade>1 ano e meio</idade>
+      <id>8</id>
+      <nome>cindy</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(11)1111-1111</telefone>
+        <email>seila@seila</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>000.000.000-00</CPF>
+      </responsavel>
+    </paciente>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>5</id>
+      <nome>Lucas</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <tratamentos>
+      <id>0</id>
+      <descricao>oi</descricao>
+    </tratamentos>
+    <diagnosticoAtendimentos>
+      <id>0</id>
+      <descricao>oi</descricao>
+    </diagnosticoAtendimentos>
+  </clinicaVeterinaria.dominio.ConsultaVeterinario>
+  <clinicaVeterinaria.dominio.ConsultaVeterinario>
+    <procedimentoPago>false</procedimentoPago>
+    <id>5</id>
+    <dataHora>2016-05-23 14:18:52.638 BRT</dataHora>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>gato</raca>
+      <especie>gato</especie>
+      <idade>1 ano e meio</idade>
+      <id>8</id>
+      <nome>cindy</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(11)1111-1111</telefone>
+        <email>seila@seila</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>000.000.000-00</CPF>
+      </responsavel>
+    </paciente>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>1234</crmv>
+      <especialidade>
+        <id>1</id>
+        <descricao>Cuida de animais domesticos</descricao>
+        <designacao>Clinico Geral</designacao>
+      </especialidade>
+      <id>5</id>
+      <nome>Lucas</nome>
+      <CPF>123.456.789-09</CPF>
+    </especialista>
+    <tratamentos>
+      <id>0</id>
+      <descricao>oi</descricao>
+    </tratamentos>
+    <diagnosticoAtendimentos>
+      <id>0</id>
+      <descricao>oi</descricao>
+    </diagnosticoAtendimentos>
+  </clinicaVeterinaria.dominio.ConsultaVeterinario>
 </list>

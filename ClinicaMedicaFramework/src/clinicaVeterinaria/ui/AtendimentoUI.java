@@ -7,16 +7,21 @@ package clinicaVeterinaria.ui;
 
 import clinicaVeterinaria.dominio.Animal;
 import clinicaVeterinaria.dominio.ConsultaVeterinario;
+import clinicaVeterinaria.dominio.ProntuarioAnimal;
 import controller.AtendimentoController;
 import controller.GerenciarEspecialistaController;
+import controller.GerenciarProntuarioController;
+import dominio.Atendimento;
 import dominio.DiagnosticoAtendimento;
 import dominio.Especialista;
 import dominio.Paciente;
 import dominio.Tratamento;
 import java.util.Date;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import ui.UIAtendimento;
 import validacoes.ValidacaoException;
 
@@ -26,12 +31,13 @@ import validacoes.ValidacaoException;
  */
 public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
 
-    DiagnosticoAtendimento diagnostico;
-    Tratamento tratamento;
-    Animal animalAtendimento;
-    Especialista especialista;
-    AtendimentoController atendimentoController;
-    GerenciarEspecialistaController especialistaController;
+    private DiagnosticoAtendimento diagnostico;
+    private Tratamento tratamento;
+    private Animal animalAtendimento;
+    private Especialista especialista;
+    private AtendimentoController atendimentoController;
+    private GerenciarEspecialistaController especialistaController;
+    private GerenciarProntuarioController gerenciarProntuario;
 
     /**
      * Creates new form AtendimentoUI
@@ -39,6 +45,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
     public AtendimentoUI() {
         atendimentoController = new AtendimentoController();
         especialistaController = new GerenciarEspecialistaController();
+        gerenciarProntuario = new GerenciarProntuarioController();
         initComponents();
     }
 
@@ -242,7 +249,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -323,6 +330,8 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
         txtNome.setText(animalAtendimento.getNome());
         txtRaca.setText(animalAtendimento.getRaca());
         txtIdade.setText(animalAtendimento.getIdade());
+        ProntuarioAnimal prontuario = (ProntuarioAnimal) gerenciarProntuario.buscarProntuario(animalAtendimento);
+        preencherTabela(prontuario);
     }
 
     @Override
@@ -342,10 +351,10 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
     @Override
     public void finalizarAtendimento() {
         try {
-            if(!txtDescricaoD.getText().isEmpty()){
+            if (!txtDescricaoD.getText().isEmpty()) {
                 preescreverDiagnostico();
             }
-            if(!txtDescricaoT.getText().isEmpty()){
+            if (!txtDescricaoT.getText().isEmpty()) {
                 preescreverTratamento();
             }
             ConsultaVeterinario consulta = new ConsultaVeterinario();
@@ -354,12 +363,25 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
             consulta.setTratamentos(tratamento);
             consulta.setPaciente(animalAtendimento);
             consulta.setEspecialista(especialista);
-
             atendimentoController.finalizarAtendimento(consulta);
         } catch (ValidacaoException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
 
+    }
+
+    private void preencherTabela(ProntuarioAnimal prontuario) {
+        System.err.println(prontuario);
+        int linhas = 0;
+            for (Atendimento atendimento : prontuario.getAtendimento()) {
+                ((DefaultTableModel) grade.getModel()).addRow(new Vector());
+
+                grade.getModel().setValueAt(atendimento.getDataHora(), linhas, 1);
+                grade.getModel().setValueAt(atendimento.getClass(), linhas, 0);
+
+                linhas++;
+            
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

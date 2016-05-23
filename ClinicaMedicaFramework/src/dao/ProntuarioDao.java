@@ -2,6 +2,7 @@ package dao;
 
 
 import dominio.Atendimento;
+import dominio.Paciente;
 import dominio.Prontuario;
 
 
@@ -21,7 +22,7 @@ public class ProntuarioDao extends GenericDao<Prontuario>{
  
 
     public void atualizar(Prontuario prontuario) {
-         int i = 0;
+        int i = 0;
         Prontuario alterar = null;
         for (Prontuario aux : listagem) {
             if (aux.getId() == prontuario.getId()) {
@@ -30,7 +31,7 @@ public class ProntuarioDao extends GenericDao<Prontuario>{
             i++;
         }
         listagem.remove(alterar);
-        listagem.add(i,prontuario);
+        listagem.add(prontuario);
         super.atualizar();
     }
 
@@ -45,10 +46,16 @@ public class ProntuarioDao extends GenericDao<Prontuario>{
         listagem.remove(remover);
         super.remover();
     }
+
     
-    public void addAtendimento(Prontuario prontuario, Atendimento atendimento){
-        prontuario.getAtendimento().add(atendimento);
-        super.atualizar();
+    public Prontuario buscarProntuario(Paciente paciente){
+         for (Prontuario aux : listagem) {
+             System.err.println(aux.getPaciente().getId()+" = "+paciente.getId());
+            if (aux.getPaciente().getId() == paciente.getId()) {
+                return aux;                
+            }
+        }
+        return null;
     }
 
 }

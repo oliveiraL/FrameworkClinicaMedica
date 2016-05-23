@@ -1,11 +1,10 @@
 package controller;
 
-import ui.UIGerenciarProntuario;
 import dao.ProntuarioDao;
 import dominio.Atendimento;
 import dominio.Prontuario;
-import java.util.List;
 import dominio.Paciente;
+import java.util.ArrayList;
 
 public class GerenciarProntuarioController {
 
@@ -17,30 +16,42 @@ public class GerenciarProntuarioController {
 
     /**
      *
+     * @param prontuario
      */
     public void cadastrarProntuario(Prontuario prontuario) {
+        prontuarioDao.salvar(prontuario);
 
     }
-    public void addAtendumento(Prontuario prontuario, Atendimento atendimento){
-        prontuarioDao.addAtendimento(prontuario, atendimento);
+
+    public void addAtendumento(Prontuario prontuario, Atendimento atendimento) {
+        prontuario.addAtendimento(atendimento);
+        atualizarProntuario(prontuario);
     }
+
+    public void addAtendumento(Atendimento atendimento) {
+        Prontuario prontuario = buscarProntuario(atendimento.getPaciente());
+        prontuario.addAtendimento(atendimento);
+        atualizarProntuario(prontuario);
+    }
+
     /**
      *
+     * @param prontuario
      */
     public void atualizarProntuario(Prontuario prontuario) {
-
+        prontuarioDao.atualizar(prontuario);
     }
 
-    public Prontuario removerProntuario(int prontuario) {
-        return null;
+    public void removerProntuario(Prontuario prontuario) {
+        prontuarioDao.remover(prontuario);
     }
 
-    public List listarProntuarios() {
-        return null;
+    public ArrayList<Prontuario> listarProntuarios() {
+        return prontuarioDao.listar();
     }
 
-    public Prontuario getProntuario(Paciente paciente) {
-        return null;
+    public Prontuario buscarProntuario(Paciente paciente) {
+        return prontuarioDao.buscarProntuario(paciente);
     }
 
 }

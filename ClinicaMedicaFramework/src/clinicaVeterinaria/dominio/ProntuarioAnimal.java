@@ -7,6 +7,7 @@ package clinicaVeterinaria.dominio;
 
 import dominio.Atendimento;
 import dominio.Prontuario;
+import java.util.Date;
 
 /**
  *
@@ -14,14 +15,29 @@ import dominio.Prontuario;
  */
 public class ProntuarioAnimal extends Prontuario{
 
+    private Date dataCriacao;
+    
+    
     public ProntuarioAnimal() {
+        super();
+        dataCriacao = new Date();
     }
 
     
     
     @Override
     public void addAtendimento(Atendimento atendimento) {
-        
+        this.getAtendimento().add(atendimento);
     }
+
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+    
+    
     
 }
