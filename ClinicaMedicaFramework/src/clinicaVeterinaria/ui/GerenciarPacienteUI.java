@@ -261,11 +261,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
 
             },
             new String [] {
-                "Nome", "Idade", "Especie", "Raca"
+                "ID", "Nome", "Idade", "Especie", "Raca"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -390,7 +390,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     }//GEN-LAST:event_listarPacientesActionPerformed
 
     private void removerPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerPacienteActionPerformed
-        removerPaciente();
+        int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir?");
+            if (resposta == JOptionPane.YES_OPTION) {
+                removerPaciente();
+                listarPaciente();
+            }
     }//GEN-LAST:event_removerPacienteActionPerformed
 
     private void AlterarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarPacienteActionPerformed
@@ -411,14 +415,6 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
                 txtEspecie.setText(animal.getEspecie());
                 txtRaca.setText(animal.getRaca());
                 txtIdade.setText(animal.getIdade());
-
-                //txtNomeResposavel.setText(animal.getResponsavel().getNome());
-                //txtCPFResponsavel.setText(animal.getResponsavel().getCPF());
-                
-                //DonoAnimal dono;
-                //dono = (DonoAnimal) animal.getResponsavel();
-                //txtTelefone.setText(dono.getTelefone());
-                //txtEmail.setText(dono.getEmail());
                 
                 
         }
@@ -496,6 +492,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
 
     @Override
     public void cadastrarPaciente() {
+        /* Pegando os Campos - Pré Cadastro */
         String nomeAnimal = txtNome.getText();
         String raca = txtRaca.getText();
         String especie = txtEspecie.getText();
@@ -505,6 +502,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         String telefone = txtTelefone.getText();
         String email = txtEmail.getText();
         Paciente animal = new Animal(nomeAnimal, raca, especie, idade, new DonoAnimal(nomeResponsavel, cpf, telefone, email));
+        
         try {
 
             if (!txtNome.getText().trim().equals("") && !txtRaca.getText().trim().equals("") && !txtEspecie.getText().trim()
@@ -518,6 +516,16 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
                 gerenciarProntuario.cadastrarProntuario(prontuario);
                 messageCadastro.setText("Cadastro realizado com Sucesso!");
                 
+                /*Limpando os Campos - Pós Cadastro*/
+                txtNome.setText(null);
+                txtRaca.setText(null);
+                txtEspecie.setText(null);
+                txtIdade.setText(null);
+                txtNomeResposavel.setText(null);
+                txtCPFResponsavel.setText(null);
+                txtTelefone.setText(null);
+                txtEmail.setText(null);
+                
             } else {
                 messageCadastro.setForeground(Color.red);
                 messageCadastro.setText("Preencha todos os campos!");
@@ -530,10 +538,8 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     @Override
     public void removerPaciente() {
         int index = jTable1.getSelectedRow();
-
-        //JOptionPane.showConfirmDialog(null,"Deseja Remover esse Paciente?");
-        Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
-
+        Integer id = (Integer) jTable1.getValueAt(index, 0);
+        Paciente paciente = gerenciarPaciente.listarPacientes().get(id);
         gerenciarPaciente.removerPaciene(paciente);
     }
 
@@ -546,11 +552,12 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         for (Paciente paciente : gerenciarPaciente.listarPacientes()) {
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
             animal = (Animal) paciente;
-
-            jTable1.getModel().setValueAt(animal.getNome(), linhas, 0);
-            jTable1.getModel().setValueAt(animal.getIdade(), linhas, 1);
-            jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 2);
-            jTable1.getModel().setValueAt(animal.getRaca(), linhas, 3);
+            
+            jTable1.getModel().setValueAt(animal.getId(), linhas, 0);
+            jTable1.getModel().setValueAt(animal.getNome(), linhas, 1);
+            jTable1.getModel().setValueAt(animal.getIdade(), linhas, 2);
+            jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 3);
+            jTable1.getModel().setValueAt(animal.getRaca(), linhas, 4);
             linhas++;
         }
         return null;

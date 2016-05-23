@@ -38,7 +38,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
     private AtendimentoController atendimentoController;
     private GerenciarEspecialistaController especialistaController;
     private GerenciarProntuarioController gerenciarProntuario;
-
+    private int clickMouse = 0;
     /**
      * Creates new form AtendimentoUI
      */
@@ -218,6 +218,11 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
                 "Atendimento", "Data"
             }
         ));
+        grade.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gradeMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(grade);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -288,6 +293,25 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
             }
         } while (!valido);
     }//GEN-LAST:event_formWindowOpened
+
+    private void gradeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gradeMouseClicked
+        clickMouse++;
+        if (clickMouse == 2) {
+            clickMouse = 0;
+                int index = grade.getSelectedRow();
+                Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
+                Animal animal;
+                animal = (Animal) paciente;
+                animalAtual = animal;
+            
+                txtNome.setText(animal.getNome());
+                txtEspecie.setText(animal.getEspecie());
+                txtRaca.setText(animal.getRaca());
+                txtIdade.setText(animal.getIdade());
+                
+                
+        }
+    }//GEN-LAST:event_gradeMouseClicked
 
     /**
      * @param args the command line arguments

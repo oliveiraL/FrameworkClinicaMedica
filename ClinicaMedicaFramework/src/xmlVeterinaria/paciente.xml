@@ -1,114 +1,30 @@
 <list>
   <clinicaVeterinaria.dominio.Animal>
     <raca>cock</raca>
-    <especie>dog</especie>
-    <idade>2</idade>
-    <id>2</id>
-    <nome>jack</nome>
-    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(99)9999-9999</telefone>
-      <email>9999</email>
-      <id>0</id>
-      <nome>lucio</nome>
-      <CPF>999.999.999-99</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>teste</raca>
-    <especie>dog</especie>
-    <idade>2</idade>
+    <especie>cao</especie>
+    <idade>2 anos</idade>
     <id>1</id>
-    <nome>cindy</nome>
+    <nome>dino</nome>
     <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
       <telefone>(99)9999-9999</telefone>
-      <email>9999</email>
+      <email>teste@gmail.com</email>
       <id>0</id>
-      <nome>lucio</nome>
+      <nome>Victor Gustavo</nome>
       <CPF>999.999.999-99</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
   <clinicaVeterinaria.dominio.Animal>
-    <raca>seila</raca>
-    <especie>seila</especie>
-    <idade>seila</idade>
-    <id>4</id>
-    <nome>deu certo porra</nome>
-    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(22)2222-2222</telefone>
-      <email>22222</email>
-      <id>0</id>
-      <nome>seila</nome>
-      <CPF>222.222.222-22</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>sdasd</raca>
-    <especie>dasdsa</especie>
-    <idade>123</idade>
-    <id>2</id>
-    <nome>asdsad</nome>
-    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(12)3123-1241</telefone>
-      <email>213213@hghyy.cimo</email>
-      <id>0</id>
-      <nome>asdasdsa</nome>
-      <CPF>222.222.222-22</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>cock</raca>
-    <especie>cat</especie>
-    <idade>2</idade>
-    <id>2</id>
-    <nome>jack</nome>
+    <raca>Pitbull</raca>
+    <especie>cao</especie>
+    <idade>10 anos</idade>
+    <id>3</id>
+    <nome>Thor</nome>
     <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
       <telefone>(99)9999-9999</telefone>
-      <email>9999</email>
+      <email>teste@gmail.com</email>
       <id>0</id>
-      <nome>lucio</nome>
-      <CPF>999.999.999-99</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>gato</raca>
-    <especie>gato</especie>
-    <idade>3 anos</idade>
-    <id>6</id>
-    <nome>lila</nome>
-    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(11)1111-1111</telefone>
-      <email>seila@seila.com</email>
-      <id>0</id>
-      <nome>lucio</nome>
-      <CPF>222.222.222-22</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>gato</raca>
-    <especie>gato</especie>
-    <idade>3 anos</idade>
-    <id>7</id>
-    <nome>lila</nome>
-    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(11)1111-1111</telefone>
-      <email>seila@seila.com</email>
-      <id>0</id>
-      <nome>lucio</nome>
-      <CPF>222.222.222-22</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>gato</raca>
-    <especie>gato</especie>
-    <idade>1 ano e meio</idade>
-    <id>8</id>
-    <nome>cindy</nome>
-    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(11)1111-1111</telefone>
-      <email>seila@seila</email>
-      <id>0</id>
-      <nome>lucio</nome>
-      <CPF>000.000.000-00</CPF>
+      <nome>PitHomem</nome>
+      <CPF>666.666.666-66</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
 </list>
