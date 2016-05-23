@@ -1,30 +1,16 @@
 <list>
   <clinicaVeterinaria.dominio.Animal>
-    <raca>cock</raca>
+    <raca>Pitbull</raca>
     <especie>cao</especie>
     <idade>2 anos</idade>
     <id>1</id>
-    <nome>dino</nome>
-    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(99)9999-9999</telefone>
-      <email>teste@gmail.com</email>
-      <id>0</id>
-      <nome>Victor Gustavo</nome>
-      <CPF>999.999.999-99</CPF>
-    </responsavel>
-  </clinicaVeterinaria.dominio.Animal>
-  <clinicaVeterinaria.dominio.Animal>
-    <raca>Pitbull</raca>
-    <especie>cao</especie>
-    <idade>10 anos</idade>
-    <id>3</id>
     <nome>Thor</nome>
     <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
       <telefone>(99)9999-9999</telefone>
       <email>teste@gmail.com</email>
       <id>0</id>
-      <nome>PitHomem</nome>
-      <CPF>666.666.666-66</CPF>
+      <nome>teste</nome>
+      <CPF>999.999.999-99</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
 </list>

@@ -299,15 +299,16 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
         if (clickMouse == 2) {
             clickMouse = 0;
                 int index = grade.getSelectedRow();
-                Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
-                Animal animal;
+                //Paciente paciente = gerenciarProntuario.listarPacientes().get(index);
+                System.out.print("DEU CERTO");
+                /*Animal animal;
                 animal = (Animal) paciente;
                 animalAtual = animal;
             
                 txtNome.setText(animal.getNome());
                 txtEspecie.setText(animal.getEspecie());
                 txtRaca.setText(animal.getRaca());
-                txtIdade.setText(animal.getIdade());
+                txtIdade.setText(animal.getIdade());*/
                 
                 
         }

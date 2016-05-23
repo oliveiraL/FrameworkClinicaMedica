@@ -2,7 +2,7 @@
   <clinicaVeterinaria.dominio.ConsultaVeterinario>
     <procedimentoPago>false</procedimentoPago>
     <id>1</id>
-    <dataHora>2016-05-18 12:15:14.23 BRT</dataHora>
+    <dataHora>2016-05-18 12:15:14.23 GFT</dataHora>
     <paciente class="clinicaVeterinaria.dominio.Animal">
       <raca>cock</raca>
       <especie>dog</especie>
@@ -32,7 +32,7 @@
   <clinicaVeterinaria.dominio.ConsultaVeterinario>
     <procedimentoPago>false</procedimentoPago>
     <id>2</id>
-    <dataHora>2016-05-18 12:19:11.1 BRT</dataHora>
+    <dataHora>2016-05-18 12:19:11.1 GFT</dataHora>
     <paciente class="clinicaVeterinaria.dominio.Animal">
       <raca>cock</raca>
       <especie>dog</especie>
@@ -70,7 +70,7 @@
   <clinicaVeterinaria.dominio.ConsultaVeterinario>
     <procedimentoPago>false</procedimentoPago>
     <id>3</id>
-    <dataHora>2016-05-18 13:37:33.956 BRT</dataHora>
+    <dataHora>2016-05-18 13:37:33.956 GFT</dataHora>
     <paciente class="clinicaVeterinaria.dominio.Animal">
       <raca>teste</raca>
       <especie>dog</especie>
@@ -104,7 +104,7 @@
   <clinicaVeterinaria.dominio.ConsultaVeterinario>
     <procedimentoPago>false</procedimentoPago>
     <id>4</id>
-    <dataHora>2016-05-23 14:17:18.990 BRT</dataHora>
+    <dataHora>2016-05-23 14:17:18.990 GFT</dataHora>
     <paciente class="clinicaVeterinaria.dominio.Animal">
       <raca>gato</raca>
       <especie>gato</especie>
@@ -142,7 +142,7 @@
   <clinicaVeterinaria.dominio.ConsultaVeterinario>
     <procedimentoPago>false</procedimentoPago>
     <id>5</id>
-    <dataHora>2016-05-23 14:18:52.638 BRT</dataHora>
+    <dataHora>2016-05-23 14:18:52.638 GFT</dataHora>
     <paciente class="clinicaVeterinaria.dominio.Animal">
       <raca>gato</raca>
       <especie>gato</especie>
@@ -175,6 +175,82 @@
     <diagnosticoAtendimentos>
       <id>0</id>
       <descricao>oi</descricao>
+    </diagnosticoAtendimentos>
+  </clinicaVeterinaria.dominio.ConsultaVeterinario>
+  <clinicaVeterinaria.dominio.ConsultaVeterinario>
+    <procedimentoPago>false</procedimentoPago>
+    <id>6</id>
+    <dataHora>2016-05-23 18:04:43.70 GFT</dataHora>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>cock</raca>
+      <especie>cao</especie>
+      <idade>2 anos</idade>
+      <id>1</id>
+      <nome>dino</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>teste@gmail.com</email>
+        <id>0</id>
+        <nome>Victor Gustavo</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>15741</crmv>
+      <especialidade>
+        <id>2</id>
+        <descricao>teste</descricao>
+        <designacao>cirurgiao plastico</designacao>
+      </especialidade>
+      <id>2</id>
+      <nome>Vinícius</nome>
+      <CPF>111.222.333-44</CPF>
+    </especialista>
+    <tratamentos>
+      <id>0</id>
+      <descricao>adljkgldakjgldajglkda</descricao>
+    </tratamentos>
+    <diagnosticoAtendimentos>
+      <id>0</id>
+      <descricao>jkdghjkdasdhakgdj			</descricao>
+    </diagnosticoAtendimentos>
+  </clinicaVeterinaria.dominio.ConsultaVeterinario>
+  <clinicaVeterinaria.dominio.ConsultaVeterinario>
+    <procedimentoPago>false</procedimentoPago>
+    <id>7</id>
+    <dataHora>2016-05-23 18:10:58.805 GFT</dataHora>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>Pitbull</raca>
+      <especie>cao</especie>
+      <idade>2 anos</idade>
+      <id>1</id>
+      <nome>Thor</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>teste@gmail.com</email>
+        <id>0</id>
+        <nome>teste</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+    <especialista class="clinicaVeterinaria.dominio.Veterinario">
+      <crmv>15741</crmv>
+      <especialidade>
+        <id>2</id>
+        <descricao>teste</descricao>
+        <designacao>cirurgiao plastico</designacao>
+      </especialidade>
+      <id>2</id>
+      <nome>Vinícius</nome>
+      <CPF>111.222.333-44</CPF>
+    </especialista>
+    <tratamentos>
+      <id>0</id>
+      <descricao>teste</descricao>
+    </tratamentos>
+    <diagnosticoAtendimentos>
+      <id>0</id>
+      <descricao>tests</descricao>
     </diagnosticoAtendimentos>
   </clinicaVeterinaria.dominio.ConsultaVeterinario>
 </list>
