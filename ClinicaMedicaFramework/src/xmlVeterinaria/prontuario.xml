@@ -191,24 +191,24 @@
     </paciente>
   </clinicaVeterinaria.dominio.ProntuarioAnimal>
   <clinicaVeterinaria.dominio.ProntuarioAnimal>
-    <dataCriacao>2016-05-23 15:22:51.76 GFT</dataCriacao>
-    <id>3</id>
+    <dataCriacao>2016-05-23 18:09:35.708 GFT</dataCriacao>
+    <id>11</id>
     <atendimento>
       <clinicaVeterinaria.dominio.ConsultaVeterinario>
         <procedimentoPago>false</procedimentoPago>
-        <id>6</id>
-        <dataHora>2016-05-23 18:04:43.70 GFT</dataHora>
+        <id>10</id>
+        <dataHora>2016-05-24 17:05:56.358 GFT</dataHora>
         <paciente class="clinicaVeterinaria.dominio.Animal">
-          <raca>cock</raca>
+          <raca>Pitbull</raca>
           <especie>cao</especie>
           <idade>2 anos</idade>
           <id>1</id>
-          <nome>dino</nome>
+          <nome>Thor</nome>
           <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
             <telefone>(99)9999-9999</telefone>
             <email>teste@gmail.com</email>
             <id>0</id>
-            <nome>Victor Gustavo</nome>
+            <nome>teste</nome>
             <CPF>999.999.999-99</CPF>
           </responsavel>
         </paciente>
@@ -225,33 +225,14 @@
         </especialista>
         <tratamentos>
           <id>0</id>
-          <descricao>adljkgldakjgldajglkda</descricao>
+          <descricao>teste</descricao>
         </tratamentos>
         <diagnosticoAtendimentos>
           <id>0</id>
-          <descricao>jkdghjkdasdhakgdj			</descricao>
+          <descricao>teste</descricao>
         </diagnosticoAtendimentos>
       </clinicaVeterinaria.dominio.ConsultaVeterinario>
     </atendimento>
-    <paciente class="clinicaVeterinaria.dominio.Animal">
-      <raca>etste</raca>
-      <especie>test</especie>
-      <idade>tetstetete</idade>
-      <id>1</id>
-      <nome>teste</nome>
-      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-        <telefone>(13)5135-1531</telefone>
-        <email>gakdngdka@gmasd</email>
-        <id>0</id>
-        <nome>tetetetete</nome>
-        <CPF>124.145.135-31</CPF>
-      </responsavel>
-    </paciente>
-  </clinicaVeterinaria.dominio.ProntuarioAnimal>
-  <clinicaVeterinaria.dominio.ProntuarioAnimal>
-    <dataCriacao>2016-05-23 18:09:35.708 GFT</dataCriacao>
-    <id>11</id>
-    <atendimento/>
     <paciente class="clinicaVeterinaria.dominio.Animal">
       <raca>Pitbull</raca>
       <especie>cao</especie>
@@ -309,6 +290,21 @@
           <descricao>tests</descricao>
         </diagnosticoAtendimentos>
       </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>false</procedimentoPago>
+        <id>11</id>
+        <dataHora>2016-05-24 17:05:58.344 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../../../clinicaVeterinaria.dominio.ProntuarioAnimal[9]/atendimento/clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../../../clinicaVeterinaria.dominio.ProntuarioAnimal[9]/atendimento/clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
     </atendimento>
     <paciente class="clinicaVeterinaria.dominio.Animal">
       <raca>cock</raca>
@@ -322,6 +318,140 @@
         <id>0</id>
         <nome>Victor Gustavo</nome>
         <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+  </clinicaVeterinaria.dominio.ProntuarioAnimal>
+  <clinicaVeterinaria.dominio.ProntuarioAnimal>
+    <dataCriacao>2016-05-23 15:22:51.76 GFT</dataCriacao>
+    <id>3</id>
+    <atendimento>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>false</procedimentoPago>
+        <id>6</id>
+        <dataHora>2016-05-23 18:04:43.70 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>cock</raca>
+          <especie>cao</especie>
+          <idade>2 anos</idade>
+          <id>1</id>
+          <nome>dino</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(99)9999-9999</telefone>
+            <email>teste@gmail.com</email>
+            <id>0</id>
+            <nome>Victor Gustavo</nome>
+            <CPF>999.999.999-99</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>cirurgiao plastico</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>adljkgldakjgldajglkda</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>jkdghjkdasdhakgdj			</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>false</procedimentoPago>
+        <id>9</id>
+        <dataHora>2016-05-24 17:05:07.995 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>Pitbull</raca>
+          <especie>cao</especie>
+          <idade>2 anos</idade>
+          <id>1</id>
+          <nome>Thor</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(99)9999-9999</telefone>
+            <email>teste@gmail.com</email>
+            <id>0</id>
+            <nome>teste</nome>
+            <CPF>999.999.999-99</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>cirurgiao plastico</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>testet</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>testet</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>false</procedimentoPago>
+        <id>12</id>
+        <dataHora>2016-05-24 17:27:19.540 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>Pitbull</raca>
+          <especie>cao</especie>
+          <idade>2 anos</idade>
+          <id>1</id>
+          <nome>Thor</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(99)9999-9999</telefone>
+            <email>teste@gmail.com</email>
+            <id>0</id>
+            <nome>teste</nome>
+            <CPF>999.999.999-99</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>cirurgiao plastico</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>TESTE</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>TESTE</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+    </atendimento>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>etste</raca>
+      <especie>test</especie>
+      <idade>tetstetete</idade>
+      <id>1</id>
+      <nome>teste</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(13)5135-1531</telefone>
+        <email>gakdngdka@gmasd</email>
+        <id>0</id>
+        <nome>tetetetete</nome>
+        <CPF>124.145.135-31</CPF>
       </responsavel>
     </paciente>
   </clinicaVeterinaria.dominio.ProntuarioAnimal>

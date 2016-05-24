@@ -215,9 +215,17 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
 
             },
             new String [] {
-                "Atendimento", "Data"
+                "ID", "Atendimento", "Data"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         grade.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 gradeMouseClicked(evt);
@@ -299,16 +307,21 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
         if (clickMouse == 2) {
             clickMouse = 0;
                 int index = grade.getSelectedRow();
-                //Paciente paciente = gerenciarProntuario.listarPacientes().get(index);
-                System.out.print("DEU CERTO");
-                /*Animal animal;
-                animal = (Animal) paciente;
-                animalAtual = animal;
-            
-                txtNome.setText(animal.getNome());
-                txtEspecie.setText(animal.getEspecie());
-                txtRaca.setText(animal.getRaca());
-                txtIdade.setText(animal.getIdade());*/
+                Integer id = (Integer) grade.getValueAt(index, 0);
+                
+                Atendimento att = atendimentoController.buscarAtendimento(id);
+                
+                JOptionPane.showConfirmDialog(this, att.getPaciente().getNome());
+                JOptionPane.showConfirmDialog(this, att.getDiagnosticoAtendimentos());
+                JOptionPane.showConfirmDialog(this, att.getTratamentos());
+                
+                GerenciarProntuarioUI prontuario = new GerenciarProntuarioUI();
+                prontuario.iniciarProntuario(att);
+                prontuario.show();
+                
+                
+                
+               
                 
                 
         }
@@ -401,8 +414,9 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
             for (Atendimento atendimento : prontuario.getAtendimento()) {
                 ((DefaultTableModel) grade.getModel()).addRow(new Vector());
 
+                grade.getModel().setValueAt(atendimento.getId(), linhas, 0);
                 grade.getModel().setValueAt(atendimento.getDataHora(), linhas, 1);
-                grade.getModel().setValueAt(atendimento.getClass(), linhas, 0);
+                grade.getModel().setValueAt(atendimento.getClass(), linhas, 2);
 
                 linhas++;
             

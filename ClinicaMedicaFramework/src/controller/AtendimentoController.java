@@ -27,5 +27,9 @@ public class AtendimentoController {
         atendimentoDao.salvar((AtendimentoPrivado) atendimento);
         gerenciarProntuario.addAtendumento(atendimento);
     }
+    
+    public Atendimento buscarAtendimento(int ID){
+        return atendimentoDao.buscarID(ID);
+    }
 
 }

@@ -58,4 +58,14 @@ public class ProntuarioDao extends GenericDao<Prontuario>{
         return null;
     }
 
+    
+    public Prontuario buscarProntuarioID(int ID){
+        for(Prontuario aux : listagem){
+            System.err.println(aux.getPaciente().getId()+" = "+ID);
+            if(aux.getPaciente().getId() == ID){
+                return aux;
+            }
+        }
+        return null;
+    }
 }

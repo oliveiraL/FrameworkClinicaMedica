@@ -5,6 +5,14 @@
  */
 package clinicaVeterinaria.ui;
 
+import clinicaVeterinaria.dominio.Animal;
+import clinicaVeterinaria.dominio.ProntuarioAnimal;
+import dominio.Atendimento;
+import dominio.DiagnosticoAtendimento;
+import dominio.Especialista;
+import dominio.Paciente;
+import dominio.Prontuario;
+import dominio.Tratamento;
 import ui.UIGerenciarProntuario;
 
 /**
@@ -16,9 +24,15 @@ public class GerenciarProntuarioUI extends javax.swing.JPanel implements UIGeren
     /**
      * Creates new form GerenciarProntuarioUI
      */
+    
+    private DiagnosticoAtendimento diagnostico;
+    private Tratamento tratamento;
+    private Animal animalAtendimento;
+    private Especialista especialista;
+    
+    
     public GerenciarProntuarioUI() {
         initComponents();
-        gerenciarDadosPaciente();
     }
 
     /**
@@ -46,7 +60,6 @@ public class GerenciarProntuarioUI extends javax.swing.JPanel implements UIGeren
         jLabel9 = new javax.swing.JLabel();
         labelTratamento = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        icone = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         labelResponsavelAssinatura = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -154,8 +167,6 @@ public class GerenciarProntuarioUI extends javax.swing.JPanel implements UIGeren
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        icone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaVeterinaria/imagens/Clinica.png"))); // NOI18N
-
         jLabel8.setText("__________________________________");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -163,9 +174,7 @@ public class GerenciarProntuarioUI extends javax.swing.JPanel implements UIGeren
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(icone, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(312, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,14 +186,10 @@ public class GerenciarProntuarioUI extends javax.swing.JPanel implements UIGeren
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(icone, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelResponsavelAssinatura, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelResponsavelAssinatura, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -254,15 +259,20 @@ public class GerenciarProntuarioUI extends javax.swing.JPanel implements UIGeren
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public void gerenciarDadosPaciente(){
-        labelNome.;
-        labelResponsavel.;
-        labelIdade.;
+    public void iniciarProntuario(Atendimento atendimento){
+        //animalAtendimento = (Animal) paciente;
+        //System.out.print("testetestetete#$##%");
+        labelNome.setText(atendimento.getPaciente().getNome());
+        //labelResponsavel.setText(prontuarioAnimal.getPaciente().getResponsavel().getNome());
+        //labelIdade.setText(prontuarioAnimal.getPaciente().get);
+        //labelDiagnostico.setText(prontuarioAnimal.getAtendimento());
+        //labelResponsavelAssinatura.setText(prontuarioAnimal.ge);
+        
+        //System.out.print(prontuarioAnimal.getAtendimento());
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel icone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

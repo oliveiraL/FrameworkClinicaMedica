@@ -53,5 +53,10 @@ public class GerenciarProntuarioController {
     public Prontuario buscarProntuario(Paciente paciente) {
         return prontuarioDao.buscarProntuario(paciente);
     }
+    
+    public Prontuario buscarProntuarioID(int ID) {
+        return prontuarioDao.buscarProntuarioID(ID);
+    }
+   
 
 }
