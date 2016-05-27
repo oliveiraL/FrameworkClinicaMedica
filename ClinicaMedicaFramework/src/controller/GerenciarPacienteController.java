@@ -56,6 +56,7 @@ public class GerenciarPacienteController {
     
     
     public ArrayList<Paciente> listarPacientes() {
+        System.err.println(pacienteDao.caminho);
         return pacienteDao.listar();
     }
 

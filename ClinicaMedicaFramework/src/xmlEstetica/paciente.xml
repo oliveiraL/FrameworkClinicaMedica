@@ -1,0 +1,12 @@
+<list>
+  <clinicaEstetica.dominio.Pacientep>
+    <telefone>(99) 9 9999 - 9999</telefone>
+    <idade>18</idade>
+    <CPF>999 . 999 . 999 - 99</CPF>
+    <id>2</id>
+    <nome>victor gustavo</nome>
+    <responsavel>
+      <id>0</id>
+    </responsavel>
+  </clinicaEstetica.dominio.Pacientep>
+</list>

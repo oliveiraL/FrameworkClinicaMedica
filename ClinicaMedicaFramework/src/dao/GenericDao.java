@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class GenericDao<T> {
 
-    protected String caminho;
+    public String caminho;
     protected ArrayList<T> listagem;
 
     public GenericDao(String caminho) {
