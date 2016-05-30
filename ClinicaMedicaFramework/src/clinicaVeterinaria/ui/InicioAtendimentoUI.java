@@ -143,6 +143,7 @@ public class InicioAtendimentoUI extends javax.swing.JFrame {
             AtendimentoUI atendimento = new AtendimentoUI();
             atendimento.iniciarAtendimento(animal);
             atendimento.show();
+            dispose();
         }
     }//GEN-LAST:event_jTable1MouseClicked
 

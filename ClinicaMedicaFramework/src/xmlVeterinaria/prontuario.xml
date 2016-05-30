@@ -184,7 +184,7 @@
           <especialidade>
             <id>2</id>
             <descricao>teste</descricao>
-            <designacao>cirurgiao plastico</designacao>
+            <designacao>Clinico Geral</designacao>
           </especialidade>
           <id>2</id>
           <nome>Vinícius</nome>
@@ -223,7 +223,7 @@
           <especialidade>
             <id>2</id>
             <descricao>teste</descricao>
-            <designacao>cirurgiao plastico</designacao>
+            <designacao>Clinico Geral</designacao>
           </especialidade>
           <id>2</id>
           <nome>Vinícius</nome>
@@ -236,6 +236,84 @@
         <diagnosticoAtendimentos>
           <id>0</id>
           <descricao>sad</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>8</id>
+        <dataHora>2016-05-30 13:36:07.361 BRT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>labrador</raca>
+          <especie>cão</especie>
+          <idade>3 meses</idade>
+          <id>1</id>
+          <nome>jack</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(11)1111-1111</telefone>
+            <email>seila@gmail.com</email>
+            <id>0</id>
+            <nome>lucio</nome>
+            <CPF>222.222.222-22</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <vacinado>false</vacinado>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>Clinico Geral</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>9</id>
+        <dataHora>2016-05-30 13:41:53.799 BRT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>labrador</raca>
+          <especie>cão</especie>
+          <idade>3 meses</idade>
+          <id>1</id>
+          <nome>jack</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(11)1111-1111</telefone>
+            <email>seila@gmail.com</email>
+            <id>0</id>
+            <nome>lucio</nome>
+            <CPF>222.222.222-22</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <vacinado>false</vacinado>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>cirurgiao plastico</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>Animal com febre</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>Animal DOente		</descricao>
         </diagnosticoAtendimentos>
       </clinicaVeterinaria.dominio.ConsultaVeterinario>
     </atendimento>

@@ -6,9 +6,12 @@
 package clinicaVeterinaria.ui;
 
 import clinicaVeterinaria.dominio.Animal;
+import clinicaVeterinaria.dominio.PagamentoCredito;
+import clinicaVeterinaria.dominio.PagamentoDebito;
 import ui.UiPagamentoAtendimento;
 import controller.PagamentoAtendimentoController;
 import dominio.Atendimento;
+import dominio.TipoPagamento;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
@@ -56,6 +59,8 @@ public class PagamentoUI extends javax.swing.JFrame implements UiPagamentoAtendi
         jButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         grade = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        cmbOpcao = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -135,6 +140,10 @@ public class PagamentoUI extends javax.swing.JFrame implements UiPagamentoAtendi
         });
         jScrollPane3.setViewportView(grade);
 
+        jLabel4.setText("Tipo Pagamento:");
+
+        cmbOpcao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Debito", "Credito", " " }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -144,10 +153,14 @@ public class PagamentoUI extends javax.swing.JFrame implements UiPagamentoAtendi
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(lblValor)
-                .addGap(53, 53, 53)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(cmbOpcao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +169,9 @@ public class PagamentoUI extends javax.swing.JFrame implements UiPagamentoAtendi
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(lblValor)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jLabel4)
+                    .addComponent(cmbOpcao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -267,15 +282,25 @@ public class PagamentoUI extends javax.swing.JFrame implements UiPagamentoAtendi
 
     @Override
     public void pagarAtendimentos() {
-        pagamentoAtendimento.realizarPagamento();
+        TipoPagamento pagamento = null;
+        int operacao = cmbOpcao.getSelectedIndex();
+        if(operacao == 0){
+            pagamento = new PagamentoDebito();
+        }else if(operacao == 1){
+            pagamento = new PagamentoCredito();
+        }
+        
+        pagamentoAtendimento.realizarPagamento(pagamento);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbOpcao;
     private javax.swing.JTable grade;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;

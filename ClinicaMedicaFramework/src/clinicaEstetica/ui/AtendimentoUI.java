@@ -473,7 +473,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
             if (!txtDescricaoT.getText().isEmpty()) {
                 preescreverTratamento();
             }
-            ConsultaEsteticaPrivado consulta = new ConsultaEsteticaPrivado(queixaPrincipal, historString);
+            ConsultaEsteticaPrivado consulta = new ConsultaEsteticaPrivado("", "");
             consulta.setDataHora(new Date());
             consulta.setDiagnosticoAtendimentos(diagnostico);
             consulta.setTratamentos(tratamento);

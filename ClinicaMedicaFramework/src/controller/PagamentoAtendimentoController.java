@@ -5,6 +5,7 @@ import dominio.Atendimento;
 import dominio.AtendimentoPrivado;
 import dominio.Paciente;
 import dominio.Prontuario;
+import dominio.TipoPagamento;
 import java.util.ArrayList;
 
 public class PagamentoAtendimentoController {
@@ -19,14 +20,14 @@ public class PagamentoAtendimentoController {
         ats = new ArrayList<>();
     }
 
-    public void realizarPagamento() {
+    public void realizarPagamento(TipoPagamento pagamento) {
+        pagamento.operacaoPagamento(valorPagamento(prontuario.getPaciente()));
         for(Atendimento atendimento : prontuario.getAtendimento()){
             System.err.println(atendimento instanceof AtendimentoPrivado);
             if(atendimento instanceof AtendimentoPrivado){
                 AtendimentoPrivado at = (AtendimentoPrivado) atendimento;
                 if(!at.isProcedimentoPago()){
                     at.setProcedimentoPago(true);
-                    System.out.println("true");
                 }
             }
         }

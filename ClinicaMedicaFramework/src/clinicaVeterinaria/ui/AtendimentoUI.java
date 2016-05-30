@@ -16,6 +16,7 @@ import dominio.DiagnosticoAtendimento;
 import dominio.Especialista;
 import dominio.Paciente;
 import dominio.Tratamento;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -285,7 +286,9 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        finalizarAtendimento();        // TODO add your handling code here:
+        finalizarAtendimento();  
+        JOptionPane.showMessageDialog(null, "Atendimento Realizado");
+// TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -406,13 +409,14 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
 
     private void preencherTabela(ProntuarioAnimal prontuario) {
       //  System.err.println(prontuario);
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
         int linhas = 0;
             for (Atendimento atendimento : prontuario.getAtendimento()) {
                 ((DefaultTableModel) grade.getModel()).addRow(new Vector());
 
                 grade.getModel().setValueAt(atendimento.getId(), linhas, 0);
-                grade.getModel().setValueAt(atendimento.getDataHora(), linhas, 1);
-                grade.getModel().setValueAt(atendimento.getClass(), linhas, 2);
+                grade.getModel().setValueAt(dt.format(atendimento.getDataHora()), linhas, 1);
+                grade.getModel().setValueAt(atendimento.getEspecialista().getEspecialidade().getDesignacao(), linhas, 2);
 
                 linhas++;
             

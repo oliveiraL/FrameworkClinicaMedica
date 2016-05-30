@@ -26,7 +26,7 @@
     <especialidade>
       <id>2</id>
       <descricao>teste</descricao>
-      <designacao>cirurgiao plastico</designacao>
+      <designacao>Clinico Geral</designacao>
     </especialidade>
     <id>4</id>
     <nome>Vinícius</nome>
@@ -48,7 +48,7 @@
     <especialidade>
       <id>2</id>
       <descricao>teste</descricao>
-      <designacao>cirurgiao plastico</designacao>
+      <designacao>Castração</designacao>
     </especialidade>
     <id>5</id>
     <nome>Bokus</nome>

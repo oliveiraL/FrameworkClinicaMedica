@@ -142,6 +142,7 @@ public class InicioPagamentoUI1 extends javax.swing.JFrame {
             }
             PagamentoUI pagamento = new PagamentoUI(animal);
             pagamento.show();
+            dispose();
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
