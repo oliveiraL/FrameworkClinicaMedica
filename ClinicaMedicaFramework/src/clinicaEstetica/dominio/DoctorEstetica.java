@@ -14,25 +14,26 @@ import validacoes.ValidacaoException;
  * @author Victor
  */
 public class DoctorEstetica extends Especialista{
-     private String crmv;
+     private String crm;
+     private int tempoProfissao;
      
-     public DoctorEstetica(String crmv, Especialidade especialidade, String nome, String CPF){
+     public DoctorEstetica(String crm, Especialidade especialidade, String nome, String CPF){
          super(especialidade, nome, CPF);
-        this.crmv = crmv;
+        this.crm = crm;
      }
      
     @Override
     public void validarEspecialista() throws ValidacaoException {
-        if(getCrmv() == null || getCPF() == null || getCPF().isEmpty() || getCrmv().isEmpty())
+        if(getCrm() == null || getCPF() == null || getCPF().isEmpty() || getCrm().isEmpty())
             throw new ValidacaoException("Erro ao validar Veterinario.");
     }
     
-    public String getCrmv() {
-        return crmv;
+    public String getCrm() {
+        return crm;
     }
 
-    public void setCrmv(String crmv) {
-        this.crmv = crmv;
+    public void setCrm(String crmv) {
+        this.crm = crm;
     }
     
 }

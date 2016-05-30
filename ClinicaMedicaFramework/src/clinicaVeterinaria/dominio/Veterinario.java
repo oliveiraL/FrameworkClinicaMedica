@@ -15,6 +15,7 @@ import validacoes.ValidacaoException;
  */
 public class Veterinario extends Especialista{
     private String crmv;
+    private boolean vacinado;
 
     public Veterinario() {
     }

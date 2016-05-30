@@ -284,7 +284,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
 
             txtNome.setText(doctorEstetica.getNome());
             txtCPF.setText(doctorEstetica.getCPF());
-            txtCRMV.setText(doctorEstetica.getCrmv());
+            txtCRMV.setText(doctorEstetica.getCrm());
             if (doctorEstetica.getEspecialidade().getDesignacao().equalsIgnoreCase("Clinico Geral")) {
                 cmbEspecialidade.setSelectedIndex(0);
             } else {
@@ -393,7 +393,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
 
             jTable1.getModel().setValueAt(doctorEstetica.getNome(), linhas, 0);
             jTable1.getModel().setValueAt(doctorEstetica.getCPF(), linhas, 1);
-            jTable1.getModel().setValueAt(doctorEstetica.getCrmv(), linhas, 2);
+            jTable1.getModel().setValueAt(doctorEstetica.getCrm(), linhas, 2);
             jTable1.getModel().setValueAt(doctorEstetica.getEspecialidade().getDesignacao(), linhas, 3);
             linhas++;
         }
@@ -433,7 +433,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
 
         doctorEsteticaAtual.setNome(nomeVeterinario);
          doctorEsteticaAtual.setCPF(CPF);
-         doctorEsteticaAtual.setCrmv(CRMV);
+         doctorEsteticaAtual.setCrm(CRMV);
         doctorEsteticaAtual.setEspecialidade(especialidade);
 
         try {
