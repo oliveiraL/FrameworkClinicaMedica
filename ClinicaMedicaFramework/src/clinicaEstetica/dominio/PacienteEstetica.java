@@ -16,17 +16,17 @@ import validacoes.ValidacaoException;
  *
  * @author Monster
  */
-public class Pacientep extends Paciente{
+public class PacienteEstetica extends Paciente{
     private String email;
     private String telefone;
     private int idade;
     private String CPF;
     
-    public Pacientep() {
+    public PacienteEstetica() {
     }
 
-    public Pacientep(String nome,String telefone, int idade,String CPF, Responsavel responsavel, PlanoDeSaude plano) {
-        super(nome, responsavel, plano);
+    public PacienteEstetica(String nome,String telefone, int idade,String CPF, Responsavel responsavel,PlanoDeSaude plano) {
+        super(nome, responsavel,plano);
         this.telefone = telefone;
         this.idade = idade;
         this.CPF = CPF;
