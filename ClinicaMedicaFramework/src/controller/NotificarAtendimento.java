@@ -13,17 +13,23 @@ public class NotificarAtendimento {
     public NotificarAtendimento(Notificacao notificacao) {
         this.notificacao = notificacao;
     }
-    
-    
+
+    public Notificacao getNotificacao() {
+        return notificacao;
+    }
+
+    public void setNotificacao(Notificacao notificacao) {
+        this.notificacao = notificacao;
+    }
 
     /**
      *
      */
-    public void notificarAgendamento(AgendamentoAtendimento agendamento) {
+    public void notificarAgendamentoSMS(AgendamentoAtendimento agendamento) {
         notificacao.enviar();
     }
 
-    public void notificarCandelamento(AgendamentoAtendimento agendamento) {
+    public void notificarCandelamentoSMS(AgendamentoAtendimento agendamento) {
         notificacao.enviar();
     }
 

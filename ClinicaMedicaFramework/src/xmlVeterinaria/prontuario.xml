@@ -1,70 +1,12 @@
 <list>
   <clinicaVeterinaria.dominio.ProntuarioAnimal>
-    <dataCriacao>2016-05-29 21:35:03.207 GFT</dataCriacao>
-    <id>1</id>
-    <atendimento>
-      <clinicaVeterinaria.dominio.ConsultaVeterinario>
-        <procedimentoPago>true</procedimentoPago>
-        <id>1</id>
-        <dataHora>2016-05-29 21:52:14.112 GFT</dataHora>
-        <paciente class="clinicaVeterinaria.dominio.Animal">
-          <raca>labrador</raca>
-          <especie>cão</especie>
-          <idade>3 meses</idade>
-          <id>1</id>
-          <nome>jack</nome>
-          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-            <telefone>(11)1111-1111</telefone>
-            <email>seila@gmail.com</email>
-            <id>0</id>
-            <nome>lucio</nome>
-            <CPF>222.222.222-22</CPF>
-          </responsavel>
-        </paciente>
-        <especialista class="clinicaVeterinaria.dominio.Veterinario">
-          <crmv>15741</crmv>
-          <especialidade>
-            <id>2</id>
-            <descricao>teste</descricao>
-            <designacao>cirurgiao plastico</designacao>
-          </especialidade>
-          <id>2</id>
-          <nome>Vinícius</nome>
-          <CPF>111.222.333-44</CPF>
-        </especialista>
-        <tratamentos>
-          <id>0</id>
-          <descricao>asd</descricao>
-        </tratamentos>
-        <diagnosticoAtendimentos>
-          <id>0</id>
-          <descricao>asd</descricao>
-        </diagnosticoAtendimentos>
-      </clinicaVeterinaria.dominio.ConsultaVeterinario>
-    </atendimento>
-    <paciente class="clinicaVeterinaria.dominio.Animal">
-      <raca>labrador</raca>
-      <especie>cão</especie>
-      <idade>3 meses</idade>
-      <id>1</id>
-      <nome>clara</nome>
-      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-        <telefone>(11)1111-1111</telefone>
-        <email>seila@gmail.com</email>
-        <id>0</id>
-        <nome>lucio</nome>
-        <CPF>222.222.222-22</CPF>
-      </responsavel>
-    </paciente>
-  </clinicaVeterinaria.dominio.ProntuarioAnimal>
-  <clinicaVeterinaria.dominio.ProntuarioAnimal>
-    <dataCriacao>2016-05-30 00:07:40.844 GFT</dataCriacao>
+    <dataCriacao>2016-05-30 00:07:40.844 BRT</dataCriacao>
     <id>2</id>
     <atendimento>
       <clinicaVeterinaria.dominio.ConsultaVeterinario>
         <procedimentoPago>true</procedimentoPago>
         <id>2</id>
-        <dataHora>2016-05-30 00:09:49.13 GFT</dataHora>
+        <dataHora>2016-05-30 00:09:49.13 BRT</dataHora>
         <paciente class="clinicaVeterinaria.dominio.Animal">
           <raca>Cock</raca>
           <especie>DOG</especie>
@@ -81,6 +23,7 @@
         </paciente>
         <especialista class="clinicaVeterinaria.dominio.Veterinario">
           <crmv>1234</crmv>
+          <vacinado>false</vacinado>
           <especialidade>
             <id>1</id>
             <descricao>Cuida de animais domesticos</descricao>
@@ -102,7 +45,7 @@
       <clinicaVeterinaria.dominio.ConsultaVeterinario>
         <procedimentoPago>true</procedimentoPago>
         <id>3</id>
-        <dataHora>2016-05-30 00:09:55.724 GFT</dataHora>
+        <dataHora>2016-05-30 00:09:55.724 BRT</dataHora>
         <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
         <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
         <tratamentos>
@@ -117,7 +60,7 @@
       <clinicaVeterinaria.dominio.ConsultaVeterinario>
         <procedimentoPago>true</procedimentoPago>
         <id>4</id>
-        <dataHora>2016-05-30 00:09:56.732 GFT</dataHora>
+        <dataHora>2016-05-30 00:09:56.732 BRT</dataHora>
         <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
         <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
         <tratamentos>
@@ -132,7 +75,7 @@
       <clinicaVeterinaria.dominio.ConsultaVeterinario>
         <procedimentoPago>true</procedimentoPago>
         <id>5</id>
-        <dataHora>2016-05-30 00:09:58.282 GFT</dataHora>
+        <dataHora>2016-05-30 00:09:58.282 BRT</dataHora>
         <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
         <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
         <tratamentos>
@@ -147,7 +90,7 @@
       <clinicaVeterinaria.dominio.ConsultaVeterinario>
         <procedimentoPago>true</procedimentoPago>
         <id>6</id>
-        <dataHora>2016-05-30 00:09:59.250 GFT</dataHora>
+        <dataHora>2016-05-30 00:09:59.250 BRT</dataHora>
         <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
         <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
         <tratamentos>
@@ -176,7 +119,7 @@
     </paciente>
   </clinicaVeterinaria.dominio.ProntuarioAnimal>
   <clinicaVeterinaria.dominio.ProntuarioAnimal>
-    <dataCriacao>2016-05-30 00:15:14.375 GFT</dataCriacao>
+    <dataCriacao>2016-05-30 00:15:14.375 BRT</dataCriacao>
     <id>3</id>
     <atendimento/>
     <paciente class="clinicaVeterinaria.dominio.Animal">
@@ -195,7 +138,7 @@
     </paciente>
   </clinicaVeterinaria.dominio.ProntuarioAnimal>
   <clinicaVeterinaria.dominio.ProntuarioAnimal>
-    <dataCriacao>2016-05-30 00:15:58.698 GFT</dataCriacao>
+    <dataCriacao>2016-05-30 00:15:58.698 BRT</dataCriacao>
     <id>4</id>
     <atendimento/>
     <paciente class="clinicaVeterinaria.dominio.Animal">
@@ -210,6 +153,104 @@
         <id>0</id>
         <nome>Victor Gustavo</nome>
         <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+  </clinicaVeterinaria.dominio.ProntuarioAnimal>
+  <clinicaVeterinaria.dominio.ProntuarioAnimal>
+    <dataCriacao>2016-05-29 21:35:03.207 BRT</dataCriacao>
+    <id>1</id>
+    <atendimento>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>1</id>
+        <dataHora>2016-05-29 21:52:14.112 BRT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>labrador</raca>
+          <especie>cão</especie>
+          <idade>3 meses</idade>
+          <id>1</id>
+          <nome>jack</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(11)1111-1111</telefone>
+            <email>seila@gmail.com</email>
+            <id>0</id>
+            <nome>lucio</nome>
+            <CPF>222.222.222-22</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <vacinado>false</vacinado>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>cirurgiao plastico</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>asd</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>asd</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>7</id>
+        <dataHora>2016-05-30 13:09:52.511 BRT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>labrador</raca>
+          <especie>cão</especie>
+          <idade>3 meses</idade>
+          <id>1</id>
+          <nome>jack</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(11)1111-1111</telefone>
+            <email>seila@gmail.com</email>
+            <id>0</id>
+            <nome>lucio</nome>
+            <CPF>222.222.222-22</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <vacinado>false</vacinado>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>cirurgiao plastico</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>dasdasdasd</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>sad</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+    </atendimento>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>labrador</raca>
+      <especie>cão</especie>
+      <idade>3 meses</idade>
+      <id>1</id>
+      <nome>clara</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(11)1111-1111</telefone>
+        <email>seila@gmail.com</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>222.222.222-22</CPF>
       </responsavel>
     </paciente>
   </clinicaVeterinaria.dominio.ProntuarioAnimal>

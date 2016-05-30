@@ -7,6 +7,7 @@ package clinicaVeterinaria.ui;
 
 import clinicaVeterinaria.dominio.Agendamento;
 import clinicaVeterinaria.dominio.Animal;
+import clinicaVeterinaria.dominio.NotificacaoSMS;
 import controller.AgendamentoController;
 import controller.GerenciarEspecialidadeController;
 import controller.GerenciarEspecialistaController;
@@ -44,7 +45,7 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento {
         gerenciarEspecialidade = new GerenciarEspecialidadeController("xmlVeterinaria");
         gerenciarEspecialista = new GerenciarEspecialistaController("xmlVeterinaria");
         gerenciarPaciente = new GerenciarPacienteController("xmlVeterinaria");
-        agendamento = new AgendamentoController("xmlVeterinaria");
+        agendamento = new AgendamentoController("xmlVeterinaria", new NotificacaoSMS("Notificacao SMS"));
     }
 
     /**

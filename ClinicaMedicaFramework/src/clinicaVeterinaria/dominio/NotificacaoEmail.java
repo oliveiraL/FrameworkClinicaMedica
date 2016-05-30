@@ -1,5 +1,6 @@
-package dominio;
+package clinicaVeterinaria.dominio;
 
+import dominio.*;
 import javax.swing.JOptionPane;
 
 public  class NotificacaoEmail extends Notificacao {
@@ -12,7 +13,7 @@ public  class NotificacaoEmail extends Notificacao {
     
     @Override
     public void enviar() {
-        JOptionPane.showMessageDialog(null, this.getMensagem());
+        JOptionPane.showMessageDialog(null, "Email "+this.getMensagem());
     }
 
 }
