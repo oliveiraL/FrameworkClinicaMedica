@@ -13,4 +13,46 @@
       <CPF>222.222.222-22</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>Cock</raca>
+    <especie>DOG</especie>
+    <idade>12</idade>
+    <id>2</id>
+    <nome>Dino</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>teste@gmail.com</email>
+      <id>0</id>
+      <nome>Victor Gustavo</nome>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>Pitbull</raca>
+    <especie>DOG</especie>
+    <idade>1 ano</idade>
+    <id>3</id>
+    <nome>Thor</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>teste@gmail.com</email>
+      <id>0</id>
+      <nome>Victor Gustavo</nome>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>BullDog</raca>
+    <especie>DOG</especie>
+    <idade>3 anos</idade>
+    <id>4</id>
+    <nome>MisterM</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(99)9999-9999</telefone>
+      <email>teste@gmail.com</email>
+      <id>0</id>
+      <nome>Victor Gustavo</nome>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
 </list>

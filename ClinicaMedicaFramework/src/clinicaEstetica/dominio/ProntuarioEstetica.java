@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clinicaEstetica.ui;
+package clinicaEstetica.dominio;
 
 import dominio.Atendimento;
 import dominio.Prontuario;
@@ -22,7 +22,7 @@ public class ProntuarioEstetica extends Prontuario{
     }
     @Override
     public void addAtendimento(Atendimento atendimento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.getAtendimento().add(atendimento);
     }
     
     

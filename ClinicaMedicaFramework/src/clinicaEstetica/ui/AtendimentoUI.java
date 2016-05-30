@@ -5,6 +5,7 @@
  */
 package clinicaEstetica.ui;
 
+import clinicaEstetica.dominio.ProntuarioEstetica;
 import clinicaEstetica.dominio.PacienteEstetica;
 import clinicaVeterinaria.dominio.Animal;
 import clinicaVeterinaria.dominio.ConsultaVeterinario;
