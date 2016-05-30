@@ -1,12 +1,12 @@
 <list>
   <clinicaVeterinaria.dominio.ProntuarioAnimal>
-    <dataCriacao>2016-05-29 21:35:03.207 BRT</dataCriacao>
+    <dataCriacao>2016-05-29 21:35:03.207 GFT</dataCriacao>
     <id>1</id>
     <atendimento>
       <clinicaVeterinaria.dominio.ConsultaVeterinario>
         <procedimentoPago>true</procedimentoPago>
         <id>1</id>
-        <dataHora>2016-05-29 21:52:14.112 BRT</dataHora>
+        <dataHora>2016-05-29 21:52:14.112 GFT</dataHora>
         <paciente class="clinicaVeterinaria.dominio.Animal">
           <raca>labrador</raca>
           <especie>cão</especie>
@@ -54,6 +54,162 @@
         <id>0</id>
         <nome>lucio</nome>
         <CPF>222.222.222-22</CPF>
+      </responsavel>
+    </paciente>
+  </clinicaVeterinaria.dominio.ProntuarioAnimal>
+  <clinicaVeterinaria.dominio.ProntuarioAnimal>
+    <dataCriacao>2016-05-30 00:07:40.844 GFT</dataCriacao>
+    <id>2</id>
+    <atendimento>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>2</id>
+        <dataHora>2016-05-30 00:09:49.13 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>Cock</raca>
+          <especie>DOG</especie>
+          <idade>12</idade>
+          <id>2</id>
+          <nome>Dino</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(99)9999-9999</telefone>
+            <email>teste@gmail.com</email>
+            <id>0</id>
+            <nome>Victor Gustavo</nome>
+            <CPF>999.999.999-99</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>1234</crmv>
+          <especialidade>
+            <id>1</id>
+            <descricao>Cuida de animais domesticos</descricao>
+            <designacao>Clinico Geral</designacao>
+          </especialidade>
+          <id>5</id>
+          <nome>Lucas</nome>
+          <CPF>123.456.789-09</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>3</id>
+        <dataHora>2016-05-30 00:09:55.724 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>4</id>
+        <dataHora>2016-05-30 00:09:56.732 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>5</id>
+        <dataHora>2016-05-30 00:09:58.282 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>6</id>
+        <dataHora>2016-05-30 00:09:59.250 GFT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/paciente"/>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario" reference="../../clinicaVeterinaria.dominio.ConsultaVeterinario/especialista"/>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+    </atendimento>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>Cock</raca>
+      <especie>DOG</especie>
+      <idade>12</idade>
+      <id>2</id>
+      <nome>Dino</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>teste@gmail.com</email>
+        <id>0</id>
+        <nome>Victor Gustavo</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+  </clinicaVeterinaria.dominio.ProntuarioAnimal>
+  <clinicaVeterinaria.dominio.ProntuarioAnimal>
+    <dataCriacao>2016-05-30 00:15:14.375 GFT</dataCriacao>
+    <id>3</id>
+    <atendimento/>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>Pitbull</raca>
+      <especie>DOG</especie>
+      <idade>1 ano</idade>
+      <id>3</id>
+      <nome>Thor</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>teste@gmail.com</email>
+        <id>0</id>
+        <nome>Victor Gustavo</nome>
+        <CPF>999.999.999-99</CPF>
+      </responsavel>
+    </paciente>
+  </clinicaVeterinaria.dominio.ProntuarioAnimal>
+  <clinicaVeterinaria.dominio.ProntuarioAnimal>
+    <dataCriacao>2016-05-30 00:15:58.698 GFT</dataCriacao>
+    <id>4</id>
+    <atendimento/>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>BullDog</raca>
+      <especie>DOG</especie>
+      <idade>3 anos</idade>
+      <id>4</id>
+      <nome>MisterM</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(99)9999-9999</telefone>
+        <email>teste@gmail.com</email>
+        <id>0</id>
+        <nome>Victor Gustavo</nome>
+        <CPF>999.999.999-99</CPF>
       </responsavel>
     </paciente>
   </clinicaVeterinaria.dominio.ProntuarioAnimal>

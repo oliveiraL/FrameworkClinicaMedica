@@ -605,10 +605,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
 
             if (nomeAnimal.equalsIgnoreCase(animal.getNome())) {
-                jTable1.getModel().setValueAt(animal.getNome(), linhas, 0);
-                jTable1.getModel().setValueAt(animal.getIdade(), linhas, 1);
-                jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 2);
-                jTable1.getModel().setValueAt(animal.getRaca(), linhas, 3);
+                jTable1.getModel().setValueAt(animal.getId(), linhas, 0);
+            jTable1.getModel().setValueAt(animal.getNome(), linhas, 1);
+            jTable1.getModel().setValueAt(animal.getIdade(), linhas, 2);
+            jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 3);
+            jTable1.getModel().setValueAt(animal.getRaca(), linhas, 4);
                 linhas++;
             }
         }
