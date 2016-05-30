@@ -34,7 +34,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     
     
     public GerenciarPacienteUI() {
-        gerenciarPacienteController = new GerenciarPacienteController("xmlVeterinaria");
+        gerenciarPacienteController = new GerenciarPacienteController("xmlEstetica");
         initComponents();
     }
 
@@ -271,6 +271,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
                 return canEdit [columnIndex];
             }
         });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -443,6 +448,10 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         dispose();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
