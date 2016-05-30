@@ -5,18 +5,26 @@ import dominio.AgendamentoAtendimento;
 
 public class NotificarAtendimento {
 
+    private Notificacao notificacao;
 
-	private Notificacao notificacao;
+    public NotificarAtendimento() {
+    }
 
-	/**
-	 *  
-	 */
-	public void notificarAgendamento(AgendamentoAtendimento agendamento) {
-                
-	}
+    public NotificarAtendimento(Notificacao notificacao) {
+        this.notificacao = notificacao;
+    }
+    
+    
 
-	public void notificarCandelamento(AgendamentoAtendimento agendamento) {
+    /**
+     *
+     */
+    public void notificarAgendamento(AgendamentoAtendimento agendamento) {
+        notificacao.enviar();
+    }
 
-	}
+    public void notificarCandelamento(AgendamentoAtendimento agendamento) {
+        notificacao.enviar();
+    }
 
 }
