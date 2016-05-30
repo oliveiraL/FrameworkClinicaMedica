@@ -13,7 +13,7 @@ import validacoes.ValidacaoException;
  * @author lucio
  */
 public class ConsultaVeterinario extends AtendimentoPrivado{
-
+    
     @Override
     public Double valorAtendimento() {
         return 100.0;
