@@ -1,5 +1,6 @@
 package controller;
 
+import clinicaEstetica.dominio.PacienteEstetica;
 import dao.PacienteDao;
 import dominio.Paciente;
 import java.util.ArrayList;
@@ -51,6 +52,17 @@ public class GerenciarPacienteController {
         ArrayList<Paciente> pacientesResposavel = new ArrayList<>();
         for(Paciente p: pacientes){
             if(p.getResponsavel().getCPF().equals(cpfResponsalvel))
+                pacientesResposavel.add(p);
+        }
+        return pacientesResposavel;
+    }
+    
+    public ArrayList<Paciente> buscarPacienteCPF(String CPF){
+        ArrayList<Paciente> pacientes = pacienteDao.listar();
+        ArrayList<Paciente> pacientesResposavel = new ArrayList<>();
+        for(Paciente p: pacientes){
+            PacienteEstetica n = (PacienteEstetica) p ; 
+            if(n.getCPF().equals(CPF))
                 pacientesResposavel.add(p);
         }
         return pacientesResposavel;
