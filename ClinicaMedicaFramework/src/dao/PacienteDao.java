@@ -4,10 +4,8 @@ import dominio.Paciente;
 
 public class PacienteDao extends GenericDao<Paciente> {
 
-    public PacienteDao() {
-        super(System.getProperty("user.dir") + "/src/xmlEstetica/paciente.xml");
-        
-        System.out.println(System.getProperty("user.dir") + "/src/xmlEstetica/paciente.xml");
+    public PacienteDao(String pacote) {
+        super(System.getProperty("user.dir") + "/src/"+pacote+"/paciente.xml");
     }
 
     public boolean existe(Paciente paciente) {
@@ -32,8 +30,9 @@ public class PacienteDao extends GenericDao<Paciente> {
             }
             i++;
         }
-        listagem.remove(alterar);
-        listagem.add(i,paciente);
+        System.err.println(alterar.getNome());
+        listagem.remove(i);
+        listagem.add(paciente);
         super.atualizar();
     }
 

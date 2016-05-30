@@ -410,11 +410,16 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
                 Animal animal;
                 animal = (Animal) paciente;
                 animalAtual = animal;
-            
+                DonoAnimal dono = (DonoAnimal) animal.getResponsavel();
                 txtNome.setText(animal.getNome());
                 txtEspecie.setText(animal.getEspecie());
                 txtRaca.setText(animal.getRaca());
                 txtIdade.setText(animal.getIdade());
+                
+                txtNomeResposavel.setText(dono.getNome());
+                txtCPFResponsavel.setText(dono.getCPF());
+                txtEmail.setText(dono.getEmail());
+                txtTelefone.setText(dono.getTelefone());
                 
                 
         }
@@ -539,7 +544,12 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     public void removerPaciente() {
         int index = jTable1.getSelectedRow();
         Integer id = (Integer) jTable1.getValueAt(index, 0);
-        Paciente paciente = gerenciarPaciente.listarPacientes().get(id);
+        Paciente paciente = null;
+        try {
+            paciente = gerenciarPaciente.buscarPaciente(id.intValue());
+        } catch (ValidacaoException ex) {
+            Logger.getLogger(GerenciarPacienteUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         gerenciarPaciente.removerPaciene(paciente);
     }
 

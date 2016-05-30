@@ -11,7 +11,7 @@ public class GerenciarPacienteController {
     GerenciarProntuarioController gerenciarProntuario;
 
     public GerenciarPacienteController() {
-        pacienteDao = new PacienteDao();
+        pacienteDao = new PacienteDao("xmlVeterinaria");
         gerenciarProntuario = new GerenciarProntuarioController();
     }
     
@@ -43,6 +43,8 @@ public class GerenciarPacienteController {
         }
         throw new ValidacaoException("Paciente não cadastrado.");
     }
+    
+   
 
     public ArrayList<Paciente> buscarPacienteResponsavel(String cpfResponsalvel){
         ArrayList<Paciente> pacientes = pacienteDao.listar();

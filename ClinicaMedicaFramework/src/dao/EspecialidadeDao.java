@@ -11,8 +11,8 @@ import dominio.Especialidade;
  */
 public class EspecialidadeDao extends GenericDao<Especialidade>{
     
-    public EspecialidadeDao() {
-        super(System.getProperty("user.dir")+ "/src/xmlVeterinaria/especialidade.xml");
+    public EspecialidadeDao(String pacote) {
+        super(System.getProperty("user.dir") + "/src/"+pacote+"/especialidade.xml");
     }
     
     public void salvar(Especialidade especialidade) {

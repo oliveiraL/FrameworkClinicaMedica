@@ -12,7 +12,7 @@ public class GerenciarEspecialistaController {
    
 
     public GerenciarEspecialistaController() {
-        especialistaDao = new EspecialistaDao();
+        especialistaDao = new EspecialistaDao("xmlVeterinaria");
     }
 
     /**

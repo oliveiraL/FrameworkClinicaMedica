@@ -13,7 +13,7 @@ public class AgendamentoController {
     private AgendamentoDao agendamentoDao;
 
     public AgendamentoController() {
-        agendamentoDao = new AgendamentoDao();
+        agendamentoDao = new AgendamentoDao("xmlVeterinaria");
     }
 
     public void agendamento(AgendamentoAtendimento agendamento) throws ValidacaoException {

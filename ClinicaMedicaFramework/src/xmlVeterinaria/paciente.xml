@@ -1,26 +1,16 @@
 <list>
   <clinicaVeterinaria.dominio.Animal>
-    <raca>Pitbull</raca>
-    <especie>cao</especie>
-    <idade>2 anos</idade>
+    <raca>labrador</raca>
+    <especie>cão</especie>
+    <idade>3 meses</idade>
     <id>1</id>
-    <nome>Thor</nome>
+    <nome>jack</nome>
     <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
-      <telefone>(99)9999-9999</telefone>
-      <email>teste@gmail.com</email>
+      <telefone>(11)1111-1111</telefone>
+      <email>seila@gmail.com</email>
       <id>0</id>
-      <nome>teste</nome>
-      <CPF>999.999.999-99</CPF>
+      <nome>lucio</nome>
+      <CPF>222.222.222-22</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
-  <clinicaEstetica.dominio.Pacientep>
-    <telefone>(99) 9 9999 - 9999</telefone>
-    <idade>18</idade>
-    <CPF>999 . 999 . 999 - 99</CPF>
-    <id>2</id>
-    <nome>victor gustavo</nome>
-    <responsavel>
-      <id>0</id>
-    </responsavel>
-  </clinicaEstetica.dominio.Pacientep>
 </list>

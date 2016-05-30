@@ -9,8 +9,11 @@ public abstract class Paciente {
     private String nome;
 
     private Responsavel responsavel;
+    
+    private PlanoDeSaude plano;
 
-    public Paciente(String nome, Responsavel responsavel) {
+    public Paciente(String nome, Responsavel responsavel,PlanoDeSaude plano) {
+        this.plano = plano;
         this.nome = nome;
         this.responsavel = responsavel;
     }
@@ -46,6 +49,14 @@ public abstract class Paciente {
 
     public void setResponsavel(Responsavel responsavel) {
         this.responsavel = responsavel;
+    }
+
+    public PlanoDeSaude getPlano() {
+        return plano;
+    }
+
+    public void setPlano(PlanoDeSaude plano) {
+        this.plano = plano;
     }
 
 }
