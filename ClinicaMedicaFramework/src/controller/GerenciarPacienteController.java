@@ -54,6 +54,16 @@ public class GerenciarPacienteController {
         return pacientesResposavel;
     }
     
+     public ArrayList<Paciente> buscarPacienteNome(String nome) throws ValidacaoException{
+        ArrayList<Paciente> pacientes = pacienteDao.listar();
+        ArrayList<Paciente> pacientesResposavel = new ArrayList<>();
+        for(Paciente p: pacientes){
+            if(p.getNome().equalsIgnoreCase(nome))
+                pacientesResposavel.add(p);
+        }
+        return pacientesResposavel;
+    }
+    
     
     public ArrayList<Paciente> listarPacientes() {
         System.err.println(pacienteDao.caminho);

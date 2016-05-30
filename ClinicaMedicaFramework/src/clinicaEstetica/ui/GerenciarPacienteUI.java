@@ -5,12 +5,13 @@
  */
 package clinicaEstetica.ui;
 
-import clinicaEstetica.dominio.Pacientep;
+import clinicaEstetica.dominio.PacienteEstetica;
 import clinicaVeterinaria.dominio.ProntuarioAnimal;
 import controller.GerenciarPacienteController;
 import dominio.Paciente;
 import dominio.Responsavel;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -126,6 +127,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         });
 
         cancelar.setText("Cancelar");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("Responsavel");
@@ -275,6 +281,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         jLabel8.setText("Nome:");
 
         jButton4.setText("BuscarNome");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         listar.setText("Listar");
         listar.addActionListener(new java.awt.event.ActionListener() {
@@ -420,6 +431,19 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
        removerPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+          try {
+              limparTabela();
+              buscarNomePaciente();
+          } catch (ValidacaoException ex) {
+              Logger.getLogger(GerenciarPacienteUI.class.getName()).log(Level.SEVERE, null, ex);
+          }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_cancelarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -499,9 +523,14 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         String CPF   = jFormattedTextField1.getText();
         String telefone = jFormattedTextField2.getText();
         String email = jTextField4.getText();
-        Responsavel  responsavel = new Responsavel();
-        Paciente pacienteEstetica = new Pacientep(nome, telefone, idade, CPF, responsavel);
         
+        String nomeResponsavel = jTextField5.getText();
+        String CPFResponsavel = jFormattedTextField3.getText();
+        
+        Responsavel  responsavel = new Responsavel(nomeResponsavel, CPFResponsavel);
+        
+        
+        Paciente pacienteEstetica = new PacienteEstetica(nome, telefone, idade, CPF, responsavel);
        try{
         if (!jTextField1.getText().trim().equals("") && !jTextField3.getText().trim().equals("") && !jFormattedTextField1.getText().trim()
                     .equals("") && !jFormattedTextField2.getText().trim().equals("") && !jTextField2.getText().trim().equals("")) {
@@ -540,7 +569,9 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     public void removerPaciente() {
         int index = jTable1.getSelectedRow();
         Integer id = (Integer) jTable1.getValueAt(index, 0);
+        System.out.print(id);
         Paciente paciente = gerenciarPacienteController.listarPacientes().get(id);
+        System.out.print("##############" + paciente.getNome());
         gerenciarPacienteController.removerPaciene(paciente);
     }
 
@@ -549,11 +580,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         
         limparTabela();
         int linhas = 0;
-        Pacientep pacienteEstetica;
+        PacienteEstetica pacienteEstetica;
 
         for (Paciente paciente : gerenciarPacienteController.listarPacientes()) {
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
-            pacienteEstetica = (Pacientep)paciente;
+            pacienteEstetica = (PacienteEstetica)paciente;
             
             jTable1.getModel().setValueAt(pacienteEstetica.getId(), linhas, 0);
             jTable1.getModel().setValueAt(pacienteEstetica.getNome(), linhas, 1);
@@ -570,8 +601,28 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    /*
-     Limpar a tabela, antes de realizar uma busca
+    
+    public void buscarNomePaciente() throws ValidacaoException{
+        String nome = jTextField4.getText();
+        ArrayList<Paciente> paciente = gerenciarPacienteController.buscarPacienteNome(nome);
+        int linhas = 0;
+        
+        for(int i =0 ; i <= paciente.size() ;i++){
+            ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
+
+                PacienteEstetica pacienteEstetica = (PacienteEstetica)paciente.get(i);
+                        
+                jTable1.getModel().setValueAt(pacienteEstetica.getId(), linhas, 0);
+                jTable1.getModel().setValueAt(pacienteEstetica.getNome(), linhas, 1);
+                jTable1.getModel().setValueAt(pacienteEstetica.getIdade(), linhas, 2);
+                jTable1.getModel().setValueAt(pacienteEstetica.getEmail(), linhas, 3);
+                linhas++;
+            
+        }
+    }
+    /**
+     * Limpa a table 
+     * 
      */
      public void limparTabela() {
         while (jTable1.getRowCount() > 0) {
