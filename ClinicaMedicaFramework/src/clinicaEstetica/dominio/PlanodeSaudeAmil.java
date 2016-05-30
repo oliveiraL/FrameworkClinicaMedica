@@ -16,7 +16,7 @@ public class PlanodeSaudeAmil  extends PlanoDeSaude{
     @Override
     public void regrasPagamento(Double valor) {
         if(valor > 100){
-            valor*0.8;
+            valor*=0.8;
         }
     }
     
