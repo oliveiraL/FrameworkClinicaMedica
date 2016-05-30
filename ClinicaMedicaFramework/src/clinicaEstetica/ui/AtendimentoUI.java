@@ -5,6 +5,7 @@
  */
 package clinicaEstetica.ui;
 
+import clinicaEstetica.dominio.ConsultaEsteticaPrivado;
 import clinicaEstetica.dominio.ProntuarioEstetica;
 import clinicaEstetica.dominio.PacienteEstetica;
 import clinicaVeterinaria.dominio.Animal;
@@ -472,7 +473,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
             if (!txtDescricaoT.getText().isEmpty()) {
                 preescreverTratamento();
             }
-            ConsultaVeterinario consulta = new ConsultaVeterinario();
+            ConsultaEsteticaPrivado consulta = new ConsultaEsteticaPrivado(queixaPrincipal, historString);
             consulta.setDataHora(new Date());
             consulta.setDiagnosticoAtendimentos(diagnostico);
             consulta.setTratamentos(tratamento);
