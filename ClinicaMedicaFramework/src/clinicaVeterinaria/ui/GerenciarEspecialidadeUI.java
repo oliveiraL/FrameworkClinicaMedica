@@ -22,7 +22,7 @@ public class GerenciarEspecialidadeUI extends javax.swing.JFrame {
      */
     public GerenciarEspecialidadeUI() {
         initComponents();
-        gerenciarEspecialidade = new GerenciarEspecialidadeController();
+        gerenciarEspecialidade = new GerenciarEspecialidadeController("xmlVeterinaria");
     }
 
     /**

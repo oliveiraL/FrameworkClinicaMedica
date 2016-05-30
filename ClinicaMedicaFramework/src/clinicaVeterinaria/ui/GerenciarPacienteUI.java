@@ -39,8 +39,8 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
      */
     public GerenciarPacienteUI() {
         initComponents();
-        gerenciarPaciente = new GerenciarPacienteController();
-        gerenciarProntuario = new GerenciarProntuarioController();
+        gerenciarPaciente = new GerenciarPacienteController("xmlVeterinaria");
+        gerenciarProntuario = new GerenciarProntuarioController("xmlVeterinaria");
     }
 
     /**

@@ -35,8 +35,8 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGer
      */
     public GerenciarEspecialistaUI() {
         initComponents();
-        gerenciarEspecialidade = new GerenciarEspecialidadeController();
-        gerenciarEspecialista = new GerenciarEspecialistaController();
+        gerenciarEspecialidade = new GerenciarEspecialidadeController("xmlVeterinaria");
+        gerenciarEspecialista = new GerenciarEspecialistaController("xmlVeterinaria");
     }
 
     /**

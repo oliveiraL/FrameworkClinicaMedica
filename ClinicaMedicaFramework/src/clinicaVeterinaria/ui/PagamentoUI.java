@@ -32,7 +32,7 @@ public class PagamentoUI extends javax.swing.JFrame implements UiPagamentoAtendi
 
     public PagamentoUI(Animal animal) {
         this.animal = animal;
-        pagamentoAtendimento = new PagamentoAtendimentoController();
+        pagamentoAtendimento = new PagamentoAtendimentoController("xmlVeterinaria");
         initComponents();
     }
 

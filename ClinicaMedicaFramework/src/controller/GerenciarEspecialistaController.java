@@ -11,8 +11,8 @@ public class GerenciarEspecialistaController {
     private EspecialistaDao especialistaDao;
    
 
-    public GerenciarEspecialistaController() {
-        especialistaDao = new EspecialistaDao("xmlVeterinaria");
+    public GerenciarEspecialistaController(String pacote) {
+        especialistaDao = new EspecialistaDao(pacote);
     }
 
     /**

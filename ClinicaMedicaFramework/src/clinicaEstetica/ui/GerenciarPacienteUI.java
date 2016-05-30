@@ -6,7 +6,6 @@
 package clinicaEstetica.ui;
 
 import clinicaEstetica.dominio.PacienteEstetica;
-import clinicaVeterinaria.dominio.ProntuarioAnimal;
 import controller.GerenciarPacienteController;
 import dominio.Paciente;
 import dominio.Responsavel;
@@ -30,11 +29,12 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     /**
      * Creates new form GerenciarPacienteUI
      */
-      GerenciarPacienteController gerenciarPacienteController = new GerenciarPacienteController();
+      GerenciarPacienteController gerenciarPacienteController;
     
     
     
     public GerenciarPacienteUI() {
+        gerenciarPacienteController = new GerenciarPacienteController("xmlVeterinaria");
         initComponents();
     }
 

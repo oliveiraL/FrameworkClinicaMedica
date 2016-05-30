@@ -10,9 +10,9 @@ public class GerenciarPacienteController {
     private PacienteDao pacienteDao;
     GerenciarProntuarioController gerenciarProntuario;
 
-    public GerenciarPacienteController() {
-        pacienteDao = new PacienteDao("xmlVeterinaria");
-        gerenciarProntuario = new GerenciarProntuarioController();
+    public GerenciarPacienteController(String pacote) {
+        pacienteDao = new PacienteDao(pacote);
+        gerenciarProntuario = new GerenciarProntuarioController(pacote);
     }
     
     

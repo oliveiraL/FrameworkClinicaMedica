@@ -13,9 +13,9 @@ public class AtendimentoController {
     AtendimentoDao atendimentoDao;
     GerenciarProntuarioController gerenciarProntuario;
 
-    public AtendimentoController() {
-        gerenciarProntuario = new GerenciarProntuarioController();
-        atendimentoDao = new AtendimentoDao("xmlVeterinaria");
+    public AtendimentoController(String pacote) {
+        gerenciarProntuario = new GerenciarProntuarioController(pacote);
+        atendimentoDao = new AtendimentoDao(pacote);
     }
 
     /**

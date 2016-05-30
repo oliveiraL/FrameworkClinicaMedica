@@ -13,9 +13,9 @@ public class PagamentoAtendimentoController {
     private GerenciarProntuarioController gerenciarProntuario;
     private ArrayList<Atendimento> ats;
     private Prontuario prontuario;
-    public PagamentoAtendimentoController() {
-        gerenciarProntuario = new GerenciarProntuarioController();
-        atendimentoDao = new AtendimentoDao("xmlVeterinaria");
+    public PagamentoAtendimentoController(String pacote) {
+        gerenciarProntuario = new GerenciarProntuarioController(pacote);
+        atendimentoDao = new AtendimentoDao(pacote);
         ats = new ArrayList<>();
     }
 

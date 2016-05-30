@@ -41,10 +41,10 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento {
      */
     public AgendamentoUI() {
         initComponents();
-        gerenciarEspecialidade = new GerenciarEspecialidadeController();
-        gerenciarEspecialista = new GerenciarEspecialistaController();
-        gerenciarPaciente = new GerenciarPacienteController();
-        agendamento = new AgendamentoController();
+        gerenciarEspecialidade = new GerenciarEspecialidadeController("xmlVeterinaria");
+        gerenciarEspecialista = new GerenciarEspecialistaController("xmlVeterinaria");
+        gerenciarPaciente = new GerenciarPacienteController("xmlVeterinaria");
+        agendamento = new AgendamentoController("xmlVeterinaria");
     }
 
     /**

@@ -43,9 +43,9 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
      * Creates new form AtendimentoUI
      */
     public AtendimentoUI() {
-        atendimentoController = new AtendimentoController();
-        especialistaController = new GerenciarEspecialistaController();
-        gerenciarProntuario = new GerenciarProntuarioController();
+        atendimentoController = new AtendimentoController("xmlVeterinaria");
+        especialistaController = new GerenciarEspecialistaController("xmlVeterinaria");
+        gerenciarProntuario = new GerenciarProntuarioController("xmlVeterinaria");
         initComponents();
     }
 

@@ -12,8 +12,8 @@ public class AgendamentoController {
 
     private AgendamentoDao agendamentoDao;
 
-    public AgendamentoController() {
-        agendamentoDao = new AgendamentoDao("xmlVeterinaria");
+    public AgendamentoController(String pacote) {
+        agendamentoDao = new AgendamentoDao(pacote);
     }
 
     public void agendamento(AgendamentoAtendimento agendamento) throws ValidacaoException {

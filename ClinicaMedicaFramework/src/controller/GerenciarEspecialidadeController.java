@@ -17,8 +17,8 @@ import java.util.List;
 public class GerenciarEspecialidadeController {
     private EspecialidadeDao especialidadeDao;
 
-    public GerenciarEspecialidadeController() {
-        especialidadeDao = new EspecialidadeDao("xmlVeterinaria");
+    public GerenciarEspecialidadeController(String pacote) {
+        especialidadeDao = new EspecialidadeDao(pacote);
     }
     
     public void cadastrar(Especialidade especialidade){

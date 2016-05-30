@@ -30,7 +30,7 @@ public class InicioAtendimentoUI extends javax.swing.JFrame {
      * Creates new form AtendimentoUI
      */
     public InicioAtendimentoUI() {
-        gerenciarPaciente = new GerenciarPacienteController();
+        gerenciarPaciente = new GerenciarPacienteController("xmlVeterinaria");
         initComponents();
     }
 
