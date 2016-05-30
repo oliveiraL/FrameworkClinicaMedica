@@ -9,8 +9,8 @@ import java.util.Date;
 
 public class AgendamentoDao extends GenericDao<AgendamentoAtendimento>{
 
-    public AgendamentoDao() {
-        super(System.getProperty("user.dir")+ "/src/xmlVeterinaria/agendamento.xml");
+    public AgendamentoDao(String pacote) {
+        super(System.getProperty("user.dir") + "/src/"+pacote+"/agendamento.xml");
     }
     
     public void salvar(AgendamentoAtendimento agendamento) {

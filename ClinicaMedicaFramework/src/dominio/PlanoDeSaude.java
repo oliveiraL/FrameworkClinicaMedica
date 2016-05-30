@@ -1,6 +1,6 @@
 package dominio;
 
-public class PlanoDeSaude {
+public abstract class PlanoDeSaude {
 
 	private int id;
 
@@ -8,10 +8,6 @@ public class PlanoDeSaude {
 
 	private String registro;
 
-	private AtendimentoPrivado atendimentoPrivado;
-
-	public void regrasPagamento(Double valor) {
-
-	}
+	public abstract void regrasPagamento(Double valor);
 
 }

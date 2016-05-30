@@ -18,7 +18,7 @@ public class GerenciarEspecialidadeController {
     private EspecialidadeDao especialidadeDao;
 
     public GerenciarEspecialidadeController() {
-        especialidadeDao = new EspecialidadeDao();
+        especialidadeDao = new EspecialidadeDao("xmlVeterinaria");
     }
     
     public void cadastrar(Especialidade especialidade){

@@ -523,14 +523,11 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         String CPF   = jFormattedTextField1.getText();
         String telefone = jFormattedTextField2.getText();
         String email = jTextField4.getText();
-        
         String nomeResponsavel = jTextField5.getText();
         String CPFResponsavel = jFormattedTextField3.getText();
         
-        Responsavel  responsavel = new Responsavel(nomeResponsavel, CPFResponsavel);
-        
-        
-        Paciente pacienteEstetica = new PacienteEstetica(nome, telefone, idade, CPF, responsavel);
+        Responsavel  responsavel = new Responsavel(nomeResponsavel, CPFResponsavel);    
+        Paciente pacienteEstetica = new PacienteEstetica(nome, telefone, idade, CPF, responsavel,null);
        try{
         if (!jTextField1.getText().trim().equals("") && !jTextField3.getText().trim().equals("") && !jFormattedTextField1.getText().trim()
                     .equals("") && !jFormattedTextField2.getText().trim().equals("") && !jTextField2.getText().trim().equals("")) {

@@ -11,7 +11,7 @@ public class GerenciarProntuarioController {
     private ProntuarioDao prontuarioDao;
 
     public GerenciarProntuarioController() {
-        prontuarioDao = new ProntuarioDao();
+        prontuarioDao = new ProntuarioDao("xmlVeterinaria");
     }
 
     /**

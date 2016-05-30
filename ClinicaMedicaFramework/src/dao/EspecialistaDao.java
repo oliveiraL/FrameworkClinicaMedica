@@ -8,8 +8,8 @@ import dominio.Especialista;
 public class EspecialistaDao extends GenericDao<Especialista>{
 
 
-    public EspecialistaDao() {
-        super(System.getProperty("user.dir")+ "/src/xmlVeterinaria/especialista.xml");
+    public EspecialistaDao(String pacote) {
+        super(System.getProperty("user.dir") + "/src/"+pacote+"/especialista.xml");
         System.out.println(listagem.size());
         
     }

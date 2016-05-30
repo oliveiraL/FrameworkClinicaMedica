@@ -311,12 +311,8 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
                 
                 Atendimento att = atendimentoController.buscarAtendimento(id);
                 
-                JOptionPane.showConfirmDialog(this, att.getPaciente().getNome());
-                JOptionPane.showConfirmDialog(this, att.getDiagnosticoAtendimentos());
-                JOptionPane.showConfirmDialog(this, att.getTratamentos());
-                
-                GerenciarProntuarioUI prontuario = new GerenciarProntuarioUI();
-                prontuario.iniciarProntuario(att);
+                ProntuarioVisualizarUI prontuario = new ProntuarioVisualizarUI((ConsultaVeterinario) att);
+               // prontuario.iniciarProntuario(att);
                 prontuario.show();
                 
                 
@@ -409,7 +405,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento {
     }
 
     private void preencherTabela(ProntuarioAnimal prontuario) {
-        System.err.println(prontuario);
+      //  System.err.println(prontuario);
         int linhas = 0;
             for (Atendimento atendimento : prontuario.getAtendimento()) {
                 ((DefaultTableModel) grade.getModel()).addRow(new Vector());

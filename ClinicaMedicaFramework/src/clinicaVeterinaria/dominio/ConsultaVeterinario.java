@@ -21,7 +21,6 @@ public class ConsultaVeterinario extends AtendimentoPrivado{
 
     @Override
     public void validarAtendimento() throws ValidacaoException{
-        System.err.println("oi");
         if(getDiagnosticoAtendimentos() == null && getTratamentos() ==null )
             throw new ValidacaoException("Atendimento tem que ter um diagnostico ou um tratamento.");
         System.out.println("clinicaVeterinaria.dominio.ConsultaVeterinario.validarAtendimento()");

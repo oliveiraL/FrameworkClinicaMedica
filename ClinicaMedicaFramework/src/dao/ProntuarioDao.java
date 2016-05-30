@@ -9,8 +9,8 @@ import dominio.Prontuario;
 
 public class ProntuarioDao extends GenericDao<Prontuario>{
 
-    public ProntuarioDao() {
-        super(System.getProperty("user.dir")+ "/src/xmlVeterinaria/prontuario.xml");
+    public ProntuarioDao(String pacote) {
+        super(System.getProperty("user.dir") + "/src/"+pacote+"/prontuario.xml");
     }
     
     public void salvar(Prontuario prontuario) {
@@ -23,14 +23,14 @@ public class ProntuarioDao extends GenericDao<Prontuario>{
 
     public void atualizar(Prontuario prontuario) {
         int i = 0;
-        Prontuario alterar = null;
         for (Prontuario aux : listagem) {
             if (aux.getId() == prontuario.getId()) {
-                alterar = prontuario;                
+                break;
             }
             i++;
         }
-        listagem.remove(alterar);
+        System.err.println(i+" "+prontuario.getId());
+        listagem.remove(i);
         listagem.add(prontuario);
         super.atualizar();
     }

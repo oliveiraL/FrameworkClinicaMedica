@@ -8,6 +8,7 @@ package clinicaEstetica.dominio;
 import validacoes.ValidacaoException;
 
 import dominio.Paciente;
+import dominio.PlanoDeSaude;
 import dominio.Responsavel;
 import validacoes.ValidacaoException;
 
@@ -24,8 +25,8 @@ public class PacienteEstetica extends Paciente{
     public PacienteEstetica() {
     }
 
-    public PacienteEstetica(String nome,String telefone, int idade,String CPF, Responsavel responsavel) {
-        super(nome, responsavel);
+    public PacienteEstetica(String nome,String telefone, int idade,String CPF, Responsavel responsavel,PlanoDeSaude plano) {
+        super(nome, responsavel,plano);
         this.telefone = telefone;
         this.idade = idade;
         this.CPF = CPF;

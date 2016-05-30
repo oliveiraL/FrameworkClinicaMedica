@@ -22,7 +22,7 @@ public class Animal extends Paciente{
     }
 
     public Animal(String nome,String raca, String especie, String idade, Responsavel responsavel) {
-        super(nome, responsavel);
+        super(nome, responsavel,null);
         this.raca = raca;
         this.especie = especie;
         this.idade = idade;

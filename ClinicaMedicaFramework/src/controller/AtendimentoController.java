@@ -1,6 +1,6 @@
 package controller;
 
-import dao.AtendimentoPrivadoDao;
+import dao.AtendimentoDao;
 import dao.ProntuarioDao;
 import dominio.Atendimento;
 import dominio.AtendimentoPrivado;
@@ -10,12 +10,12 @@ import validacoes.ValidacaoException;
 
 public class AtendimentoController {
 
-    AtendimentoPrivadoDao atendimentoDao;
+    AtendimentoDao atendimentoDao;
     GerenciarProntuarioController gerenciarProntuario;
 
     public AtendimentoController() {
         gerenciarProntuario = new GerenciarProntuarioController();
-        atendimentoDao = new AtendimentoPrivadoDao();
+        atendimentoDao = new AtendimentoDao("xmlVeterinaria");
     }
 
     /**
