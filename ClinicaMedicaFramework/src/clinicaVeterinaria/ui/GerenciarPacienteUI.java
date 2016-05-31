@@ -391,10 +391,10 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
 
     private void removerPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerPacienteActionPerformed
         int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir?");
-            if (resposta == JOptionPane.YES_OPTION) {
-                removerPaciente();
-                listarPaciente();
-            }
+        if (resposta == JOptionPane.YES_OPTION) {
+            removerPaciente();
+            listarPaciente();
+        }
     }//GEN-LAST:event_removerPacienteActionPerformed
 
     private void AlterarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarPacienteActionPerformed
@@ -405,23 +405,22 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         clickMouse++;
         if (clickMouse == 2) {
             clickMouse = 0;
-                int index = jTable1.getSelectedRow();
-                Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
-                Animal animal;
-                animal = (Animal) paciente;
-                animalAtual = animal;
-                DonoAnimal dono = (DonoAnimal) animal.getResponsavel();
-                txtNome.setText(animal.getNome());
-                txtEspecie.setText(animal.getEspecie());
-                txtRaca.setText(animal.getRaca());
-                txtIdade.setText(animal.getIdade());
-                
-                txtNomeResposavel.setText(dono.getNome());
-                txtCPFResponsavel.setText(dono.getCPF());
-                txtEmail.setText(dono.getEmail());
-                txtTelefone.setText(dono.getTelefone());
-                
-                
+            int index = jTable1.getSelectedRow();
+            Paciente paciente = gerenciarPaciente.listarPacientes().get(index);
+            Animal animal;
+            animal = (Animal) paciente;
+            animalAtual = animal;
+            DonoAnimal dono = (DonoAnimal) animal.getResponsavel();
+            txtNome.setText(animal.getNome());
+            txtEspecie.setText(animal.getEspecie());
+            txtRaca.setText(animal.getRaca());
+            txtIdade.setText(animal.getIdade());
+
+            txtNomeResposavel.setText(dono.getNome());
+            txtCPFResponsavel.setText(dono.getCPF());
+            txtEmail.setText(dono.getEmail());
+            txtTelefone.setText(dono.getTelefone());
+
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -507,20 +506,20 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         String telefone = txtTelefone.getText();
         String email = txtEmail.getText();
         Paciente animal = new Animal(nomeAnimal, raca, especie, idade, new DonoAnimal(nomeResponsavel, cpf, telefone, email));
-        
+
         try {
 
             if (!txtNome.getText().trim().equals("") && !txtRaca.getText().trim().equals("") && !txtEspecie.getText().trim()
                     .equals("") && !txtIdade.getText().trim().equals("") && !txtNomeResposavel.getText().trim().equals("")
                     && !txtCPFResponsavel.getText().trim().equals("")) {
-                
+
                 messageCadastro.setForeground(Color.GREEN);
                 gerenciarPaciente.cadastrarPaciente(animal);
                 ProntuarioAnimal prontuario = new ProntuarioAnimal();
                 prontuario.setPaciente(animal);
                 gerenciarProntuario.cadastrarProntuario(prontuario);
                 messageCadastro.setText("Cadastro realizado com Sucesso!");
-                
+
                 /*Limpando os Campos - Pós Cadastro*/
                 txtNome.setText(null);
                 txtRaca.setText(null);
@@ -530,7 +529,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
                 txtCPFResponsavel.setText(null);
                 txtTelefone.setText(null);
                 txtEmail.setText(null);
-                
+
             } else {
                 messageCadastro.setForeground(Color.red);
                 messageCadastro.setText("Preencha todos os campos!");
@@ -562,7 +561,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         for (Paciente paciente : gerenciarPaciente.listarPacientes()) {
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
             animal = (Animal) paciente;
-            
+
             jTable1.getModel().setValueAt(animal.getId(), linhas, 0);
             jTable1.getModel().setValueAt(animal.getNome(), linhas, 1);
             jTable1.getModel().setValueAt(animal.getIdade(), linhas, 2);
@@ -579,13 +578,12 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         String raca = txtRaca.getText();
         String especie = txtEspecie.getText();
         String idade = txtIdade.getText();
-        
-        
+
         animalAtual.setEspecie(especie);
         animalAtual.setIdade(idade);
         animalAtual.setNome(nomeAnimal);
         animalAtual.setRaca(raca);
-        
+
         try {
             gerenciarPaciente.alterarPaciente(animalAtual);
         } catch (ValidacaoException ex) {
@@ -606,10 +604,10 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
 
             if (nomeAnimal.equalsIgnoreCase(animal.getNome())) {
                 jTable1.getModel().setValueAt(animal.getId(), linhas, 0);
-            jTable1.getModel().setValueAt(animal.getNome(), linhas, 1);
-            jTable1.getModel().setValueAt(animal.getIdade(), linhas, 2);
-            jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 3);
-            jTable1.getModel().setValueAt(animal.getRaca(), linhas, 4);
+                jTable1.getModel().setValueAt(animal.getNome(), linhas, 1);
+                jTable1.getModel().setValueAt(animal.getIdade(), linhas, 2);
+                jTable1.getModel().setValueAt(animal.getEspecie(), linhas, 3);
+                jTable1.getModel().setValueAt(animal.getRaca(), linhas, 4);
                 linhas++;
             }
         }

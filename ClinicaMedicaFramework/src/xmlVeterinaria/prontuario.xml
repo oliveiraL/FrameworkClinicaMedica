@@ -157,6 +157,25 @@
     </paciente>
   </clinicaVeterinaria.dominio.ProntuarioAnimal>
   <clinicaVeterinaria.dominio.ProntuarioAnimal>
+    <dataCriacao>2016-05-30 14:58:57.647 BRT</dataCriacao>
+    <id>5</id>
+    <atendimento/>
+    <paciente class="clinicaVeterinaria.dominio.Animal">
+      <raca>gato</raca>
+      <especie>gato</especie>
+      <idade>3</idade>
+      <id>5</id>
+      <nome>cindy</nome>
+      <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+        <telefone>(11)1111-1111</telefone>
+        <email>seila@gmail.com</email>
+        <id>0</id>
+        <nome>lucio</nome>
+        <CPF>222.222.222-22</CPF>
+      </responsavel>
+    </paciente>
+  </clinicaVeterinaria.dominio.ProntuarioAnimal>
+  <clinicaVeterinaria.dominio.ProntuarioAnimal>
     <dataCriacao>2016-05-29 21:35:03.207 BRT</dataCriacao>
     <id>1</id>
     <atendimento>
@@ -314,6 +333,45 @@
         <diagnosticoAtendimentos>
           <id>0</id>
           <descricao>Animal DOente		</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaVeterinaria.dominio.ConsultaVeterinario>
+      <clinicaVeterinaria.dominio.ConsultaVeterinario>
+        <procedimentoPago>true</procedimentoPago>
+        <id>10</id>
+        <dataHora>2016-05-30 15:02:09.54 BRT</dataHora>
+        <paciente class="clinicaVeterinaria.dominio.Animal">
+          <raca>labrador</raca>
+          <especie>cão</especie>
+          <idade>3 meses</idade>
+          <id>1</id>
+          <nome>jack</nome>
+          <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+            <telefone>(11)1111-1111</telefone>
+            <email>seila@gmail.com</email>
+            <id>0</id>
+            <nome>lucio</nome>
+            <CPF>222.222.222-22</CPF>
+          </responsavel>
+        </paciente>
+        <especialista class="clinicaVeterinaria.dominio.Veterinario">
+          <crmv>15741</crmv>
+          <vacinado>false</vacinado>
+          <especialidade>
+            <id>2</id>
+            <descricao>teste</descricao>
+            <designacao>cirurgiao plastico</designacao>
+          </especialidade>
+          <id>2</id>
+          <nome>Vinícius</nome>
+          <CPF>111.222.333-44</CPF>
+        </especialista>
+        <tratamentos>
+          <id>0</id>
+          <descricao>asd</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>asd</descricao>
         </diagnosticoAtendimentos>
       </clinicaVeterinaria.dominio.ConsultaVeterinario>
     </atendimento>

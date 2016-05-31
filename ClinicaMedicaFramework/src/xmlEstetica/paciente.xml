@@ -11,4 +11,16 @@
       <CPF>    .     .     -   </CPF>
     </responsavel>
   </clinicaEstetica.dominio.PacienteEstetica>
+  <clinicaEstetica.dominio.PacienteEstetica>
+    <telefone>(22) 2 2222 - 2222</telefone>
+    <idade>18</idade>
+    <CPF>111 . 111 . 111 - 11</CPF>
+    <id>2</id>
+    <nome>lucio</nome>
+    <responsavel>
+      <id>0</id>
+      <nome></nome>
+      <CPF>    .     .     -   </CPF>
+    </responsavel>
+  </clinicaEstetica.dominio.PacienteEstetica>
 </list>

@@ -55,4 +55,18 @@
       <CPF>999.999.999-99</CPF>
     </responsavel>
   </clinicaVeterinaria.dominio.Animal>
+  <clinicaVeterinaria.dominio.Animal>
+    <raca>gato</raca>
+    <especie>gato</especie>
+    <idade>3</idade>
+    <id>5</id>
+    <nome>cindy</nome>
+    <responsavel class="clinicaVeterinaria.dominio.DonoAnimal">
+      <telefone>(11)1111-1111</telefone>
+      <email>seila@gmail.com</email>
+      <id>0</id>
+      <nome>lucio</nome>
+      <CPF>222.222.222-22</CPF>
+    </responsavel>
+  </clinicaVeterinaria.dominio.Animal>
 </list>
