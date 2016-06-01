@@ -36,4 +36,41 @@
       <descricao>asd</descricao>
     </diagnosticoAtendimentos>
   </clinicaEstetica.dominio.ConsultaEsteticaPrivado>
+  <clinicaEstetica.dominio.ConsultaEsteticaPrivado>
+    <insonia>false</insonia>
+    <bebida>true</bebida>
+    <estresse>false</estresse>
+    <etc>false</etc>
+    <sedentarismo>false</sedentarismo>
+    <tabagismo>false</tabagismo>
+    <linha>false</linha>
+    <seque>false</seque>
+    <manc>true</manc>
+    <enve>false</enve>
+    <desi>false</desi>
+    <flaci>false</flaci>
+    <procedimentoPago>false</procedimentoPago>
+    <id>2</id>
+    <dataHora>2016-06-01 19:47:34.35 BRT</dataHora>
+    <paciente class="clinicaEstetica.dominio.PacienteEstetica">
+      <telefone>(22)2222-2222</telefone>
+      <idade>20</idade>
+      <CPF>222.222.222-22</CPF>
+      <id>1</id>
+      <nome>Bokus</nome>
+      <responsavel>
+        <id>0</id>
+        <nome></nome>
+        <CPF>   .   .   -  </CPF>
+      </responsavel>
+    </paciente>
+    <tratamentos>
+      <id>0</id>
+      <descricao>asd</descricao>
+    </tratamentos>
+    <diagnosticoAtendimentos>
+      <id>0</id>
+      <descricao>asd</descricao>
+    </diagnosticoAtendimentos>
+  </clinicaEstetica.dominio.ConsultaEsteticaPrivado>
 </list>

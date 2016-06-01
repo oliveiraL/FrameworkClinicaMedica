@@ -543,6 +543,8 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
             consulta.setPaciente(pacienteEstetica);
             consulta.setEspecialista(especialista);
             atendimentoController.finalizarAtendimento(consulta);
+            JOptionPane.showMessageDialog(rootPane, "Atendimento Finalizado com Sucesso.");
+            dispose();
         } catch (ValidacaoException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }

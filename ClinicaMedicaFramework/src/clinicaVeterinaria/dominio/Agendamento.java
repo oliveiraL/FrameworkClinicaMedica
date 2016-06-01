@@ -18,7 +18,6 @@ import validacoes.ValidacaoException;
  */
 public class Agendamento extends AgendamentoAtendimento{
     
-    
 
     @Override
     public void validarAgendamento() throws ValidacaoException{

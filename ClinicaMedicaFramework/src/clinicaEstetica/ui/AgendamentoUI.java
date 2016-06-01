@@ -5,6 +5,8 @@
  */
 package clinicaEstetica.ui;
 
+import clinicaEstetica.dominio.AgendamentoEstetico;
+import clinicaEstetica.dominio.NotificacaoSMS;
 import clinicaEstetica.dominio.PacienteEstetica;
 import clinicaVeterinaria.dominio.Agendamento;
 import controller.AgendamentoController;
@@ -15,8 +17,11 @@ import dominio.AgendamentoAtendimento;
 import dominio.Especialidade;
 import dominio.Especialista;
 import dominio.Paciente;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import ui.UiAgendamento;
@@ -26,19 +31,22 @@ import validacoes.ValidacaoException;
  *
  * @author Victor
  */
-public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
+public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento {
 
     /**
      * Creates new form AgendamentoUI
      */
-    
     GerenciarEspecialidadeController gerenciarEspecialidade;
     GerenciarPacienteController gerenciarPaciente;
     AgendamentoController agendamento;
     GerenciarEspecialistaController gerenciarEspecialista;
-    
-    
+
     public AgendamentoUI() {
+        String pacote = "xmlEstetica";
+        gerenciarEspecialidade = new GerenciarEspecialidadeController(pacote);
+        gerenciarEspecialista = new GerenciarEspecialistaController(pacote);
+        gerenciarPaciente = new GerenciarPacienteController(pacote);
+        agendamento = new AgendamentoController(pacote, new NotificacaoSMS("Notificacao SMS"));
         initComponents();
     }
 
@@ -59,19 +67,24 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         grade = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         cbEmail = new javax.swing.JCheckBox();
         cbSMS = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         txtHora = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
-        txtCPFDono = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
         data = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -130,11 +143,11 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
 
             },
             new String [] {
-                "Nome", "CPF"
+                "ID", "Nome", "CPF"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                true, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -143,30 +156,43 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
         });
         jScrollPane1.setViewportView(grade);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setText("Quarta-Feira, 18 de maio de 2016");
+        jLabel2.setText("Nome Paciente: ");
+
+        jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel2.setText("CPF Dono:");
 
         cbEmail.setText("NotificarEmail");
 
@@ -183,17 +209,6 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
             }
         });
 
-        try {
-            txtCPFDono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCPFDono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtCPFDonoKeyReleased(evt);
-            }
-        });
-
         jLabel3.setText("Data:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -203,50 +218,43 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCPFDono)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(data, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(6, 6, 6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(data, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                        .addGap(0, 6, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(51, 51, 51)
                                 .addComponent(jLabel3))
-                            .addComponent(jLabel2)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(cbEmail)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cbSMS)))
-                        .addGap(0, 6, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCPFDono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbEmail)
                     .addComponent(cbSMS))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(6, 6, 6))
         );
@@ -259,9 +267,9 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -270,13 +278,15 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 9, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -295,23 +305,26 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtCPFDonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCPFDonoKeyReleased
-        if(evt.getKeyCode() == 10){
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            buscarNome();        // TODO add your handling code here:
+        } catch (ValidacaoException ex) {
+            Logger.getLogger(AgendamentoUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-            String cpf = txtCPFDono.getText();
-            try {
-                Paciente paciente = gerenciarPaciente.buscarPaciente(cpf);
-                ((DefaultTableModel) grade.getModel()).addRow(new Vector());
-                PacienteEstetica pacienteEstetica = (PacienteEstetica) paciente;
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        ArrayList<Especialidade> especialidades = gerenciarEspecialidade.listagem();
+        especialidades.stream().forEach((e) -> {
+            cmbEspecialidade.addItem(e.getDescricao());        // TODO add your handling code here:
+        });
 
-                grade.getModel().setValueAt(pacienteEstetica.getNome(), 0, 0);
-                grade.getModel().setValueAt(pacienteEstetica.getCPF(), 0, 1);
-
-            } catch (ValidacaoException ex) {
-                JOptionPane.showMessageDialog(rootPane, ex.getMessage());
-            }
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFDonoKeyReleased
+        ArrayList<Especialista> especialistas = gerenciarEspecialista.listarEspecialista();
+        System.err.println(especialistas.size());
+        especialistas.stream().forEach((especialista) -> {
+            cmbEspecialista.addItem(especialista.getNome());
+        });        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -356,8 +369,8 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
     private com.toedter.calendar.JDateChooser data;
     private javax.swing.JTable grade;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -366,33 +379,33 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JFormattedTextField txtCPFDono;
     private javax.swing.JFormattedTextField txtHora;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void agendar() {
-        String cpf = txtCPFDono.getText();
+        int row = grade.getSelectedRow();
+        int id = (Integer) grade.getValueAt(row, 0);
         String hora = txtHora.getText();
         int hh = Integer.parseInt(hora.split(":")[0]);
         int mm = Integer.parseInt(hora.split(":")[1]);
         int indexEspecialidade = cmbEspecialidade.getSelectedIndex();
         int indexEspecialista = cmbEspecialista.getSelectedIndex();
         try {
-            Especialista especialista = gerenciarEspecialista.listarEspecialista().get(indexEspecialista-1);
+            Especialista especialista = gerenciarEspecialista.listarEspecialista().get(indexEspecialista - 1);
             Especialidade especialidade = gerenciarEspecialidade.listagem().get(indexEspecialidade);
-            Paciente paciente = gerenciarPaciente.buscarPaciente(cpf);
+            Paciente paciente = gerenciarPaciente.buscarPaciente(id);
             Date dataAgendamento = data.getDate();
             dataAgendamento.setHours(hh);
             dataAgendamento.setMinutes(mm);
-        
-            AgendamentoAtendimento agendamentoEstetica = new Agendamento(dataAgendamento, especialista, paciente, especialidade);
+            AgendamentoAtendimento agendamentoEstetica = new AgendamentoEstetico(dataAgendamento, especialista, paciente, especialidade);
             agendamento.agendamento(agendamentoEstetica);
             JOptionPane.showMessageDialog(rootPane, "Agendamento Realizado com sucesso.");
         } catch (ValidacaoException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
-        
+
     }
 
     @Override
@@ -403,5 +416,26 @@ public class AgendamentoUI extends javax.swing.JFrame implements UiAgendamento{
     @Override
     public void cancelar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void buscarNome() throws ValidacaoException {
+
+        String nome = txtNome.getText();
+        PacienteEstetica pacienteEstetica;
+        int linhas = 0;
+
+        ArrayList<Paciente> ApacientesEstetica = gerenciarPaciente.buscarPacienteNome(nome);
+        System.err.println(ApacientesEstetica.size());
+
+        for (Paciente paciente : ApacientesEstetica) {
+            pacienteEstetica = (PacienteEstetica) paciente;
+            ((DefaultTableModel) grade.getModel()).addRow(new Vector());
+            grade.getModel().setValueAt(pacienteEstetica.getId(), linhas, 0);
+            grade.getModel().setValueAt(pacienteEstetica.getNome(), linhas, 1);
+            grade.getModel().setValueAt(pacienteEstetica.getCPF(), linhas, 2);
+            linhas++;
+
+        }
+
     }
 }

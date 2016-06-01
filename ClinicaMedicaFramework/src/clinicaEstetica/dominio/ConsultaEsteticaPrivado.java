@@ -157,9 +157,15 @@ public class ConsultaEsteticaPrivado extends AtendimentoPrivado{
 
     @Override
     public void validarAtendimento() throws ValidacaoException {
+        if(!bebida && !insonia && !tabagismo && !sedentarismo && !estresse && !etc){
+            throw  new ValidacaoException("Nessesario preencher historico social.");
+        }
+        if(!linha && !enve && !manc && !flaci && !desi && !seque){
+            throw new ValidacaoException("Nessesario preencher queixa principal.");
+        }
         if(getDiagnosticoAtendimentos() == null && getTratamentos() ==null )
             throw new ValidacaoException("Atendimento tem que ter um diagnostico ou um tratamento.");
-        System.out.println("clinicaVeterinaria.dominio.ConsultaVeterinario.validarAtendimento()");
+        //System.out.println("clinicaVeterinaria.dominio.ConsultaVeterinario.validarAtendimento()");
     }
     
 

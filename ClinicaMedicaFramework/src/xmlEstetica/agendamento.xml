@@ -1,0 +1,35 @@
+<list>
+  <clinicaEstetica.dominio.AgendamentoEstetico>
+    <id>1</id>
+    <dataHora>2016-06-03 12:30:00.136 BRT</dataHora>
+    <especialista class="clinicaEstetica.dominio.DoctorEstetica">
+      <crm>123</crm>
+      <tempoProfissao>0</tempoProfissao>
+      <especialidade>
+        <id>1</id>
+        <descricao>fazer massagem</descricao>
+        <designacao>massagista</designacao>
+      </especialidade>
+      <id>1</id>
+      <nome>lucio</nome>
+      <CPF>222.222.222-22</CPF>
+    </especialista>
+    <paciente class="clinicaEstetica.dominio.PacienteEstetica">
+      <telefone>(22)2222-2222</telefone>
+      <idade>20</idade>
+      <CPF>222.222.222-22</CPF>
+      <id>1</id>
+      <nome>Bokus</nome>
+      <responsavel>
+        <id>0</id>
+        <nome></nome>
+        <CPF>   .   .   -  </CPF>
+      </responsavel>
+    </paciente>
+    <especialidade>
+      <id>1</id>
+      <descricao>fazer massagem</descricao>
+      <designacao>massagista</designacao>
+    </especialidade>
+  </clinicaEstetica.dominio.AgendamentoEstetico>
+</list>
