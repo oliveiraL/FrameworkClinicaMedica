@@ -51,7 +51,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGer
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        cmbEspecialidade = new javax.swing.JComboBox<>();
+        cmbEspecialidade = new javax.swing.JComboBox<String>();
         txtNome = new javax.swing.JTextField();
         txtCRMV = new javax.swing.JTextField();
         txtCPF = new javax.swing.JFormattedTextField();
@@ -78,7 +78,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGer
 
         jLabel2.setText("CPF:");
 
-        jLabel3.setText("CRMV:");
+        jLabel3.setText("CRM:");
 
         jLabel4.setText("Especialidade:");
 
@@ -154,11 +154,11 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGer
 
             },
             new String [] {
-                "ID", "Nome", "CPF", "CRMV", "Especialidade"
+                "ID", "Nome", "CPF", "CRM", "Especialidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -191,7 +191,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGer
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -313,7 +313,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGer
         for (Especialidade e : especialidades) {
             System.err.println(e.getDescricao());
             cmbEspecialidade.addItem(e.getDesignacao());
-        }        // TODO add your handling code here:
+        }        
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -424,19 +424,19 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGer
         limparTabela();
 
         String nomeEspecialista = txtNomeBusca.getText();
-        Veterinario veterinario;
+        DoctorEstetica doctorEstetica;
         int linhas = 0;
 
         for (Especialista especialista : gerenciarEspecialista.listarEspecialista()) {
-            veterinario = (Veterinario) especialista;
+            doctorEstetica = (DoctorEstetica) especialista;
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
 
-            if (nomeEspecialista.equalsIgnoreCase(veterinario.getNome())) {
-                jTable1.getModel().setValueAt(veterinario.getId(), linhas, 0);
-                jTable1.getModel().setValueAt(veterinario.getNome(), linhas, 1);
-                jTable1.getModel().setValueAt(veterinario.getCPF(), linhas, 2);
-                jTable1.getModel().setValueAt(veterinario.getCrmv(), linhas, 3);
-                jTable1.getModel().setValueAt(veterinario.getEspecialidade().getDesignacao(), linhas, 4);
+            if (nomeEspecialista.equalsIgnoreCase(doctorEstetica.getNome())) {
+                jTable1.getModel().setValueAt(doctorEstetica.getId(), linhas, 0);
+                jTable1.getModel().setValueAt(doctorEstetica.getNome(), linhas, 1);
+                jTable1.getModel().setValueAt(doctorEstetica.getCPF(), linhas, 2);
+                jTable1.getModel().setValueAt(doctorEstetica.getCrm(), linhas, 3);
+                jTable1.getModel().setValueAt(doctorEstetica.getEspecialidade().getDesignacao(), linhas, 4);
                 linhas++;
             }
         }

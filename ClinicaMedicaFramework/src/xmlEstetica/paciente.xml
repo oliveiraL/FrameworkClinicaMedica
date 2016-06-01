@@ -59,4 +59,52 @@
       <CPF>   .   .   -  </CPF>
     </responsavel>
   </clinicaEstetica.dominio.PacienteEstetica>
+  <clinicaEstetica.dominio.PacienteEstetica>
+    <telefone>(84)9821-0063</telefone>
+    <idade>12</idade>
+    <CPF>999.999.999-99</CPF>
+    <id>6</id>
+    <nome>victor gustavo</nome>
+    <responsavel>
+      <id>0</id>
+      <nome>testte</nome>
+      <CPF>999.999.999-99</CPF>
+    </responsavel>
+  </clinicaEstetica.dominio.PacienteEstetica>
+  <clinicaEstetica.dominio.PacienteEstetica>
+    <telefone>(99)9999-9999</telefone>
+    <idade>12</idade>
+    <CPF>999.999.999-99</CPF>
+    <id>7</id>
+    <nome>victor gustavo</nome>
+    <responsavel>
+      <id>0</id>
+      <nome>teste</nome>
+      <CPF>123.131.312-31</CPF>
+    </responsavel>
+  </clinicaEstetica.dominio.PacienteEstetica>
+  <clinicaEstetica.dominio.PacienteEstetica>
+    <telefone>(99)9999-9999</telefone>
+    <idade>13</idade>
+    <CPF>999.999.999-99</CPF>
+    <id>8</id>
+    <nome>teste</nome>
+    <responsavel>
+      <id>0</id>
+      <nome>teste</nome>
+      <CPF>123.131.312-31</CPF>
+    </responsavel>
+  </clinicaEstetica.dominio.PacienteEstetica>
+  <clinicaEstetica.dominio.PacienteEstetica>
+    <telefone>(99)9999-9999</telefone>
+    <idade>12</idade>
+    <CPF>999.999.999-99</CPF>
+    <id>9</id>
+    <nome>tete</nome>
+    <responsavel>
+      <id>0</id>
+      <nome>teste</nome>
+      <CPF>111.111.111-11</CPF>
+    </responsavel>
+  </clinicaEstetica.dominio.PacienteEstetica>
 </list>

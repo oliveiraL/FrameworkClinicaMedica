@@ -9,4 +9,9 @@
     <descricao>Melhoria no rosto</descricao>
     <designacao>Cirurgião plastico</designacao>
   </dominio.Especialidade>
+  <dominio.Especialidade>
+    <id>3</id>
+    <descricao>Teste</descricao>
+    <designacao>Limpeza Pele</designacao>
+  </dominio.Especialidade>
 </list>

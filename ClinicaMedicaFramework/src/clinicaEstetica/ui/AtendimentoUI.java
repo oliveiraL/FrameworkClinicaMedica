@@ -11,6 +11,7 @@ import clinicaEstetica.dominio.PacienteEstetica;
 import clinicaVeterinaria.dominio.Animal;
 import clinicaVeterinaria.dominio.ConsultaVeterinario;
 import clinicaVeterinaria.dominio.ProntuarioAnimal;
+import clinicaVeterinaria.ui.ProntuarioVisualizarUI;
 import controller.AtendimentoController;
 import controller.GerenciarEspecialistaController;
 import controller.GerenciarProntuarioController;
@@ -76,28 +77,27 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
         jPanel2 = new javax.swing.JPanel();
         txtDescricaoD = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        cbInsonia = new javax.swing.JCheckBox();
+        cbSeden = new javax.swing.JCheckBox();
+        cbEstre = new javax.swing.JCheckBox();
+        cbTaba = new javax.swing.JCheckBox();
+        cbBebi = new javax.swing.JCheckBox();
+        cbEtc = new javax.swing.JCheckBox();
         jPanel6 = new javax.swing.JPanel();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        cbLinha = new javax.swing.JCheckBox();
+        cbFlaci = new javax.swing.JCheckBox();
+        cbDesi = new javax.swing.JCheckBox();
+        cbManchas = new javax.swing.JCheckBox();
+        cbEnve = new javax.swing.JCheckBox();
+        cbSequelas = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        finalizarAtendimento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PacienteEstetica", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PacienteEstetica", 0, 0, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         jPanel1.setToolTipText("");
-
-        foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clinicaVeterinaria/imagens/avatar_phixr.jpg"))); // NOI18N
 
         jLabel1.setText("Nome:");
 
@@ -214,17 +214,17 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Historico Social"));
 
-        jCheckBox1.setText("Insonia");
+        cbInsonia.setText("Insonia");
 
-        jCheckBox2.setText("Sedentarismo");
+        cbSeden.setText("Sedentarismo");
 
-        jCheckBox3.setText("Estresse");
+        cbEstre.setText("Estresse");
 
-        jCheckBox4.setText("Tabagismo");
+        cbTaba.setText("Tabagismo");
 
-        jCheckBox5.setText("Bebida Alcolicas");
+        cbBebi.setText("Bebida Alcolicas");
 
-        jCheckBox6.setText("etc");
+        cbEtc.setText("etc");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -233,14 +233,14 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox1))
+                    .addComponent(cbEstre)
+                    .addComponent(cbSeden)
+                    .addComponent(cbInsonia))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6))
+                    .addComponent(cbTaba)
+                    .addComponent(cbBebi)
+                    .addComponent(cbEtc))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -248,32 +248,32 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox4))
+                    .addComponent(cbInsonia)
+                    .addComponent(cbTaba))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox5))
+                    .addComponent(cbSeden)
+                    .addComponent(cbBebi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox6))
+                    .addComponent(cbEstre)
+                    .addComponent(cbEtc))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Queixa Principal"));
 
-        jCheckBox7.setText("Linhas Expressao");
+        cbLinha.setText("Linhas Expressao");
 
-        jCheckBox8.setText("Flacidez");
+        cbFlaci.setText("Flacidez");
 
-        jCheckBox9.setText("Desidratação");
+        cbDesi.setText("Desidratação");
 
-        jCheckBox10.setText("Manchas");
+        cbManchas.setText("Manchas");
 
-        jCheckBox11.setText("Envelhecimento Precoce");
+        cbEnve.setText("Envelhecimento Precoce");
 
-        jCheckBox12.setText("Sequelas Acne");
+        cbSequelas.setText("Sequelas Acne");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -282,30 +282,30 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox8)
-                    .addComponent(jCheckBox7))
+                    .addComponent(cbDesi)
+                    .addComponent(cbFlaci)
+                    .addComponent(cbLinha))
                 .addGap(8, 8, 8)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox10)
-                    .addComponent(jCheckBox11)
-                    .addComponent(jCheckBox12)))
+                    .addComponent(cbManchas)
+                    .addComponent(cbEnve)
+                    .addComponent(cbSequelas)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox7)
-                    .addComponent(jCheckBox10))
+                    .addComponent(cbLinha)
+                    .addComponent(cbManchas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox8)
-                    .addComponent(jCheckBox11))
+                    .addComponent(cbFlaci)
+                    .addComponent(cbEnve))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox12))
+                    .addComponent(cbDesi)
+                    .addComponent(cbSequelas))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -325,7 +325,19 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
                 return canEdit [columnIndex];
             }
         });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+
+        finalizarAtendimento.setText("FinalizarAtendimento");
+        finalizarAtendimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finalizarAtendimentoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -349,6 +361,10 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
                         .addComponent(jLabel7)
                         .addGap(0, 522, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(finalizarAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,11 +382,40 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(finalizarAtendimento, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void finalizarAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarAtendimentoActionPerformed
+       finalizarAtendimento();
+        
+        
+    }//GEN-LAST:event_finalizarAtendimentoActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        clickMouse++;
+        if (clickMouse == 2) {
+            clickMouse = 0;
+                int index = jTable1.getSelectedRow();
+                Integer id = (Integer) jTable1.getValueAt(index, 0);
+                
+                Atendimento att = atendimentoController.buscarAtendimento(id);
+                
+                ProntuarioVisualizarUI prontuario = new ProntuarioVisualizarUI((ConsultaVeterinario) att);
+               // prontuario.iniciarProntuario(att);
+                prontuario.show();
+                
+                
+                
+               
+                
+                
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -408,19 +453,20 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox cbBebi;
+    private javax.swing.JCheckBox cbDesi;
+    private javax.swing.JCheckBox cbEnve;
+    private javax.swing.JCheckBox cbEstre;
+    private javax.swing.JCheckBox cbEtc;
+    private javax.swing.JCheckBox cbFlaci;
+    private javax.swing.JCheckBox cbInsonia;
+    private javax.swing.JCheckBox cbLinha;
+    private javax.swing.JCheckBox cbManchas;
+    private javax.swing.JCheckBox cbSeden;
+    private javax.swing.JCheckBox cbSequelas;
+    private javax.swing.JCheckBox cbTaba;
+    private javax.swing.JButton finalizarAtendimento;
     private javax.swing.JLabel foto;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -446,7 +492,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
         jLabel4.setText(pacienteEstetica.getNome());
         jLabel5.setText(String.valueOf(pacienteEstetica.getIdade()));
         jLabel6.setText(pacienteEstetica.getCPF());
-        ProntuarioEstetica prontuario = (ProntuarioEstetica) gerenciarProntuario.buscarProntuario(pacienteEstetica);      
+        ProntuarioEstetica prontuario = (ProntuarioEstetica) gerenciarProntuario.buscarProntuario(pacienteEstetica);
         preencherTabela(prontuario);
     }
 
@@ -466,6 +512,23 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
 
     @Override
     public void finalizarAtendimento() {
+            boolean insonia = cbInsonia.isSelected();
+            boolean bebida = cbBebi.isSelected();
+            boolean estresse = cbEstre.isSelected();
+            boolean etc  =  cbEtc.isSelected();
+            boolean sedentarismo = cbSeden.isSelected();
+            boolean tabagismo = cbTaba.isSelected();
+        
+            boolean linha = cbLinha.isSelected();
+            boolean seque = cbSequelas.isSelected();
+            boolean manc  = cbManchas.isSelected();
+            boolean enve  = cbEnve.isSelected();
+            boolean desi  = cbDesi.isSelected();
+            boolean flaci = cbFlaci.isSelected();
+        
+        
+        
+        
         try {
             if (!txtDescricaoD.getText().isEmpty()) {
                 preescreverDiagnostico();
@@ -473,7 +536,7 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
             if (!txtDescricaoT.getText().isEmpty()) {
                 preescreverTratamento();
             }
-            ConsultaEsteticaPrivado consulta = new ConsultaEsteticaPrivado("", "");
+            ConsultaEsteticaPrivado consulta = new ConsultaEsteticaPrivado(insonia, bebida, estresse, etc, sedentarismo, tabagismo, linha, seque, manc, enve, desi, flaci);
             consulta.setDataHora(new Date());
             consulta.setDiagnosticoAtendimentos(diagnostico);
             consulta.setTratamentos(tratamento);
@@ -486,7 +549,6 @@ public class AtendimentoUI extends javax.swing.JFrame implements UIAtendimento{
     }
     
     private void preencherTabela(ProntuarioEstetica prontuario) {
-        System.err.println(prontuario);
         int linhas = 0;
             for (Atendimento atendimento : prontuario.getAtendimento()) {
                 ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());

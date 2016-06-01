@@ -17,6 +17,7 @@ public class ProntuarioEstetica extends Prontuario{
     private Date dataCriacao;
     
     
+    
     public ProntuarioEstetica() {
         super();
         dataCriacao = new Date();

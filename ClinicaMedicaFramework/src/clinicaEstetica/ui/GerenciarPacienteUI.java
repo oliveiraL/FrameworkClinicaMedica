@@ -6,7 +6,9 @@
 package clinicaEstetica.ui;
 
 import clinicaEstetica.dominio.PacienteEstetica;
+import clinicaEstetica.dominio.ProntuarioEstetica;
 import controller.GerenciarPacienteController;
+import controller.GerenciarProntuarioController;
 import dominio.Paciente;
 import dominio.Responsavel;
 import java.awt.Color;
@@ -30,10 +32,13 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
      * Creates new form GerenciarPacienteUI
      */
     GerenciarPacienteController gerenciarPacienteController;
+    GerenciarProntuarioController gerenciarProntuarioController;
 
     public GerenciarPacienteUI() {
         gerenciarPacienteController = new GerenciarPacienteController("xmlEstetica");
+        gerenciarProntuarioController = new GerenciarProntuarioController("xmlEstetica");
         initComponents();
+        
     }
 
     /**
@@ -532,13 +537,17 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
             String email = jTextField4.getText();
             String nomeResponsavel = jTextField5.getText();
             String CPFResponsavel = jFormattedTextField3.getText();
-
+            
+            /* Cadastra o paciente */
             Responsavel responsavel = new Responsavel(nomeResponsavel, CPFResponsavel);
             Paciente pacienteEstetica = new PacienteEstetica(nome, telefone, idade, CPF, responsavel, null);
             messageCadastro.setForeground(Color.GREEN);
-
             gerenciarPacienteController.cadastrarPaciente(pacienteEstetica);
-
+            
+            /* Cadastra o Prontuario*/
+            ProntuarioEstetica prontuarioEstetica = new ProntuarioEstetica();
+            prontuarioEstetica.setPaciente(pacienteEstetica);
+            gerenciarProntuarioController.cadastrarProntuario(prontuarioEstetica);
             messageCadastro.setText("Cadastro realizado com Sucesso!");
 
             /*Limpando os Campos - Pós Cadastro*/

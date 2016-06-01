@@ -11,4 +11,28 @@
     <nome>lucio</nome>
     <CPF>222.222.222-22</CPF>
   </clinicaEstetica.dominio.DoctorEstetica>
+  <clinicaEstetica.dominio.DoctorEstetica>
+    <crm>0101020203</crm>
+    <tempoProfissao>0</tempoProfissao>
+    <especialidade>
+      <id>2</id>
+      <descricao>Melhoria no rosto</descricao>
+      <designacao>Cirurgião plastico</designacao>
+    </especialidade>
+    <id>2</id>
+    <nome>Victor Gustavo</nome>
+    <CPF>999.999.999-99</CPF>
+  </clinicaEstetica.dominio.DoctorEstetica>
+  <clinicaEstetica.dominio.DoctorEstetica>
+    <crm>010242</crm>
+    <tempoProfissao>0</tempoProfissao>
+    <especialidade>
+      <id>2</id>
+      <descricao>Melhoria no rosto</descricao>
+      <designacao>Cirurgião plastico</designacao>
+    </especialidade>
+    <id>3</id>
+    <nome>Serginn</nome>
+    <CPF>999.999.999-99</CPF>
+  </clinicaEstetica.dominio.DoctorEstetica>
 </list>

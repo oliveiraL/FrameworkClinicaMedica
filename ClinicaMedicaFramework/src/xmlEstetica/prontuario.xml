@@ -1,0 +1,57 @@
+<list>
+  <clinicaEstetica.dominio.ProntuarioEstetica>
+    <dataCriacao>2016-06-01 14:22:03.560 BRT</dataCriacao>
+    <id>1</id>
+    <atendimento>
+      <clinicaEstetica.dominio.ConsultaEsteticaPrivado>
+        <insonia>true</insonia>
+        <bebida>false</bebida>
+        <estresse>false</estresse>
+        <etc>false</etc>
+        <sedentarismo>false</sedentarismo>
+        <tabagismo>false</tabagismo>
+        <linha>true</linha>
+        <seque>false</seque>
+        <manc>false</manc>
+        <enve>false</enve>
+        <desi>false</desi>
+        <flaci>false</flaci>
+        <procedimentoPago>false</procedimentoPago>
+        <id>1</id>
+        <dataHora>2016-06-01 15:08:05.676 BRT</dataHora>
+        <paciente class="clinicaEstetica.dominio.PacienteEstetica">
+          <telefone>(99)9999-9999</telefone>
+          <idade>12</idade>
+          <CPF>999.999.999-99</CPF>
+          <id>9</id>
+          <nome>tete</nome>
+          <responsavel>
+            <id>0</id>
+            <nome>teste</nome>
+            <CPF>111.111.111-11</CPF>
+          </responsavel>
+        </paciente>
+        <tratamentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </tratamentos>
+        <diagnosticoAtendimentos>
+          <id>0</id>
+          <descricao>teste</descricao>
+        </diagnosticoAtendimentos>
+      </clinicaEstetica.dominio.ConsultaEsteticaPrivado>
+    </atendimento>
+    <paciente class="clinicaEstetica.dominio.PacienteEstetica">
+      <telefone>(99)9999-9999</telefone>
+      <idade>12</idade>
+      <CPF>999.999.999-99</CPF>
+      <id>9</id>
+      <nome>tete</nome>
+      <responsavel>
+        <id>0</id>
+        <nome>teste</nome>
+        <CPF>111.111.111-11</CPF>
+      </responsavel>
+    </paciente>
+  </clinicaEstetica.dominio.ProntuarioEstetica>
+</list>
