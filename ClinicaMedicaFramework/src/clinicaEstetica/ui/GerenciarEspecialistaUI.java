@@ -11,6 +11,7 @@ import controller.GerenciarEspecialidadeController;
 import controller.GerenciarEspecialistaController;
 import dominio.Especialidade;
 import dominio.Especialista;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -21,7 +22,7 @@ import validacoes.ValidacaoException;
  *
  * @author Victor
  */
-public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGerenciarEspecialista{
+public class GerenciarEspecialistaUI extends javax.swing.JFrame implements UIGerenciarEspecialista {
 
     /**
      * Creates new form GerenciarEspecialistaUI
@@ -30,8 +31,10 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
     private GerenciarEspecialidadeController gerenciarEspecialidade;
     private int clickMouse = 0;
     private DoctorEstetica doctorEsteticaAtual;
-    
+
     public GerenciarEspecialistaUI() {
+        gerenciarEspecialidade = new GerenciarEspecialidadeController("xmlEstetica");
+        gerenciarEspecialista = new GerenciarEspecialistaController("xmlEstetica");
         initComponents();
     }
 
@@ -64,7 +67,12 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
         removerEspecialista = new javax.swing.JButton();
         atualizarEspecialista = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setText("Nome:");
 
@@ -143,17 +151,14 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Nome", "CPF", "CRMV", "Especialidade"
+                "ID", "Nome", "CPF", "CRMV", "Especialidade"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                true, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -255,6 +260,7 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -301,6 +307,14 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
     private void atualizarEspecialistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarEspecialistaActionPerformed
         atualizar();
     }//GEN-LAST:event_atualizarEspecialistaActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        ArrayList<Especialidade> especialidades = gerenciarEspecialidade.listagem();
+        for (Especialidade e : especialidades) {
+            System.err.println(e.getDescricao());
+            cmbEspecialidade.addItem(e.getDesignacao());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -398,12 +412,14 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
             linhas++;
         }
     }
+
     public void limparTabela() {
         while (jTable1.getRowCount() > 0) {
             DefaultTableModel dm = (DefaultTableModel) jTable1.getModel();
             dm.getDataVector().removeAllElements();
         }
     }
+
     public void buscarNome() {
         limparTabela();
 
@@ -416,14 +432,16 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
 
             if (nomeEspecialista.equalsIgnoreCase(veterinario.getNome())) {
-                jTable1.getModel().setValueAt(veterinario.getNome(), linhas, 0);
-                jTable1.getModel().setValueAt(veterinario.getCPF(), linhas, 1);
-                jTable1.getModel().setValueAt(veterinario.getCrmv(), linhas, 2);
-                jTable1.getModel().setValueAt(veterinario.getEspecialidade().getDesignacao(), linhas, 3);
+                jTable1.getModel().setValueAt(veterinario.getId(), linhas, 0);
+                jTable1.getModel().setValueAt(veterinario.getNome(), linhas, 1);
+                jTable1.getModel().setValueAt(veterinario.getCPF(), linhas, 2);
+                jTable1.getModel().setValueAt(veterinario.getCrmv(), linhas, 3);
+                jTable1.getModel().setValueAt(veterinario.getEspecialidade().getDesignacao(), linhas, 4);
                 linhas++;
             }
         }
     }
+
     public void atualizar() {
         String nomeVeterinario = txtNome.getText();
         String CPF = txtCPF.getText();
@@ -432,12 +450,12 @@ public class GerenciarEspecialistaUI extends javax.swing.JFrame  implements UIGe
         Especialidade especialidade = gerenciarEspecialidade.listagem().get(index);
 
         doctorEsteticaAtual.setNome(nomeVeterinario);
-         doctorEsteticaAtual.setCPF(CPF);
-         doctorEsteticaAtual.setCrm(CRMV);
+        doctorEsteticaAtual.setCPF(CPF);
+        doctorEsteticaAtual.setCrm(CRMV);
         doctorEsteticaAtual.setEspecialidade(especialidade);
 
         try {
-            gerenciarEspecialista.cadastrarEspecialista( doctorEsteticaAtual);
+            gerenciarEspecialista.cadastrarEspecialista(doctorEsteticaAtual);
         } catch (ValidacaoException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }

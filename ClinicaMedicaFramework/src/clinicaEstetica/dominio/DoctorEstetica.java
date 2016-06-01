@@ -16,6 +16,10 @@ import validacoes.ValidacaoException;
 public class DoctorEstetica extends Especialista{
      private String crm;
      private int tempoProfissao;
+
+    public DoctorEstetica() {
+    }
+     
      
      public DoctorEstetica(String crm, Especialidade especialidade, String nome, String CPF){
          super(especialidade, nome, CPF);
@@ -25,7 +29,7 @@ public class DoctorEstetica extends Especialista{
     @Override
     public void validarEspecialista() throws ValidacaoException {
         if(getCrm() == null || getCPF() == null || getCPF().isEmpty() || getCrm().isEmpty())
-            throw new ValidacaoException("Erro ao validar Veterinario.");
+            throw new ValidacaoException("Erro ao validar Especialista.");
     }
     
     public String getCrm() {

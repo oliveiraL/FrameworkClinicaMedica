@@ -24,15 +24,13 @@ import validacoes.ValidacaoException;
  *
  * @author Monster
  */
-public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenciamentoPaciente{
+public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenciamentoPaciente {
 
     /**
      * Creates new form GerenciarPacienteUI
      */
-      GerenciarPacienteController gerenciarPacienteController;
-    
-    
-    
+    GerenciarPacienteController gerenciarPacienteController;
+
     public GerenciarPacienteUI() {
         gerenciarPacienteController = new GerenciarPacienteController("xmlEstetica");
         initComponents();
@@ -91,13 +89,13 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         jLabel1.setText("Paciente");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("### . ### . ### - ##")));
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) # #### - ####")));
+            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -139,7 +137,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
         jLabel11.setText("Nome:");
 
         try {
-            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("### . ### . ### - ##")));
+            jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -421,7 +419,7 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarPacienteActionPerformed
-       cadastrarPaciente();
+        cadastrarPaciente();
     }//GEN-LAST:event_cadastrarPacienteActionPerformed
 
     private void alterarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterarPacienteActionPerformed
@@ -433,16 +431,16 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
     }//GEN-LAST:event_listarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       removerPaciente();
+        removerPaciente();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-          try {
-              limparTabela();
-              buscarNomePaciente();
-          } catch (ValidacaoException ex) {
-              Logger.getLogger(GerenciarPacienteUI.class.getName()).log(Level.SEVERE, null, ex);
-          }
+        try {
+            limparTabela();
+            buscarNomePaciente();
+        } catch (ValidacaoException ex) {
+            Logger.getLogger(GerenciarPacienteUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
@@ -526,56 +524,42 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
 
     @Override
     public void cadastrarPaciente() {
-        String nome  = jTextField1.getText();
-        int idade = Integer.parseInt(jTextField3.getText());
-        
-        String CPF   = jFormattedTextField1.getText();
-        String telefone = jFormattedTextField2.getText();
-        String email = jTextField4.getText();
-        String nomeResponsavel = jTextField5.getText();
-        String CPFResponsavel = jFormattedTextField3.getText();
-        
-        Responsavel  responsavel = new Responsavel(nomeResponsavel, CPFResponsavel);    
-        Paciente pacienteEstetica = new PacienteEstetica(nome, telefone, idade, CPF, responsavel,null);
-       try{
-        if (!jTextField1.getText().trim().equals("") && !jTextField3.getText().trim().equals("") && !jFormattedTextField1.getText().trim()
-                    .equals("") && !jFormattedTextField2.getText().trim().equals("") && !jTextField2.getText().trim().equals("")) {
-                
-                messageCadastro.setForeground(Color.GREEN);
-                
-                gerenciarPacienteController.cadastrarPaciente(pacienteEstetica);
-           
-                
-                messageCadastro.setText("Cadastro realizado com Sucesso!");
-                
-                /*Limpando os Campos - Pós Cadastro*/
-                jTextField1.setText(null);
-                jTextField3.setText(null);
-                jFormattedTextField1.setText(null);
-                jFormattedTextField2.setText(null);
-                jTextField2.setText(null);
-               
-                
-            }else {
-                messageCadastro.setForeground(Color.red);
-                messageCadastro.setText("Preencha todos os campos!");
-            }
-        
-            } catch (ValidacaoException ex) {
+        try {
+            String nome = jTextField1.getText();
+            int idade = Integer.parseInt(jTextField3.getText());
+            String CPF = jFormattedTextField1.getText();
+            String telefone = jFormattedTextField2.getText();
+            String email = jTextField4.getText();
+            String nomeResponsavel = jTextField5.getText();
+            String CPFResponsavel = jFormattedTextField3.getText();
+
+            Responsavel responsavel = new Responsavel(nomeResponsavel, CPFResponsavel);
+            Paciente pacienteEstetica = new PacienteEstetica(nome, telefone, idade, CPF, responsavel, null);
+            messageCadastro.setForeground(Color.GREEN);
+
+            gerenciarPacienteController.cadastrarPaciente(pacienteEstetica);
+
+            messageCadastro.setText("Cadastro realizado com Sucesso!");
+
+            /*Limpando os Campos - Pós Cadastro*/
+            jTextField1.setText(null);
+            jTextField3.setText(null);
+            jFormattedTextField1.setText(null);
+            jFormattedTextField2.setText(null);
+            jTextField2.setText(null);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane, "Preencha o campo idade adequadamente.", "Erro", 2);
+
+        } catch (ValidacaoException ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Erro", 2);
-            }
+        }
     }
-    
-        
-        
-                
-  
 
     @Override
     public void removerPaciente() {
         int index = jTable1.getSelectedRow();
         Integer id = (Integer) jTable1.getValueAt(index, 0);
-        System.out.print(id);
         Paciente paciente = gerenciarPacienteController.listarPacientes().get(id);
         System.out.print("##############" + paciente.getNome());
         gerenciarPacienteController.removerPaciene(paciente);
@@ -583,15 +567,15 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
 
     @Override
     public List listarPaciente() {
-        
+
         limparTabela();
         int linhas = 0;
         PacienteEstetica pacienteEstetica;
 
         for (Paciente paciente : gerenciarPacienteController.listarPacientes()) {
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
-            pacienteEstetica = (PacienteEstetica)paciente;
-            
+            pacienteEstetica = (PacienteEstetica) paciente;
+
             jTable1.getModel().setValueAt(pacienteEstetica.getId(), linhas, 0);
             jTable1.getModel().setValueAt(pacienteEstetica.getNome(), linhas, 1);
             jTable1.getModel().setValueAt(pacienteEstetica.getIdade(), linhas, 2);
@@ -599,41 +583,41 @@ public class GerenciarPacienteUI extends javax.swing.JFrame implements UIGerenci
             linhas++;
         }
         return null;
-    
+
     }
 
     @Override
     public void atualizar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    public void buscarNomePaciente() throws ValidacaoException{
+
+    public void buscarNomePaciente() throws ValidacaoException {
         String nome = jTextField4.getText();
         ArrayList<Paciente> paciente = gerenciarPacienteController.buscarPacienteNome(nome);
         int linhas = 0;
-        
-        for(int i =0 ; i <= paciente.size() ;i++){
+
+        for (int i = 0; i <= paciente.size(); i++) {
             ((DefaultTableModel) jTable1.getModel()).addRow(new Vector());
 
-                PacienteEstetica pacienteEstetica = (PacienteEstetica)paciente.get(i);
-                        
-                jTable1.getModel().setValueAt(pacienteEstetica.getId(), linhas, 0);
-                jTable1.getModel().setValueAt(pacienteEstetica.getNome(), linhas, 1);
-                jTable1.getModel().setValueAt(pacienteEstetica.getIdade(), linhas, 2);
-                jTable1.getModel().setValueAt(pacienteEstetica.getEmail(), linhas, 3);
-                linhas++;
-            
+            PacienteEstetica pacienteEstetica = (PacienteEstetica) paciente.get(i);
+
+            jTable1.getModel().setValueAt(pacienteEstetica.getId(), linhas, 0);
+            jTable1.getModel().setValueAt(pacienteEstetica.getNome(), linhas, 1);
+            jTable1.getModel().setValueAt(pacienteEstetica.getIdade(), linhas, 2);
+            jTable1.getModel().setValueAt(pacienteEstetica.getEmail(), linhas, 3);
+            linhas++;
+
         }
     }
+
     /**
-     * Limpa a table 
-     * 
+     * Limpa a table
+     *
      */
-     public void limparTabela() {
+    public void limparTabela() {
         while (jTable1.getRowCount() > 0) {
             DefaultTableModel dm = (DefaultTableModel) jTable1.getModel();
             dm.getDataVector().removeAllElements();
         }
-     }
+    }
 }

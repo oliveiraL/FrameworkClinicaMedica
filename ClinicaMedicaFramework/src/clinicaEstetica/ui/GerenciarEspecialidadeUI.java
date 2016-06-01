@@ -20,6 +20,7 @@ public class GerenciarEspecialidadeUI extends javax.swing.JFrame {
      */
      private GerenciarEspecialidadeController gerenciarEspecialidade;
     public GerenciarEspecialidadeUI() {
+        gerenciarEspecialidade = new GerenciarEspecialidadeController("xmlEstetica");
         initComponents();
     }
 
@@ -41,7 +42,7 @@ public class GerenciarEspecialidadeUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Especialidade"));
 
@@ -116,12 +117,12 @@ public class GerenciarEspecialidadeUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String descricao = txtDescricao.getText();
         String designacao = txtDesignacao.getText();
-        TipoAtendimento tipoAtendimento = new TipoAtendimento(designacao);
         Especialidade especialidade = new Especialidade(descricao, designacao);
         gerenciarEspecialidade.cadastrar(especialidade);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -1,0 +1,12 @@
+<list>
+  <dominio.Especialidade>
+    <id>1</id>
+    <descricao>fazer massagem</descricao>
+    <designacao>massagista</designacao>
+  </dominio.Especialidade>
+  <dominio.Especialidade>
+    <id>2</id>
+    <descricao>Melhoria no rosto</descricao>
+    <designacao>Cirurgião plastico</designacao>
+  </dominio.Especialidade>
+</list>
