@@ -146,16 +146,18 @@ public class InicioAtendimentoUI extends javax.swing.JFrame {
             clickMouse = 0;
             int index = jTable1.getSelectedRow();
             Integer id = (Integer) jTable1.getValueAt(index, 0);
-
+            
+            
             PacienteEstetica pacienteEstetica = null;
             try {
                 pacienteEstetica = (PacienteEstetica) gerenciarPaciente.buscarPaciente(id.intValue());
             } catch (ValidacaoException ex) {
-                Logger.getLogger(InicioAtendimentoUI.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(clinicaVeterinaria.ui.InicioAtendimentoUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-            AtendimentoUI atendimento = new AtendimentoUI();
+            clinicaEstetica.ui.AtendimentoUI atendimento = new clinicaEstetica.ui.AtendimentoUI();
             atendimento.iniciarAtendimento(pacienteEstetica);
             atendimento.show();
+            dispose();
         }
     }//GEN-LAST:event_jTable1MouseClicked
 

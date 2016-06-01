@@ -28,7 +28,13 @@ public class ConsultaEsteticaPrivado extends AtendimentoPrivado{
     private boolean desi;
     private boolean flaci;
 
+    public ConsultaEsteticaPrivado() {
+    }
+    
+    
+
     public ConsultaEsteticaPrivado(boolean insonia, boolean bebida, boolean estresse, boolean etc, boolean sedentarismo, boolean tabagismo, boolean linha, boolean seque, boolean manc, boolean enve, boolean desi, boolean flaci) {
+        super();
         this.insonia = insonia;
         this.bebida = bebida;
         this.estresse = estresse;
@@ -42,6 +48,9 @@ public class ConsultaEsteticaPrivado extends AtendimentoPrivado{
         this.desi = desi;
         this.flaci = flaci;
     }
+
+    
+    
 
     public boolean isInsonia() {
         return insonia;

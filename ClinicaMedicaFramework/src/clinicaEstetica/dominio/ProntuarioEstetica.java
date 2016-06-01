@@ -15,12 +15,7 @@ import java.util.Date;
  */
 public class ProntuarioEstetica extends Prontuario{
     private Date dataCriacao;
-    
-    
-    
     public ProntuarioEstetica() {
-        super();
-        dataCriacao = new Date();
     }
     @Override
     public void addAtendimento(Atendimento atendimento) {
