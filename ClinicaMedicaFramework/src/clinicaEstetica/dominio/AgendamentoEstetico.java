@@ -15,7 +15,7 @@ import validacoes.ValidacaoException;
 
 /**
  *
- * @author lucio
+ * @author victor
  */
 public class AgendamentoEstetico extends AgendamentoAtendimento {
 
@@ -30,7 +30,7 @@ public class AgendamentoEstetico extends AgendamentoAtendimento {
     public void validarAgendamento() throws ValidacaoException {
         PacienteEstetica paciente = (PacienteEstetica) getPaciente();
         if(paciente.getIdade() < 18){
-            int resposta = JOptionPane.showConfirmDialog( null,"Responsavel Autorisa ?", "Autorisação",JOptionPane.YES_OPTION);
+            int resposta = JOptionPane.showConfirmDialog( null,"Responsavel Autoriza ?", "Autorisação",JOptionPane.YES_OPTION);
             if(resposta != JOptionPane.YES_OPTION){
                 throw new ValidacaoException("Erro na autorisação do responsavel.");
             }
